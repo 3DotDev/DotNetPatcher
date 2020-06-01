@@ -1,0 +1,310 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BC17B941-39E0-45BD-8F49-730EC6045108}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Implementer</RootNamespace>
+    <AssemblyName>Implementer</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>Windows</MyType>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Mono.Cecil, Version=0.11.2.0, Culture=neutral, PublicKeyToken=50cebf1cceb9d05e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Helper\bin\Mono.Cecil.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\Obfuscation\Builder\Context\CompressContext.vb" />
+    <Compile Include="Core\Obfuscation\Builder\Context\EmbedContext.vb" />
+    <Compile Include="Core\Obfuscation\Builder\Context\PackerContext.vb" />
+    <Compile Include="Core\Obfuscation\Builder\Context\ResManagerContext.vb" />
+    <Compile Include="Core\Obfuscation\Builder\Context\ResStreamContext.vb" />
+    <Compile Include="Core\Obfuscation\Builder\Context\StubContext.vb" />
+    <Compile Include="Core\Obfuscation\Builder\Names.vb" />
+    <Compile Include="Core\Obfuscation\Builder\Stub.vb" />
+    <Compile Include="Core\Obfuscation\Viewer\TreeviewHandler.vb" />
+    <Compile Include="Core\Obfuscation\Protections\NativeDllFunction.vb" />
+    <Compile Include="Engine\Analyze\Analyzer.vb" />
+    <Compile Include="Engine\Analyze\ValidatedFile.vb" />
+    <Compile Include="Core\Obfuscation\Protections\EmbedDependencies.vb" />
+    <Compile Include="Core\Obfuscation\Protections\PackerStubCreation.vb" />
+    <Compile Include="Core\Obfuscation\Protections\PostAntiTamper.vb" />
+    <Compile Include="Core\Obfuscation\Builder\Stubs\AntiDumpProtect.vb" />
+    <Compile Include="Core\Obfuscation\Builder\Stubs\AntiDebugProfiling.vb" />
+    <Compile Include="Core\Obfuscation\Builder\Stubs\DecryptionBase64.vb" />
+    <Compile Include="Core\Obfuscation\Builder\Stubs\DecryptionXor.vb" />
+    <Compile Include="Core\Obfuscation\Builder\Stubs\DecryptionString.vb" />
+    <Compile Include="Core\Obfuscation\Builder\Stubs\ResourcesCompression.vb" />
+    <Compile Include="Core\Obfuscation\Builder\Stubs\ResourcesResolver.vb" />
+    <Compile Include="Core\Obfuscation\Builder\Stubs\AntiTamperResolver.vb" />
+    <Compile Include="Core\Obfuscation\Builder\Stubs\DynamicPinvoke.vb" />
+    <Compile Include="Core\Obfuscation\Builder\Stubs\DecryptionPrime.vb" />
+    <Compile Include="Core\Obfuscation\Builder\Stubs\DecryptionOdd.vb" />
+    <Compile Include="Core\Obfuscation\Builder\Stubs\DecryptionRpn.vb" />
+    <Compile Include="Core\Obfuscation\Builder\Stubs\DecryptionInteger.vb" />
+    <Compile Include="Core\Obfuscation\Builder\Stubs\DecryptionResources.vb" />
+    <Compile Include="Core\Obfuscation\Builder\Stubs\PackerResolver.vb" />
+    <Compile Include="Core\Obfuscation\Protections\Watermark.vb" />
+    <Compile Include="Core\Obfuscation\Protections\ConstantsReplacement.vb" />
+    <Compile Include="Core\Obfuscation\Protections\ControlFlow.vb" />
+    <Compile Include="Core\Obfuscation\Protections\Renaming.vb" />
+    <Compile Include="Core\Obfuscation\Protections\Scattering.vb" />
+    <Compile Include="Core\Obfuscation\Protections\AntiDebug.vb" />
+    <Compile Include="Core\Obfuscation\Protections\AntiDumper.vb" />
+    <Compile Include="Core\Obfuscation\Protections\AntiIlDasm.vb" />
+    <Compile Include="Core\Obfuscation\Protections\HidePinvokeCalls.vb" />
+    <Compile Include="Core\Obfuscation\Protections\PreAntiTamper.vb" />
+    <Compile Include="Core\Obfuscation\Protections\BoolEncryption.vb" />
+    <Compile Include="Engine\Processing\Configurator.vb" />
+    <Compile Include="Core\Obfuscation\Protections\ResourcesContentRenaming.vb" />
+    <Compile Include="Core\Obfuscation\Protections\ProtectionContext.vb" />
+    <Compile Include="Engine\Context\RenamerState.vb" />
+    <Compile Include="Core\Dependencing\DependenciesInfos.vb" />
+    <Compile Include="Core\Dependencing\Embedding.vb" />
+    <Compile Include="Core\Obfuscation\Protections\PinvokeModifier.vb" />
+    <Compile Include="Core\IconChanger\Changer.vb" />
+    <Compile Include="Core\IconChanger\IconInfos.vb" />
+    <Compile Include="Core\IconChanger\Replacer.vb" />
+    <Compile Include="Core\ManifestRequest\ManifestWriter.vb" />
+    <Compile Include="Core\ManifestRequest\ManifestReader.vb" />
+    <Compile Include="Core\ManifestRequest\ManifestInfos.vb" />
+    <Compile Include="Core\Obfuscation\Protections\ObfuscationInfos.vb" />
+    <Compile Include="Core\Packer\PackInfos.vb" />
+    <Compile Include="Core\Packer\ZipInfos.vb" />
+    <Compile Include="Core\Versions\Infos.vb" />
+    <Compile Include="Core\Dependencing\Checker.vb" />
+    <Compile Include="Engine\Checking\CheckerEventArgs.vb" />
+    <Compile Include="Engine\Identification\Identifier.vb" />
+    <Compile Include="Engine\Identification\IdentifierEnum.vb" />
+    <Compile Include="Engine\Identification\IdentifierResult.vb" />
+    <Compile Include="Engine\Context\TaskState.vb" />
+    <Compile Include="Engine\Context\RenamedItem\RenamedItemType.vb" />
+    <Compile Include="Engine\Context\Tasks.vb" />
+    <Compile Include="Core\Dependencing\Dependencies.vb" />
+    <Compile Include="Core\Dependencing\AnalysisResult.vb" />
+    <Compile Include="Core\Obfuscation\Builder\Source.vb" />
+    <Compile Include="Core\Obfuscation\Protections\NumericEncryption.vb" />
+    <Compile Include="Core\Obfuscation\Protections\PostCompressResources.vb" />
+    <Compile Include="Core\Obfuscation\Protections\PreCompressResources.vb" />
+    <Compile Include="Engine\Processing\OverridesMap.vb" />
+    <Compile Include="Engine\Processing\Mapping.vb" />
+    <Compile Include="Core\Obfuscation\Protections\Protection.vb" />
+    <Compile Include="Core\Obfuscation\Protections\StringEncryption.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Engine\Context\Parameters.vb" />
+    <Compile Include="Engine\Context\RenamedItem\RenamedItemEventArgs.vb" />
+    <Compile Include="Engine\Context\RenamedItem\RenamedItem.vb" />
+    <Compile Include="Engine\Processing\Renamer.vb" />
+    <Compile Include="Core\Versions\Extractor.vb" />
+    <Compile Include="Core\Versions\Injector.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Dnlib\dnlib.csproj">
+      <Project>{7460a353-299c-4d1a-b95a-15c675f4fbc7}</Project>
+      <Name>dnlib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Helper\Helper.vbproj">
+      <Project>{c83fb11b-f2fc-4895-bede-11bfa9c90ae3}</Project>
+      <Name>Helper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Injections\Injections\Injections.csproj">
+      <Project>{2e99870d-2adf-448b-92ce-cce190c9134d}</Project>
+      <Name>Injections</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ResourceLib\ResourceLib.csproj">
+      <Project>{ac9af16f-7bf8-4400-95de-6bc6ca53181e}</Project>
+      <Name>ResourceLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sevenzip\Sevenzip\Sevenzip.csproj">
+      <Project>{233fa980-ef10-4ba7-8c4a-63f5d6d09925}</Project>
+      <Name>Sevenzip</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NetReactor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Skater.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ILProtector.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SmartAssembly.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CryptoObfuscator.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AgileDotNet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DotFuscator.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Babel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NetPack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EazFuscator.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Macrobject.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DotBundle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NetShrink.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Netz.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MPress.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CodeFort.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Manco.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Goliath.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Spices.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DNP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RPX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CodeVeil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Valid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Warning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Confuser.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ILRepack.exe" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SevenzipLib.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dotwall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dllexp.exe" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
