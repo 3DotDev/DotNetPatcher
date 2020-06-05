@@ -131,7 +131,7 @@ Namespace CecilHelper
 
         Public Shared Sub AddHelpKeywordAttribute(Modul As ModuleDefinition, targetMember As ICustomAttributeProvider, browsable As TypeReference)
             Dim attribType = Modul.Import(GetType(ComponentModel.Design.HelpKeywordAttribute))
-            Dim constructor = attribType.Resolve.GetConstructors().Single(Function(ctor) 1 = ctor.Parameters.Count AndAlso "System.Type" = ctor.Parameters(0).ParameterType.FullName)
+            Dim constructor = attribType.Resolve.getConstructors().Single(Function(ctor) 1 = ctor.Parameters.Count AndAlso "System.Type" = ctor.Parameters(0).ParameterType.FullName)
             Dim constructorRef = Modul.Import(constructor)
             Dim attrib = New CustomAttribute(constructorRef)
             Dim browsableArg = New CustomAttributeArgument(Modul.Import(GetType(Type)), browsable)
@@ -168,7 +168,7 @@ Namespace CecilHelper
             Dim HasAtt As Boolean = False
             For Each mo In ass.Modules
                 If HasAtt Then Exit For
-                For Each ty In mo.GetTypes
+                For Each ty In mo.GetallTypes
                     If ty.Attributes.HasFlag(TypeAttributes.Serializable) Then
                         HasAtt = True
                         Exit For
@@ -188,25 +188,6 @@ Namespace CecilHelper
                             Return True
                         End If
                     Next
-                    baseType = def.BaseType
-                Else
-                    baseType = Nothing
-                End If
-            End While
-            Return False
-        End Function
-
-        Public Shared Function HasBeforeFieldInit(td As TypeDefinition) As Boolean
-            If td.IsBeforeFieldInit Then
-                Return True
-            End If
-            Dim baseType As TypeReference = td.BaseType
-            While baseType IsNot Nothing
-                Dim def As TypeDefinition = baseType.Resolve()
-                If def IsNot Nothing Then
-                    If def.IsBeforeFieldInit Then
-                        Return True
-                    End If
                     baseType = def.BaseType
                 Else
                     baseType = Nothing

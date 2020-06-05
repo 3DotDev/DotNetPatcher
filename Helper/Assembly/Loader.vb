@@ -39,7 +39,7 @@ Namespace AssemblyHelper
                 'Create instance of Helper.AssemblyHelper.Infos type
                 Dim assemblyBuffer As Byte() = File.ReadAllBytes(tempAssemblyFilePath)
                 Dim anObject As Object = Nothing
-                anObject = tempAppDomain.CreateInstanceAndUnwrap(Assembly.GetExecutingAssembly.GetName.Name, "Helper.AssemblyHelper.Infos")
+                anObject = tempAppDomain.CreateInstanceAndUnwrap(Assembly.GetExecutingAssembly.GetName.Name, GetType(Infos).FullName)
 
                 Dim assemblyInspector As IAssemblyInfos = TryCast(anObject, IAssemblyInfos)
 
@@ -93,7 +93,7 @@ Namespace AssemblyHelper
 
                 Dim assemblyBuffer As Byte() = File.ReadAllBytes(tempAssemblyFilePath)
                 Dim anObject As Object = Nothing
-                anObject = tempAppDomain.CreateInstanceAndUnwrap(Assembly.GetExecutingAssembly.GetName.Name, "Helper.AssemblyHelper.Infos")
+                anObject = tempAppDomain.CreateInstanceAndUnwrap(Assembly.GetExecutingAssembly.GetName.Name, GetType(Infos).FullName)
 
                 Dim assemblyInspector As IAssemblyInfos = TryCast(anObject, IAssemblyInfos)
 
@@ -144,20 +144,24 @@ Namespace AssemblyHelper
                     GC.SuppressFinalize(tempAppDomain)
                 End Try
 
-                For Each f In Directory.GetFiles(path)
-                    File.Delete(f)
-                Next
-                For Each f In m_AssList
-                    If File.Exists(f) Then
-                        Try
-                            File.Delete(f)
-                        Catch ex As Exception
-                        End Try
+                Try
+                    For Each f In Directory.GetFiles(path)
+                        File.Delete(f)
+                    Next
+                    For Each f In m_AssList
+                        If File.Exists(f) Then
+                            Try
+                                File.Delete(f)
+                            Catch ex As Exception
+                            End Try
+                        End If
+                    Next
+                    If Directory.Exists(path) Then
+                        Directory.Delete(path)
                     End If
-                Next
-                If Directory.Exists(path) Then
-                    Directory.Delete(path)
-                End If
+                Catch ex As Exception
+
+                End Try
 
                 m_AssList.Clear()
             End If

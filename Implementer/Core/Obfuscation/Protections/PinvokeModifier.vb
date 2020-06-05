@@ -3,7 +3,6 @@ Imports Helper.CecilHelper
 Imports Helper.RandomizeHelper
 Imports Mono.Cecil.Cil
 Imports System.Runtime.InteropServices
-Imports Mono
 
 Namespace Core.Obfuscation.Protections
     Public Class PinvokeModifier
@@ -17,7 +16,7 @@ Namespace Core.Obfuscation.Protections
         Private moduleName As String
         Private functionName As String
         Private returnedType As TypeReference
-        Private parameters As New Collections.Generic.Collection(Of ParameterDefinition)
+        Private parameters As New Mono.Collections.Generic.Collection(Of ParameterDefinition)
         Private typeRefs As List(Of TypeReference)
         Private Randomizer As Randomizer
 #End Region

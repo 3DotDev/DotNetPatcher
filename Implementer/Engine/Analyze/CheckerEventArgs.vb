@@ -1,4 +1,4 @@
-﻿Namespace Engine.Checking
+﻿Namespace Engine.Analyze
 
 #Region " Delegates "
     Public Delegate Sub Check(sender As Object, e As CheckEventArgs)

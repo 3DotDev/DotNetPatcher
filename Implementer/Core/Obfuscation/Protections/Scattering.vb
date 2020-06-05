@@ -9,7 +9,7 @@ Namespace Core.Obfuscation.Protections
     Public NotInheritable Class Scattering
         Inherits Protection
 
-#Region " ¨Private Class "
+#Region " Private Class "
         Private Class MethodsCollection(Of T)
             Inherits List(Of KeyValuePair(Of T, MethodDefinition))
 

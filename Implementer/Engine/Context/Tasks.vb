@@ -14,7 +14,7 @@ Imports Implementer.Core.ManifestRequest
 Namespace Engine.Context
 
     ''' <summary>
-    ''' INFO : This is the second step of the renamer library. 
+    ''' INFO : This is the second step of the library. 
     '''        You must pass one argument (parameter) when instantiating this class and calling the RenameAssembly routine.
     ''' </summary>
     Public NotInheritable Class Tasks
@@ -164,6 +164,7 @@ Namespace Engine.Context
         End Sub
 
         Public Sub ObfuscationTask()
+            'The order of execution of the tasks must not be changed or the behavior of the various protections must be modified.
             If Parameters.TaskAccept.Obfuscation.Enabled Then
                 Dim conf As New Configurator(m_bgw, Parameters)
                 conf.Add(New ResourcesContentRenaming(Context))
@@ -189,6 +190,7 @@ Namespace Engine.Context
         End Sub
 
         Public Sub PackerTask()
+            'The order of execution of the tasks must not be changed or the behavior of the various protections must be modified.
             If Parameters.TaskAccept.Packer.Enabled Then
                 Dim conf As New Configurator(m_bgw, Parameters)
                 conf.Add(New PackerStubCreation(Context))

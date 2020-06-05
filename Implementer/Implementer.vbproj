@@ -48,10 +48,6 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Mono.Cecil, Version=0.11.2.0, Culture=neutral, PublicKeyToken=50cebf1cceb9d05e, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Helper\bin\Mono.Cecil.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -131,7 +127,7 @@
     <Compile Include="Core\Packer\ZipInfos.vb" />
     <Compile Include="Core\Versions\Infos.vb" />
     <Compile Include="Core\Dependencing\Checker.vb" />
-    <Compile Include="Engine\Checking\CheckerEventArgs.vb" />
+    <Compile Include="Engine\Analyze\CheckerEventArgs.vb" />
     <Compile Include="Engine\Identification\Identifier.vb" />
     <Compile Include="Engine\Identification\IdentifierEnum.vb" />
     <Compile Include="Engine\Identification\IdentifierResult.vb" />
@@ -190,6 +186,14 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Cecil\Mono.Cecil.csproj">
+      <Project>{d68133bd-1e63-496e-9ede-4fbdbf77b486}</Project>
+      <Name>Mono.Cecil</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cecil\rocks\Mono.Cecil.Rocks.csproj">
+      <Project>{fbc6dd59-d09d-499c-b03c-99c1c78ff2ac}</Project>
+      <Name>Mono.Cecil.Rocks</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Dnlib\dnlib.csproj">
       <Project>{7460a353-299c-4d1a-b95a-15c675f4fbc7}</Project>
       <Name>dnlib</Name>

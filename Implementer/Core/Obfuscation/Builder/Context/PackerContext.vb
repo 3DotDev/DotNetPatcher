@@ -12,6 +12,7 @@ Namespace Core.Obfuscation.Builder
 
     Public Class PackerContext
         Inherits StubContext
+
 #Region " Properties "
         Friend ReadOnly Property ResourceName As String
         Friend Property AssemblyTempFilePath As String

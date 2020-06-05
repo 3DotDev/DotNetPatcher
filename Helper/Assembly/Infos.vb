@@ -17,23 +17,28 @@ Namespace AssemblyHelper
                 Dim manifest = assembly.ManifestModule
                 AssVersion = assembly.GetName.Version.ToString()
 
-                Dim frameworkName = String.Empty
-                Dim frameworkDisplayName = String.Empty
-                Dim customAttributes = assembly.GetCustomAttributesData()
-                For Each att In customAttributes
-                    For Each attca In att.NamedArguments
-                        If attca.MemberInfo.Name.ToString = "FrameworkDisplayName" Then
-                            If att.ConstructorArguments.Count <> 0 Then
-                                If Not att.ConstructorArguments(0).Value Is Nothing Then
-                                    If att.ConstructorArguments(0).Value.ToString().ToLower.Contains(",version=") Then
-                                        FrmwkVersion = att.ConstructorArguments(0).Value.ToString().Split("=")(1).Replace(",Client", String.Empty).Replace(",Profile", String.Empty).Trim
-                                        Exit For
+                Dim filteredType = GetType(Runtime.Versioning.TargetFrameworkAttribute)
+                Dim TargetFrmwkAtt = assembly.GetCustomAttributes(filteredType, False)
+                If Not TargetFrmwkAtt Is Nothing AndAlso TargetFrmwkAtt.Count = 1 Then
+                    Dim customAttributes = assembly.GetCustomAttributesData()
+                    For Each att In customAttributes
+                        For Each attca In att.NamedArguments
+                            If attca.MemberInfo.Name.ToString = "FrameworkDisplayName" OrElse attca.MemberInfo.Name.ToString = "FrameworkName" Then
+                                If att.ConstructorArguments.Count <> 0 Then
+                                    If Not att.ConstructorArguments(0).Value Is Nothing Then
+                                        If att.ConstructorArguments(0).Value.ToString().ToLower.Contains(",version=") Then
+                                            FrmwkVersion = att.ConstructorArguments(0).Value.ToString().Split("=")(1).Replace(",Client", String.Empty).Replace(",Profile", String.Empty).Trim
+                                            Exit For
+                                        End If
                                     End If
                                 End If
                             End If
-                        End If
+                        Next
                     Next
-                Next
+                End If
+                If FrmwkVersion = "" Then
+                    FrmwkVersion = assembly.ImageRuntimeVersion
+                End If
 
                 Dim isWpfProg = assembly.GetReferencedAssemblies().Any(Function(x) x.Name.ToLower = "system.xaml") AndAlso
         assembly.GetManifestResourceNames().Any(Function(x) x.ToLower.EndsWith(".g.resources"))

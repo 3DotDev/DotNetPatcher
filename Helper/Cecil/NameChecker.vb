@@ -10,7 +10,6 @@ Namespace CecilHelper
         ''' <param name="type"></param>
         Public Shared Function IsRenamable(type As TypeDefinition) As Boolean
             Return Not type.FullName = "<Module>" AndAlso Not type.Name.StartsWith("<") AndAlso Not type.Name.Contains("__") AndAlso Not type.IsImport AndAlso Not type.IsSerializable AndAlso Not type.IsRuntimeSpecialName
-            'Return Not type.FullName = "<Module>" AndAlso Not type.Name.StartsWith("<") AndAlso Not type.IsImport AndAlso Not type.IsSerializable AndAlso Not type.IsRuntimeSpecialName
         End Function
 
         ''' <summary>

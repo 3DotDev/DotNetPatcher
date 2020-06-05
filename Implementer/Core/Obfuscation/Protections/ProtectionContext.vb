@@ -8,6 +8,7 @@ Imports Mono.Cecil
 Namespace Core.Obfuscation.Protections
     Public Class ProtectionContext
 
+#Region " Properties "
         Public Property PackerTask As Boolean
         Public Property PropertyFileInfo As FileInfo
         Public Property I As Integer = 0
@@ -21,12 +22,16 @@ Namespace Core.Obfuscation.Protections
         Public Property ResourcesCompression As ResourcesCompression
         Public ReadOnly Property Params As Parameters
         Public ReadOnly Property Randomizer As Randomizer
+#End Region
 
+#Region " Constructor "
         Public Sub New(Conf As Parameters)
             Params = Conf
             Randomizer = New Randomizer(Conf.RenamingAccept.RenamingType)
         End Sub
+#End Region
 
+#Region " Methods "
         Public Sub ReadAssembly()
             InputAssembly = AssemblyDefinition.ReadAssembly(Params.InputFile)
             If FrameworkVersion = "" Then FrameworkVersion = Finder.FindFrameworkVersion(InputAssembly)
@@ -40,5 +45,7 @@ Namespace Core.Obfuscation.Protections
         Public Sub WriteAssembly()
             InputAssembly.Write(Params.OutputFile)
         End Sub
+#End Region
+
     End Class
 End Namespace

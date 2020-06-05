@@ -48,7 +48,6 @@ Namespace Core.Obfuscation.Protections
                 Contex.Params.TaskAccept.DllReferences.Dependencies.Count <> 0 AndAlso
                 Contex.Params.TaskAccept.DllReferences.DependenciesMode = DependenciesInfos.DependenciesAddMode.Embedded Then
                 _Enabled = True
-
             End If
         End Sub
 #End Region

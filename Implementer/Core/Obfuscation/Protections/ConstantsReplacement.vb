@@ -20,7 +20,8 @@ Namespace Core.Obfuscation.Protections
             Friend ReadOnly Property CctorAlreadyExists As Boolean
             Public Property IntCount As Integer
             Private Property Conform As Boolean
-            Private Randomizer As Randomizer
+
+            Private ReadOnly Randomizer As Randomizer
 
             Friend ReadOnly Property IsConform As Boolean
                 Get

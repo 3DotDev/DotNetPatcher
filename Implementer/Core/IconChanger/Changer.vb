@@ -1,6 +1,6 @@
 ﻿Imports System.IO
 Imports System.Drawing
-Imports Implementer.Engine.Checking
+Imports Implementer.Engine.Analyze
 Imports Helper.UtilsHelper
 
 Namespace Core.IconChanger

@@ -4,7 +4,7 @@ Imports Mono.Cecil.Rocks
 Imports Helper.UtilsHelper
 Imports Helper.AssemblyHelper
 Imports Mono.Cecil.Cil
-Imports Implementer.engine.Analyze
+Imports Implementer.Engine.Analyze
 
 Namespace Engine.Identification
 
@@ -23,30 +23,30 @@ Namespace Engine.Identification
         Private Shared ReadOnly IdentifierSearcher As New List(Of ObfuscatorPackerIdentifierDelegate)() From {
       New ObfuscatorPackerIdentifierDelegate(AddressOf FindConfuserObfuscator),
       New ObfuscatorPackerIdentifierDelegate(AddressOf FindIdentifierInitializer),
-      New ObfuscatorPackerIdentifierDelegate(AddressOf findRpxMethods),
-      New ObfuscatorPackerIdentifierDelegate(AddressOf findILProtectorReferences),
-      New ObfuscatorPackerIdentifierDelegate(AddressOf findDotBundle),
-      New ObfuscatorPackerIdentifierDelegate(AddressOf findNetz),
-      New ObfuscatorPackerIdentifierDelegate(AddressOf findNetPack),
-      New ObfuscatorPackerIdentifierDelegate(AddressOf findMpress),
-      New ObfuscatorPackerIdentifierDelegate(AddressOf findNetshrink),
-      New ObfuscatorPackerIdentifierDelegate(AddressOf findDotNetPatcherAttribute),
-      New ObfuscatorPackerIdentifierDelegate(AddressOf findSmartAssemblyAttribute),
-      New ObfuscatorPackerIdentifierDelegate(AddressOf findBabelAttribute),
-      New ObfuscatorPackerIdentifierDelegate(AddressOf findCliSecureAttribute),
-      New ObfuscatorPackerIdentifierDelegate(AddressOf findCodeVeilType),
-      New ObfuscatorPackerIdentifierDelegate(AddressOf findCryptoObfuscatorAttribute),
-      New ObfuscatorPackerIdentifierDelegate(AddressOf findDotfuscatorAttribute),
-      New ObfuscatorPackerIdentifierDelegate(AddressOf findGoliathNETAttribute),
-      New ObfuscatorPackerIdentifierDelegate(AddressOf findSpicesAttributes),
-      New ObfuscatorPackerIdentifierDelegate(AddressOf findSkaterAttribute),
-      New ObfuscatorPackerIdentifierDelegate(AddressOf findManco),
-      New ObfuscatorPackerIdentifierDelegate(AddressOf findCodeFort),
-      New ObfuscatorPackerIdentifierDelegate(AddressOf findMacrobjectObfuscator),
-      New ObfuscatorPackerIdentifierDelegate(AddressOf findPhoenixProtectorObfuscator),
-      New ObfuscatorPackerIdentifierDelegate(AddressOf findEazFuscatorObfuscator),
-      New ObfuscatorPackerIdentifierDelegate(AddressOf findDotWallObfuscator),
-      New ObfuscatorPackerIdentifierDelegate(AddressOf findOtherAttribute)
+      New ObfuscatorPackerIdentifierDelegate(AddressOf FindRpxMethods),
+      New ObfuscatorPackerIdentifierDelegate(AddressOf FindILProtectorReferences),
+      New ObfuscatorPackerIdentifierDelegate(AddressOf FindDotBundle),
+      New ObfuscatorPackerIdentifierDelegate(AddressOf FindNetz),
+      New ObfuscatorPackerIdentifierDelegate(AddressOf FindNetPack),
+      New ObfuscatorPackerIdentifierDelegate(AddressOf FindMpress),
+      New ObfuscatorPackerIdentifierDelegate(AddressOf FindNetshrink),
+      New ObfuscatorPackerIdentifierDelegate(AddressOf FindDotNetPatcherAttribute),
+      New ObfuscatorPackerIdentifierDelegate(AddressOf FindSmartAssemblyAttribute),
+      New ObfuscatorPackerIdentifierDelegate(AddressOf FindBabelAttribute),
+      New ObfuscatorPackerIdentifierDelegate(AddressOf FindCliSecureAttribute),
+      New ObfuscatorPackerIdentifierDelegate(AddressOf FindCodeVeilType),
+      New ObfuscatorPackerIdentifierDelegate(AddressOf FindCryptoObfuscatorAttribute),
+      New ObfuscatorPackerIdentifierDelegate(AddressOf FindDotfuscatorAttribute),
+      New ObfuscatorPackerIdentifierDelegate(AddressOf FindGoliathNETAttribute),
+      New ObfuscatorPackerIdentifierDelegate(AddressOf FindSpicesAttributes),
+      New ObfuscatorPackerIdentifierDelegate(AddressOf FindSkaterAttribute),
+      New ObfuscatorPackerIdentifierDelegate(AddressOf FindManco),
+      New ObfuscatorPackerIdentifierDelegate(AddressOf FindCodeFort),
+      New ObfuscatorPackerIdentifierDelegate(AddressOf FindMacrobjectObfuscator),
+      New ObfuscatorPackerIdentifierDelegate(AddressOf FindPhoenixProtectorObfuscator),
+      New ObfuscatorPackerIdentifierDelegate(AddressOf FindEazFuscatorObfuscator),
+      New ObfuscatorPackerIdentifierDelegate(AddressOf FindDotWallObfuscator),
+      New ObfuscatorPackerIdentifierDelegate(AddressOf FindOtherAttribute)
       }
 #End Region
 
@@ -56,14 +56,6 @@ Namespace Engine.Identification
 
 #Region " Methods "
         Public Shared Function Search(e As ValidatedFile) As IdentifierResult
-
-            '################################################## COMMENT IT IF NECESSARY  ################################################
-
-            'If e.peInfos.HasInvalidSectionHeader Then
-            '    Return New IdentifierResult(IdentifierEnum.ResultName.Unknown, IdentifierEnum.ResultType.Other, My.Resources.Warning)
-            'End If
-
-            '#############################################################################################################################
 
             m_assem = e.Assembly
             m_HexAssembly = Functions.AssemblyToHex(m_assem.Location)
@@ -75,7 +67,6 @@ Namespace Engine.Identification
                     Return signature
                 End If
             Next
-            'm_assDef.Dispose()
             Return New IdentifierResult(IdentifierEnum.ResultName.Unidentified, IdentifierEnum.ResultType.Empty, My.Resources.Valid)
         End Function
 
@@ -116,7 +107,6 @@ Namespace Engine.Identification
                     m_assDefResources = m_assDef.MainModule.Resources
                     m_assDefTypes = m_assDef.MainModule.Types
                     m_assDefModuleReferences = m_assDef.MainModule.ModuleReferences
-
                 Else
                     found = True
                     Return New IdentifierResult(IdentifierEnum.ResultName.Unknown, IdentifierEnum.ResultType.Other, My.Resources.Warning)

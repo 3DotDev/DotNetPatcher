@@ -94,14 +94,13 @@ Namespace Core.Dependencing
             Catch ex As Exception
                 Return New AnalysisResult("Error : Dependencing Analyze : " & vbNewLine & ex.Message)
             End Try
-
         End Function
 
         Private Sub AddToRExternal(fPath)
-            For Each item In (From ite In GetExternal(fPath)
-                              Where Not m_RExternal.ContainsKey(ite.Key.ToLower)
-                              Select ite)
-                m_RExternal.Add(item.Key.ToLower, item.Value)
+            For Each item In GetExternal(fPath)
+                If Not m_RExternal.ContainsKey(item.Key.ToLower) Then
+                    m_RExternal.Add(item.Key.ToLower, item.Value)
+                End If
             Next
         End Sub
 
@@ -110,10 +109,10 @@ Namespace Core.Dependencing
 
             Try
                 Dim infos As IDataFull = Loader.Full(target)
-                For Each assname In (From ass In infos.AssemblyReferences
-                                     Where Not ass Is Nothing AndAlso Not IsAssemblyInGAC(ass.FullName) AndAlso Not resultsExt.ContainsKey((ass.Name & ".dll").ToLower)
-                                     Select ass)
-                    resultsExt.Add((assname.Name & ".dll").ToLower, assname.FullName)
+                For Each ass In infos.AssemblyReferences
+                    If Not ass Is Nothing AndAlso Not IsAssemblyInGAC(ass.FullName) AndAlso Not resultsExt.ContainsKey((ass.Name & ".dll").ToLower) Then
+                        resultsExt.Add((ass.Name & ".dll").ToLower, ass.FullName)
+                    End If
                 Next
             Catch ex As Exception
                 MsgBox("Error : Dependencing GetExternal : " & vbNewLine & ex.ToString)

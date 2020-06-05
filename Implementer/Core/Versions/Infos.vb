@@ -40,5 +40,6 @@
             _ProductVersion = fvi.ProductVersion
         End Sub
 #End Region
+
     End Structure
 End Namespace

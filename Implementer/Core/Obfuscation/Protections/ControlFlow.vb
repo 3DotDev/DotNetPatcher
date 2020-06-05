@@ -10,7 +10,6 @@ Namespace Core.Obfuscation.Protections
 
 #Region " Fields "
         Private ReadOnly m_Types As List(Of TypeDefinition)
-        Private ReadOnly CompletedMethods As Mono.Collections.Generic.Collection(Of MethodDefinition)
         Private ReadOnly PackerState As Boolean
 #End Region
 
@@ -52,7 +51,6 @@ Namespace Core.Obfuscation.Protections
                 _Enabled = True
                 PackerState = PackerStat
                 m_Types = New List(Of TypeDefinition)
-                CompletedMethods = New Mono.Collections.Generic.Collection(Of MethodDefinition)
             End If
         End Sub
 #End Region
@@ -74,7 +72,6 @@ Namespace Core.Obfuscation.Protections
                                                             Not m.DeclaringType.BaseType Is Nothing AndAlso
                                                             Not m.IsConstructor AndAlso
                                                             Not Utils.HasUnsafeInstructions(m) AndAlso
-                                                            Not CompletedMethods.Contains(m) AndAlso
                                                             Not m.Body.Instructions.Any(Function(f) f.OpCode = OpCodes.Throw) AndAlso 'CtrlFlow Stack calculation doesn't take charge Throw opcode like ExceptionHandlers !
                                                             Not m.Body.Instructions.Any(Function(f) f.OpCode = OpCodes.Initobj))) 'CtrlFlow Stack calculation doesn't take charge Initobj opcode !
 
@@ -106,7 +103,7 @@ Namespace Core.Obfuscation.Protections
                     Dim Instruct = instruction
                     Dim stacks As Integer
                     Dim pops As Integer = 0
-                    Msil.CalculateStackUsage(body.Method, Instruct, stacks, pops)
+                    Msil.CalculateStackUsage(Instruct, stacks, pops)
                     item1.Add(Instruct)
                     incremStackUsage = (incremStackUsage + (stacks - pops))
                     If (((stacks = 0) AndAlso (Not Instruct.OpCode = OpCodes.Nop)) AndAlso ((incremStackUsage = 0) OrElse (Instruct.OpCode = OpCodes.Ret))) Then
@@ -177,7 +174,6 @@ Namespace Core.Obfuscation.Protections
             Catch ex As Exception
                 MsgBox(body.Method.FullName & " :" & vbNewLine & ex.ToString)
             End Try
-
         End Sub
 #End Region
 

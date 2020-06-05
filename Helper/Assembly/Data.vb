@@ -14,8 +14,6 @@ Namespace AssemblyHelper
         Public Property EntryPoint As MethodInfo Implements IDataFull.EntryPoint
         Public Property AssemblyReferences As AssemblyName() Implements IDataFull.AssemblyReferences
         Public Property Result As Message Implements IDataFull.Result
-
-
         Public Property ManifestResourceNames As IEnumerable(Of String) Implements IDataFull.ManifestResourceNames
         Public Property ManifestResourceStreams As List(Of Stream) Implements IDataFull.ManifestResourceStreams
         Public Property TypesClass As IEnumerable(Of Type) Implements IDataFull.TypesClass
@@ -28,6 +26,7 @@ Namespace AssemblyHelper
             Success = 1
         End Enum
 #End Region
+
     End Class
 End Namespace
 

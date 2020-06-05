@@ -6,7 +6,7 @@ Namespace CecilHelper
 
         Private Shared ReadOnly Rand As Random = New Random
 
-        Public Function GetGroup(ByVal id As Integer) As InstructionGroup
+        Public Function GetGroup(id As Integer) As InstructionGroup
             Dim group As InstructionGroup
             For Each group In Me
                 If (group.ID = id) Then
@@ -17,7 +17,7 @@ Namespace CecilHelper
         End Function
 
         Public Function GetLast() As InstructionGroup
-            Return Me.GetGroup((MyBase.Count - 1))
+            Return GetGroup((Count - 1))
         End Function
 
         Public Sub Scramble(<Out> ByRef incGroups As InstructionGroups)

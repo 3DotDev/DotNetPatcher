@@ -4,7 +4,6 @@ Imports System.Drawing.Imaging
 Imports LoginTheme.XertzLoginTheme
 Imports Implementer.Engine.Analyze
 Imports Implementer.Engine.Context
-Imports Implementer.Engine.Checking
 Imports Implementer.Engine.Identification
 Imports Implementer.Core.Dependencing
 Imports Implementer.Core.ManifestRequest
@@ -24,7 +23,7 @@ Public Class Frm_Main
     Private ReadOnly m_taskArgs As TaskState
     Private ReadOnly m_controlList As List(Of Control)
     Private m_taskIsRunning As Boolean
-    Private m_lastRequested$
+    Private m_lastRequested As String
     Private m_assemblyHasSerializableAttributes As Boolean
 #End Region
 
@@ -32,7 +31,7 @@ Public Class Frm_Main
 
     Public Sub New()
         InitializeComponent()
-        Frm_MainThemeContainer.Text = "DotNet Patcher " & My.Application.Info.Version.ToString
+        Frm_MainThemeContainer.Text = "DotNetPatcher " & My.Application.Info.Version.ToString
         ShowAboutInfos()
         m_rdb = New LogInRadioButton(2) {RdbManifestChangerAsInvoker, RdbManifestChangerRequireAdministrator, RdbManifestChangerHighestAvailable}
         m_taskArgs = New TaskState
@@ -129,12 +128,9 @@ Public Class Frm_Main
                         Modified()
                         Exit Select
                     Case "Empty"
-                        'Dim ass = AssemblyDefinition.ReadAssembly(e.Assembly.Location)
-                        'm_assemblyHasSerializableAttributes = ass.MainModule.GetAllTypes.Any(Function(t) t.HasCustomAttributes AndAlso t.IsSerializable)
-
                         Dim infos As IDataFull = Loader.Full(e.Assembly.Location)
                         m_assemblyHasSerializableAttributes = infos.HasSerializableAttribute
-                        UnModified(m_assemblyHasSerializableAttributes)
+                        UnModified()
                         Exit Select
                 End Select
             End With
@@ -175,7 +171,7 @@ Public Class Frm_Main
         LbxDependenciesAdd.Items.Clear()
     End Sub
 
-    Private Sub UnModified(HasSerializableAttribute As Boolean)
+    Private Sub UnModified()
         With TbcTask
             If Not .TabPages.Contains(TpDependencies) Then .TabPages.Add(TpDependencies)
             If Not .TabPages.Contains(TpObfuscator) Then .TabPages.Add(TpObfuscator)
@@ -213,8 +209,6 @@ Public Class Frm_Main
         ChbObfuscatorRenameMainNamespaceOnlyNamespaces.Enabled = True
         ChbObfuscatorRenameMainNamespaceOnlyNamespaces.Checked = False
 
-        ' ############## FOR TESTING ######################
-
         CbxObfuscatorScheme.Items.Clear()
         CbxObfuscatorScheme.Items.Add("Alphabetic")
         CbxObfuscatorScheme.Items.Add("Greek")
@@ -225,13 +219,8 @@ Public Class Frm_Main
         CbxObfuscatorScheme.Items.Add("Symbols")
         CbxObfuscatorScheme.Items.Add("Flowing")
 
-        If HasSerializableAttribute Then
-            ChbObfuscatorReplaceNamespaceByEmptyNamespaces.Enabled = False
-            ChbObfuscatorReplaceNamespaceByEmptyNamespaces.Checked = False
-        Else
-            ChbObfuscatorReplaceNamespaceByEmptyNamespaces.Enabled = True
-            ChbObfuscatorReplaceNamespaceByEmptyNamespaces.Checked = True
-        End If
+        ChbObfuscatorReplaceNamespaceByEmptyNamespaces.Enabled = True
+        ChbObfuscatorReplaceNamespaceByEmptyNamespaces.Checked = True
     End Sub
 
     Private Sub EmptyTextBox()
@@ -422,6 +411,9 @@ Public Class Frm_Main
 
     Private Sub OnDependenciesChecked(sender As Object, e As CheckEventArgs) Handles DependenciesChecker.CheckerResult
         If File.Exists(e.CheckedFile) Then
+            If m_assemblyHasSerializableAttributes = False Then
+                m_assemblyHasSerializableAttributes = DependenciesChecker.DependencyHasSerializableAttribute
+            End If
             LbxDependenciesAdd.Items.Add(e.CheckedFile)
         Else
             MsgBox(e.Message, MsgBoxStyle.Exclamation, e.Title)

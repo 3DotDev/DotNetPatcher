@@ -15,26 +15,26 @@ Namespace Core.Obfuscation.Builder
         Private AssDefTarget As AssemblyDefinition
         Private TypeDefResolver As TypeDefinition
         Private ResolverDll As String
-        Private ReadOnly NumberOfFunctions As Integer
+        Private ReadOnly NumberOfFunc As Integer
 #End Region
 
 #Region " Properties "
         Protected Property Names As Names
-        Protected ReadOnly Property ResolvedTypeDef As TypeDefinition = Nothing
         Protected Property ReferencedZipperAssembly As ZipInfos
+        Protected ReadOnly Property ResolvedTypeDef As TypeDefinition = Nothing
         Private Property Randomizer As Randomizer
 #End Region
 
 #Region " Constructor "
         Friend Sub New(NumberOfFunctions As Integer, Randomize As Randomizer)
+            NumberOfFunc = NumberOfFunctions
             _Randomizer = Randomize
-            Me.NumberOfFunctions = NumberOfFunctions
             _Names = New Names(NumberOfFunctions, Randomize)
         End Sub
 
         Friend Sub New(classN As String, FuncN1 As String, Randomize As Randomizer)
+            NumberOfFunc = 1
             _Randomizer = Randomize
-            NumberOfFunctions = 1
             _Names = New Names(classN, FuncN1)
         End Sub
 #End Region
@@ -53,7 +53,7 @@ Namespace Core.Obfuscation.Builder
 
             _Names.ClassName = Randomizer.GenerateNew
 
-            For i As Integer = 0 To NumberOfFunctions - 1
+            For i As Integer = 0 To NumberOfFunc - 1
                 Dim m = Finder.FindMethod(TypeDefResolver, _Names.Functions(i))
                 m.Name = Randomizer.GenerateNew
                 _Names.Functions(i) = m.Name

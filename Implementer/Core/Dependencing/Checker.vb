@@ -1,8 +1,9 @@
 ﻿Imports System.IO
 Imports System.Windows.Forms
 Imports Helper.UtilsHelper
-Imports Implementer.Engine.Checking
+Imports Implementer.Engine.Analyze
 Imports dnlib
+Imports System.Reflection
 
 Namespace Core.Dependencing
     Public NotInheritable Class Checker
@@ -13,6 +14,7 @@ Namespace Core.Dependencing
 
 #Region " Fields "
         Private ReadOnly m_Lbx As ListBox
+        Public ReadOnly Property DependencyHasSerializableAttribute As Boolean
 #End Region
 
 #Region " Constructor "
@@ -40,7 +42,7 @@ Namespace Core.Dependencing
                             Exit Sub
                         End If
 
-                        If Not Functions.isValid(File.ReadAllBytes(f)) Then
+                        If Not Functions.IsValid(File.ReadAllBytes(f)) Then
                             RaiseCheckerResultEvent("The file : " & New FileInfo(f).Name & " isn't a Dynamic-Link Library !", "Bad file", "")
                         Else
                             Dim pe As New PeReader(f)
@@ -50,7 +52,21 @@ Namespace Core.Dependencing
                             Else
                                 If pe.IsManaged Then
                                     Try
-                                        Dim AssemblyName As Reflection.AssemblyName = Reflection.AssemblyName.GetAssemblyName(f)
+                                        Dim AssemblyName As AssemblyName = AssemblyName.GetAssemblyName(f)
+
+                                        If _DependencyHasSerializableAttribute = False Then
+                                            Dim ass = Assembly.Load(AssemblyName)
+
+                                            Dim TypesClass = ass.ManifestModule.GetTypes.Where(Function(t) t.IsClass)
+                                            For Each typ In TypesClass
+                                                If _DependencyHasSerializableAttribute Then Exit For
+                                                If typ.Attributes.HasFlag(TypeAttributes.Serializable) Then
+                                                    _DependencyHasSerializableAttribute = True
+                                                    Exit For
+                                                End If
+                                            Next
+                                        End If
+
                                         RaiseCheckerResultEvent("File Added", "Operation Completed", f)
                                     Catch ex As FileNotFoundException
                                         RaiseCheckerResultEvent("The file : " & New FileInfo(f).Name & " doesn't exist !", "Inexistant file", "")

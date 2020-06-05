@@ -1,7 +1,6 @@
 ﻿Imports Mono.Cecil
 Imports Mono.Cecil.Rocks
 Imports Mono.Cecil.Cil
-Imports Helper.RandomizeHelper
 Imports Helper.CecilHelper
 Imports System.IO
 Imports System.Text
@@ -19,12 +18,12 @@ Namespace Core.Obfuscation.Protections
         Private DecryptionXor As DecryptionXor
         Private DecryptionBase64 As DecryptionBase64
         Private DecryptionPrime As DecryptionPrime
+        Private IsDefaultEncoding As Boolean
+        Private EncryptToResources As EncryptType
 
         Private ReadOnly randSalt As Random
         Private ReadOnly Types As List(Of TypeDefinition)
-        Private IsDefaultEncoding As Boolean
         Private ReadOnly CompletedMethods As Mono.Collections.Generic.Collection(Of MethodDefinition)
-        Private EncryptToResources As EncryptType
         Private ReadOnly Rand As Random
         Private ReadOnly PackerState As Boolean
 #End Region

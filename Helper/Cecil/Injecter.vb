@@ -10,7 +10,7 @@ Namespace CecilHelper
         Public Shared Function CreateGenericCctor(assDef As AssemblyDefinition) As MethodDefinition
             Dim cctor__1 As New MethodDefinition(".cctor", MethodAttributes.Private Or MethodAttributes.HideBySig Or MethodAttributes.SpecialName Or MethodAttributes.RTSpecialName Or MethodAttributes.[Static], assDef.MainModule.Import(GetType(Void)))
             Dim ilproc As ILProcessor
-            cctor__1.Body = New Cil.MethodBody(cctor__1)
+            cctor__1.Body = New MethodBody(cctor__1)
             ilproc = cctor__1.Body.GetILProcessor()
             ilproc.Emit(OpCodes.Ret)
             Return cctor__1
@@ -460,8 +460,8 @@ Namespace CecilHelper
             Dim definition As New TypeDefinition(type.Namespace, type.Name, type.Attributes) With {
                 .Scope = mDef,
                 .ClassSize = type.ClassSize,
-                .PackingSize = type.PackingSize
-            }
+                .PackingSize = type.PackingSize}
+
             If type.HasCustomAttributes Then
                 For Each attr As CustomAttribute In type.CustomAttributes
                     Dim nAttr As New CustomAttribute(ImportMethod(attr.Constructor, mDef, attr.Constructor, mems), attr.GetBlob())
@@ -512,6 +512,7 @@ Namespace CecilHelper
             mdef.Resources.Add(item)
             Return item
         End Function
+
         Public Shared Sub InjectResource(TargetAssembly As AssemblyDefinition, ResName As String)
             Dim CompressRes As EmbeddedResource = New EmbeddedResource(ResName & ".resources", ManifestResourceAttributes.Private, File.ReadAllBytes(My.Application.Info.DirectoryPath & "\" & ResName & ".resources"))
             TargetAssembly.MainModule.Resources.Add(CompressRes)

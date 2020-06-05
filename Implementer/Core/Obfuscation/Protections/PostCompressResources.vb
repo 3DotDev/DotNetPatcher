@@ -1,5 +1,4 @@
-﻿
-Namespace Core.Obfuscation.Protections
+﻿Namespace Core.Obfuscation.Protections
 
     Public NotInheritable Class PostCompressResources
         Inherits Protection

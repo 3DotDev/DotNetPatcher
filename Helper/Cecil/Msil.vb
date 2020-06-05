@@ -6,7 +6,7 @@ Namespace CecilHelper
     Public Class Msil
 
 #Region " Methods "
-        Public Shared Sub CalculateStackUsage(mtd As MethodDefinition, inst As Instruction, <Out> ByRef pushes As Integer, <Out> ByRef pops As Integer)
+        Public Shared Sub CalculateStackUsage(inst As Instruction, <Out> ByRef pushes As Integer, <Out> ByRef pops As Integer)
             Dim hasReturnValue As Boolean = False
             Dim opCode As OpCode = inst.OpCode
             If (opCode.FlowControl = FlowControl.Call) Then
@@ -27,7 +27,7 @@ Namespace CecilHelper
                         If (methodSig.ReturnType.MetadataType <> MetadataType.Void OrElse ((opCode.Code = Code.Newobj) AndAlso methodSig.HasThis)) Then
                             pushes += 1
                         End If
-                        pops = (pops + methodSig.Parameters.Count)
+                        pops += methodSig.Parameters.Count
 
                         Dim paramsAfterSentinel As New List(Of TypeReference)
                         For Each p In methodSig.Parameters
@@ -36,7 +36,7 @@ Namespace CecilHelper
                             End If
                         Next
                         If (Not paramsAfterSentinel Is Nothing) Then
-                            pops = (pops + paramsAfterSentinel.Count)
+                            pops += paramsAfterSentinel.Count
                         End If
                         If (implicitThis AndAlso (opCode.Code <> Code.Newobj)) Then
                             pops += 1
@@ -84,13 +84,13 @@ Namespace CecilHelper
                     Case StackBehaviour.Pop0, StackBehaviour.Push0, StackBehaviour.Push1, StackBehaviour.Push1_push1, StackBehaviour.Pushi, StackBehaviour.Pushi8, StackBehaviour.Pushr4, StackBehaviour.Pushr8, StackBehaviour.Pushref, StackBehaviour.Varpush
                         Exit Select
                     Case StackBehaviour.Pop1, StackBehaviour.Pop1_pop1, StackBehaviour.Popi, StackBehaviour.Popref
-                        pops = (pops + 1)
+                        pops += 1
                         Return
                     Case StackBehaviour.Popi_pop1, StackBehaviour.Popi_popi, StackBehaviour.Popi_popi8, StackBehaviour.Popi_popr4, StackBehaviour.Popi_popr8, StackBehaviour.Popref_pop1, StackBehaviour.Popref_popi
-                        pops = (pops + 2)
+                        pops += 2
                         Return
                     Case StackBehaviour.Popi_popi_popi, StackBehaviour.Popref_popi_popi, StackBehaviour.Popref_popi_popi8, StackBehaviour.Popref_popi_popr4, StackBehaviour.Popref_popi_popr8, StackBehaviour.Popref_popi_popref
-                        pops = (pops + 3)
+                        pops += 3
                         Return
                     Case StackBehaviour.PopAll
                         pops = -1

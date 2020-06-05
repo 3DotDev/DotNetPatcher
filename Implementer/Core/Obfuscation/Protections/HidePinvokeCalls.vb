@@ -77,8 +77,6 @@ Namespace Core.Obfuscation.Protections
                 Next
             Next
 
-
-
             If HasPinvokeCalls Then
                 LoaderInvoke = New DynamicPinvoke(New StubContext(Context.InputAssembly, PackerState, Context.Randomizer))
                 CompletedMethods.Add(LoaderInvoke.LoadLibrary)

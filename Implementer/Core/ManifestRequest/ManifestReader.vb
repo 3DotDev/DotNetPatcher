@@ -6,7 +6,7 @@ Namespace Core.ManifestRequest
     Friend NotInheritable Class ManifestReader
 
 #Region " Methods "
-        Friend Shared Function ExtractManifest(ByVal FilePath As String) As String
+        Friend Shared Function ExtractManifest(FilePath As String) As String
             Try
                 Dim rc As New ManifestResource
                 rc.LoadFrom(FilePath)

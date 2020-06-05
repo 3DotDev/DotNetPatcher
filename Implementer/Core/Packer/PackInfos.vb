@@ -26,5 +26,6 @@ Namespace Core.Packer
             Return New IconInfos(fPath).NewIcon
         End Function
 #End Region
+
     End Structure
 End Namespace

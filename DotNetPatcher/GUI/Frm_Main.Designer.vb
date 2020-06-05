@@ -196,7 +196,7 @@ Partial Class Frm_Main
         Me.Frm_MainThemeContainer.ShowMinimizeButton = True
         Me.Frm_MainThemeContainer.Size = New System.Drawing.Size(704, 697)
         Me.Frm_MainThemeContainer.TabIndex = 0
-        Me.Frm_MainThemeContainer.Text = "DotNet Patcher"
+        Me.Frm_MainThemeContainer.Text = "DotNetPatcher"
         '
         'LnkLblBlogSpot
         '

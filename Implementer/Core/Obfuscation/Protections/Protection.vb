@@ -1,5 +1,4 @@
-﻿
-Namespace Core.Obfuscation.Protections
+﻿Namespace Core.Obfuscation.Protections
     Public MustInherit Class Protection
 
 #Region " Properties "
