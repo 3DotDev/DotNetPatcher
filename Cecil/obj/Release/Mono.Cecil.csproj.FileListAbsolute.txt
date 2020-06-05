@@ -1,0 +1,9 @@
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\Cecil\bin\Release\Mono.Cecil.dll
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\Cecil\bin\Release\Mono.Cecil.pdb
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\Cecil\obj\Release\Mono.Cecil.dll
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\Cecil\obj\Release\Mono.Cecil.pdb
+D:\Documents\Bitbucket\DotNetPatcher\Cecil\bin\Release\Mono.Cecil.dll
+D:\Documents\Bitbucket\DotNetPatcher\Cecil\bin\Release\Mono.Cecil.pdb
+D:\Documents\Bitbucket\DotNetPatcher\Cecil\obj\Release\Mono.Cecil.dll
+D:\Documents\Bitbucket\DotNetPatcher\Cecil\obj\Release\Mono.Cecil.pdb
+D:\Documents\Bitbucket\DotNetPatcher\Cecil\obj\Release\Mono.Cecil.csproj.CoreCompileInputs.cache

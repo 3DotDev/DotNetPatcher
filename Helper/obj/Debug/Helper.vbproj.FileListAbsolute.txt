@@ -1,0 +1,22 @@
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\Helper\obj\Debug\Helper.vbprojAssemblyReference.cache
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\Helper\obj\Debug\Helper.Resources.resources
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\Helper\obj\Debug\Helper.vbproj.GenerateResource.cache
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\Helper\bin\Debug\Helper.dll
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\Helper\bin\Debug\Helper.pdb
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\Helper\bin\Debug\Mono.Cecil.dll
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\Helper\obj\Debug\Helper.vbproj.CopyComplete
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\Helper\obj\Debug\Helper.dll
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\Helper\obj\Debug\Helper.pdb
+D:\Documents\Bitbucket\DotNetPatcher\Helper\bin\Debug\Helper.dll
+D:\Documents\Bitbucket\DotNetPatcher\Helper\bin\Debug\Helper.pdb
+D:\Documents\Bitbucket\DotNetPatcher\Helper\bin\Debug\Mono.Cecil.dll
+D:\Documents\Bitbucket\DotNetPatcher\Helper\bin\Debug\Mono.Cecil.Rocks.dll
+D:\Documents\Bitbucket\DotNetPatcher\Helper\bin\Debug\Mono.Cecil.pdb
+D:\Documents\Bitbucket\DotNetPatcher\Helper\bin\Debug\Mono.Cecil.Rocks.pdb
+D:\Documents\Bitbucket\DotNetPatcher\Helper\obj\Debug\Helper.vbprojAssemblyReference.cache
+D:\Documents\Bitbucket\DotNetPatcher\Helper\obj\Debug\Helper.Resources.resources
+D:\Documents\Bitbucket\DotNetPatcher\Helper\obj\Debug\Helper.vbproj.GenerateResource.cache
+D:\Documents\Bitbucket\DotNetPatcher\Helper\obj\Debug\Helper.vbproj.CopyComplete
+D:\Documents\Bitbucket\DotNetPatcher\Helper\obj\Debug\Helper.dll
+D:\Documents\Bitbucket\DotNetPatcher\Helper\obj\Debug\Helper.pdb
+D:\Documents\Bitbucket\DotNetPatcher\Helper\obj\Debug\Helper.vbproj.CoreCompileInputs.cache

@@ -1,0 +1,44 @@
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\Implementer\obj\Debug\Implementer.vbprojAssemblyReference.cache
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\Implementer\obj\Debug\Implementer.Resources.resources
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\Implementer\obj\Debug\Implementer.vbproj.GenerateResource.cache
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\Implementer\bin\Debug\Implementer.dll
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\Implementer\bin\Debug\Implementer.pdb
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\Implementer\bin\Debug\dnlib.dll
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\Implementer\bin\Debug\Helper.dll
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\Implementer\bin\Debug\Injections.dll
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\Implementer\bin\Debug\Mono.Cecil.dll
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\Implementer\bin\Debug\SevenzipLib.dll
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\Implementer\bin\Debug\Vestris.ResourceLib.dll
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\Implementer\bin\Debug\dnlib.pdb
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\Implementer\bin\Debug\Helper.pdb
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\Implementer\bin\Debug\Injections.pdb
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\Implementer\bin\Debug\Vestris.ResourceLib.pdb
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\Implementer\bin\Debug\Vestris.ResourceLib.xml
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\Implementer\bin\Debug\SevenzipLib.pdb
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\Implementer\obj\Debug\Implementer.vbproj.CopyComplete
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\Implementer\obj\Debug\Implementer.dll
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\Implementer\obj\Debug\Implementer.pdb
+D:\Documents\Bitbucket\DotNetPatcher\Implementer\bin\Debug\Implementer.dll
+D:\Documents\Bitbucket\DotNetPatcher\Implementer\bin\Debug\Implementer.pdb
+D:\Documents\Bitbucket\DotNetPatcher\Implementer\bin\Debug\dnlib.dll
+D:\Documents\Bitbucket\DotNetPatcher\Implementer\bin\Debug\Helper.dll
+D:\Documents\Bitbucket\DotNetPatcher\Implementer\bin\Debug\Injections.dll
+D:\Documents\Bitbucket\DotNetPatcher\Implementer\bin\Debug\Mono.Cecil.dll
+D:\Documents\Bitbucket\DotNetPatcher\Implementer\bin\Debug\Mono.Cecil.Rocks.dll
+D:\Documents\Bitbucket\DotNetPatcher\Implementer\bin\Debug\SevenzipLib.dll
+D:\Documents\Bitbucket\DotNetPatcher\Implementer\bin\Debug\Vestris.ResourceLib.dll
+D:\Documents\Bitbucket\DotNetPatcher\Implementer\bin\Debug\Mono.Cecil.pdb
+D:\Documents\Bitbucket\DotNetPatcher\Implementer\bin\Debug\Mono.Cecil.Rocks.pdb
+D:\Documents\Bitbucket\DotNetPatcher\Implementer\bin\Debug\dnlib.pdb
+D:\Documents\Bitbucket\DotNetPatcher\Implementer\bin\Debug\Helper.pdb
+D:\Documents\Bitbucket\DotNetPatcher\Implementer\bin\Debug\Injections.pdb
+D:\Documents\Bitbucket\DotNetPatcher\Implementer\bin\Debug\Vestris.ResourceLib.pdb
+D:\Documents\Bitbucket\DotNetPatcher\Implementer\bin\Debug\Vestris.ResourceLib.xml
+D:\Documents\Bitbucket\DotNetPatcher\Implementer\bin\Debug\SevenzipLib.pdb
+D:\Documents\Bitbucket\DotNetPatcher\Implementer\obj\Debug\Implementer.vbprojAssemblyReference.cache
+D:\Documents\Bitbucket\DotNetPatcher\Implementer\obj\Debug\Implementer.Resources.resources
+D:\Documents\Bitbucket\DotNetPatcher\Implementer\obj\Debug\Implementer.vbproj.GenerateResource.cache
+D:\Documents\Bitbucket\DotNetPatcher\Implementer\obj\Debug\Implementer.vbproj.CopyComplete
+D:\Documents\Bitbucket\DotNetPatcher\Implementer\obj\Debug\Implementer.dll
+D:\Documents\Bitbucket\DotNetPatcher\Implementer\obj\Debug\Implementer.pdb
+D:\Documents\Bitbucket\DotNetPatcher\Implementer\obj\Debug\Implementer.vbproj.CoreCompileInputs.cache

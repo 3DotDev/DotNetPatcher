@@ -1,0 +1,10 @@
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\Injections\Injections\bin\Debug\Injections.dll
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\Injections\Injections\bin\Debug\Injections.pdb
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\Injections\Injections\obj\Debug\Injections.csprojAssemblyReference.cache
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\Injections\Injections\obj\Debug\Injections.dll
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\Injections\Injections\obj\Debug\Injections.pdb
+D:\Documents\Bitbucket\DotNetPatcher\Injections\Injections\bin\Debug\Injections.dll
+D:\Documents\Bitbucket\DotNetPatcher\Injections\Injections\bin\Debug\Injections.pdb
+D:\Documents\Bitbucket\DotNetPatcher\Injections\Injections\obj\Debug\Injections.dll
+D:\Documents\Bitbucket\DotNetPatcher\Injections\Injections\obj\Debug\Injections.pdb
+D:\Documents\Bitbucket\DotNetPatcher\Injections\Injections\obj\Debug\Injections.csproj.CoreCompileInputs.cache

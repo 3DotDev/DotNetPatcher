@@ -1,0 +1,13 @@
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\Cecil\rocks\obj\Release\Mono.Cecil.Rocks.csprojAssemblyReference.cache
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\Cecil\bin\Release\Mono.Cecil.Rocks.dll
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\Cecil\bin\Release\Mono.Cecil.Rocks.pdb
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\Cecil\rocks\obj\Release\Mono.Cecil.Rocks.csproj.CopyComplete
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\Cecil\rocks\obj\Release\Mono.Cecil.Rocks.dll
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\Cecil\rocks\obj\Release\Mono.Cecil.Rocks.pdb
+D:\Documents\Bitbucket\DotNetPatcher\Cecil\bin\Release\Mono.Cecil.Rocks.dll
+D:\Documents\Bitbucket\DotNetPatcher\Cecil\bin\Release\Mono.Cecil.Rocks.pdb
+D:\Documents\Bitbucket\DotNetPatcher\Cecil\rocks\obj\Release\Mono.Cecil.Rocks.csprojAssemblyReference.cache
+D:\Documents\Bitbucket\DotNetPatcher\Cecil\rocks\obj\Release\Mono.Cecil.Rocks.csproj.CopyComplete
+D:\Documents\Bitbucket\DotNetPatcher\Cecil\rocks\obj\Release\Mono.Cecil.Rocks.dll
+D:\Documents\Bitbucket\DotNetPatcher\Cecil\rocks\obj\Release\Mono.Cecil.Rocks.pdb
+D:\Documents\Bitbucket\DotNetPatcher\Cecil\rocks\obj\Release\Mono.Cecil.Rocks.csproj.CoreCompileInputs.cache

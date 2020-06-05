@@ -1,0 +1,65 @@
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\DotNetPatcher\bin\Release\DotNetPatcher.exe.config
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\DotNetPatcher\bin\Release\DotNetPatcher.exe
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\DotNetPatcher\bin\Release\DotNetPatcher.pdb
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\DotNetPatcher\bin\Release\dnlib.dll
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\DotNetPatcher\bin\Release\Helper.dll
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\DotNetPatcher\bin\Release\Implementer.dll
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\DotNetPatcher\bin\Release\LoginTheme.dll
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\DotNetPatcher\bin\Release\Mono.Cecil.dll
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\DotNetPatcher\bin\Release\Vestris.ResourceLib.dll
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\DotNetPatcher\bin\Release\SevenzipLib.dll
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\DotNetPatcher\bin\Release\Injections.dll
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\DotNetPatcher\bin\Release\dnlib.pdb
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\DotNetPatcher\bin\Release\Helper.pdb
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\DotNetPatcher\bin\Release\Implementer.pdb
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\DotNetPatcher\bin\Release\LoginTheme.pdb
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\DotNetPatcher\bin\Release\LoginTheme.xml
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\DotNetPatcher\bin\Release\Vestris.ResourceLib.pdb
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\DotNetPatcher\bin\Release\Vestris.ResourceLib.xml
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\DotNetPatcher\bin\Release\SevenzipLib.pdb
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\DotNetPatcher\bin\Release\Injections.pdb
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\DotNetPatcher\obj\Release\DotNetPatcher.vbprojAssemblyReference.cache
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Viewer.resources
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Result.resources
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Main.resources
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\DotNetPatcher\obj\Release\DotNetPatcher.Resources.resources
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\DotNetPatcher\obj\Release\DotNetPatcher.vbproj.GenerateResource.cache
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\DotNetPatcher\obj\Release\DotNetPatcher.vbproj.CopyComplete
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\DotNetPatcher\obj\Release\DotNetPatcher.exe
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\DotNetPatcher\obj\Release\DotNetPatcher.pdb
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\DotNetPatcher\bin\Release\Mono.Cecil.Rocks.dll
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\DotNetPatcher\bin\Release\Mono.Cecil.pdb
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\DotNetPatcher\bin\Release\Mono.Cecil.Rocks.pdb
+D:\Documents\Bitbucket\DotNetPatcher\DotNetPatcher\bin\Release\DotNetPatcher.exe.config
+D:\Documents\Bitbucket\DotNetPatcher\DotNetPatcher\bin\Release\DotNetPatcher.exe
+D:\Documents\Bitbucket\DotNetPatcher\DotNetPatcher\bin\Release\DotNetPatcher.pdb
+D:\Documents\Bitbucket\DotNetPatcher\DotNetPatcher\bin\Release\dnlib.dll
+D:\Documents\Bitbucket\DotNetPatcher\DotNetPatcher\bin\Release\Helper.dll
+D:\Documents\Bitbucket\DotNetPatcher\DotNetPatcher\bin\Release\Implementer.dll
+D:\Documents\Bitbucket\DotNetPatcher\DotNetPatcher\bin\Release\LoginTheme.dll
+D:\Documents\Bitbucket\DotNetPatcher\DotNetPatcher\bin\Release\Mono.Cecil.dll
+D:\Documents\Bitbucket\DotNetPatcher\DotNetPatcher\bin\Release\Mono.Cecil.Rocks.dll
+D:\Documents\Bitbucket\DotNetPatcher\DotNetPatcher\bin\Release\Vestris.ResourceLib.dll
+D:\Documents\Bitbucket\DotNetPatcher\DotNetPatcher\bin\Release\SevenzipLib.dll
+D:\Documents\Bitbucket\DotNetPatcher\DotNetPatcher\bin\Release\Injections.dll
+D:\Documents\Bitbucket\DotNetPatcher\DotNetPatcher\bin\Release\dnlib.pdb
+D:\Documents\Bitbucket\DotNetPatcher\DotNetPatcher\bin\Release\Helper.pdb
+D:\Documents\Bitbucket\DotNetPatcher\DotNetPatcher\bin\Release\Implementer.pdb
+D:\Documents\Bitbucket\DotNetPatcher\DotNetPatcher\bin\Release\LoginTheme.pdb
+D:\Documents\Bitbucket\DotNetPatcher\DotNetPatcher\bin\Release\LoginTheme.xml
+D:\Documents\Bitbucket\DotNetPatcher\DotNetPatcher\bin\Release\Mono.Cecil.pdb
+D:\Documents\Bitbucket\DotNetPatcher\DotNetPatcher\bin\Release\Mono.Cecil.Rocks.pdb
+D:\Documents\Bitbucket\DotNetPatcher\DotNetPatcher\bin\Release\Vestris.ResourceLib.pdb
+D:\Documents\Bitbucket\DotNetPatcher\DotNetPatcher\bin\Release\Vestris.ResourceLib.xml
+D:\Documents\Bitbucket\DotNetPatcher\DotNetPatcher\bin\Release\SevenzipLib.pdb
+D:\Documents\Bitbucket\DotNetPatcher\DotNetPatcher\bin\Release\Injections.pdb
+D:\Documents\Bitbucket\DotNetPatcher\DotNetPatcher\obj\Release\DotNetPatcher.vbprojAssemblyReference.cache
+D:\Documents\Bitbucket\DotNetPatcher\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Viewer.resources
+D:\Documents\Bitbucket\DotNetPatcher\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Result.resources
+D:\Documents\Bitbucket\DotNetPatcher\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Main.resources
+D:\Documents\Bitbucket\DotNetPatcher\DotNetPatcher\obj\Release\DotNetPatcher.Resources.resources
+D:\Documents\Bitbucket\DotNetPatcher\DotNetPatcher\obj\Release\DotNetPatcher.vbproj.GenerateResource.cache
+D:\Documents\Bitbucket\DotNetPatcher\DotNetPatcher\obj\Release\DotNetPatcher.vbproj.CopyComplete
+D:\Documents\Bitbucket\DotNetPatcher\DotNetPatcher\obj\Release\DotNetPatcher.exe
+D:\Documents\Bitbucket\DotNetPatcher\DotNetPatcher\obj\Release\DotNetPatcher.pdb
+D:\Documents\Bitbucket\DotNetPatcher\DotNetPatcher\obj\Release\DotNetPatcher.vbproj.CoreCompileInputs.cache

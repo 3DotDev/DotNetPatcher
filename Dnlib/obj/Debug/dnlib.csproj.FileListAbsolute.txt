@@ -1,0 +1,10 @@
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\Dnlib\bin\Debug\dnlib.dll
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\Dnlib\bin\Debug\dnlib.pdb
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\Dnlib\obj\Debug\dnlib.csprojAssemblyReference.cache
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\Dnlib\obj\Debug\dnlib.dll
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\Dnlib\obj\Debug\dnlib.pdb
+D:\Documents\Bitbucket\DotNetPatcher\Dnlib\bin\Debug\dnlib.dll
+D:\Documents\Bitbucket\DotNetPatcher\Dnlib\bin\Debug\dnlib.pdb
+D:\Documents\Bitbucket\DotNetPatcher\Dnlib\obj\Debug\dnlib.dll
+D:\Documents\Bitbucket\DotNetPatcher\Dnlib\obj\Debug\dnlib.pdb
+D:\Documents\Bitbucket\DotNetPatcher\Dnlib\obj\Debug\dnlib.csproj.CoreCompileInputs.cache

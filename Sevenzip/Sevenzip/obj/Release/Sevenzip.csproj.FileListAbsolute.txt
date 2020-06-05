@@ -1,0 +1,9 @@
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\Sevenzip\Sevenzip\bin\Release\SevenzipLib.dll
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\Sevenzip\Sevenzip\bin\Release\SevenzipLib.pdb
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\Sevenzip\Sevenzip\obj\Release\SevenzipLib.dll
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\Sevenzip\Sevenzip\obj\Release\SevenzipLib.pdb
+D:\Documents\Bitbucket\DotNetPatcher\Sevenzip\Sevenzip\bin\Release\SevenzipLib.dll
+D:\Documents\Bitbucket\DotNetPatcher\Sevenzip\Sevenzip\bin\Release\SevenzipLib.pdb
+D:\Documents\Bitbucket\DotNetPatcher\Sevenzip\Sevenzip\obj\Release\SevenzipLib.dll
+D:\Documents\Bitbucket\DotNetPatcher\Sevenzip\Sevenzip\obj\Release\SevenzipLib.pdb
+D:\Documents\Bitbucket\DotNetPatcher\Sevenzip\Sevenzip\obj\Release\Sevenzip.csproj.CoreCompileInputs.cache

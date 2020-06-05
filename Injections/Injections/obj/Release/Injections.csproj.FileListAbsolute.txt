@@ -1,0 +1,9 @@
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\Injections\Injections\bin\Release\Injections.dll
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\Injections\Injections\bin\Release\Injections.pdb
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\Injections\Injections\obj\Release\Injections.dll
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\Injections\Injections\obj\Release\Injections.pdb
+D:\Documents\Bitbucket\DotNetPatcher\Injections\Injections\bin\Release\Injections.dll
+D:\Documents\Bitbucket\DotNetPatcher\Injections\Injections\bin\Release\Injections.pdb
+D:\Documents\Bitbucket\DotNetPatcher\Injections\Injections\obj\Release\Injections.dll
+D:\Documents\Bitbucket\DotNetPatcher\Injections\Injections\obj\Release\Injections.pdb
+D:\Documents\Bitbucket\DotNetPatcher\Injections\Injections\obj\Release\Injections.csproj.CoreCompileInputs.cache

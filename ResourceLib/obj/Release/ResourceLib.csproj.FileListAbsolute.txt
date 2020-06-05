@@ -1,0 +1,12 @@
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\ResourceLib\bin\Release\Vestris.ResourceLib.XML
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\ResourceLib\bin\Release\Vestris.ResourceLib.dll
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\ResourceLib\bin\Release\Vestris.ResourceLib.pdb
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\ResourceLib\obj\Release\Vestris.ResourceLib.dll
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\ResourceLib\obj\Release\Vestris.ResourceLib.pdb
+D:\Documents\Bitbucket\DotNetPatcher\ResourceLib\bin\Release\Vestris.ResourceLib.XML
+D:\Documents\Bitbucket\DotNetPatcher\ResourceLib\bin\Release\Vestris.ResourceLib.dll
+D:\Documents\Bitbucket\DotNetPatcher\ResourceLib\bin\Release\Vestris.ResourceLib.pdb
+D:\Documents\Bitbucket\DotNetPatcher\ResourceLib\obj\Release\Vestris.ResourceLib.dll
+D:\Documents\Bitbucket\DotNetPatcher\ResourceLib\obj\Release\Vestris.ResourceLib.pdb
+D:\Documents\Bitbucket\DotNetPatcher\ResourceLib\obj\Release\ResourceLib.csproj.CoreCompileInputs.cache
+D:\Documents\Bitbucket\DotNetPatcher\ResourceLib\obj\Release\ResourceLib.csprojAssemblyReference.cache

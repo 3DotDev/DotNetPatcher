@@ -1,0 +1,12 @@
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\ResourceLib\bin\Debug\Vestris.ResourceLib.XML
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\ResourceLib\bin\Debug\Vestris.ResourceLib.dll
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\ResourceLib\bin\Debug\Vestris.ResourceLib.pdb
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\ResourceLib\obj\Debug\ResourceLib.csprojAssemblyReference.cache
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\ResourceLib\obj\Debug\Vestris.ResourceLib.dll
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\ResourceLib\obj\Debug\Vestris.ResourceLib.pdb
+D:\Documents\Bitbucket\DotNetPatcher\ResourceLib\bin\Debug\Vestris.ResourceLib.XML
+D:\Documents\Bitbucket\DotNetPatcher\ResourceLib\bin\Debug\Vestris.ResourceLib.dll
+D:\Documents\Bitbucket\DotNetPatcher\ResourceLib\bin\Debug\Vestris.ResourceLib.pdb
+D:\Documents\Bitbucket\DotNetPatcher\ResourceLib\obj\Debug\Vestris.ResourceLib.dll
+D:\Documents\Bitbucket\DotNetPatcher\ResourceLib\obj\Debug\Vestris.ResourceLib.pdb
+D:\Documents\Bitbucket\DotNetPatcher\ResourceLib\obj\Debug\ResourceLib.csproj.CoreCompileInputs.cache

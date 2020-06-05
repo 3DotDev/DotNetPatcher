@@ -1,0 +1,17 @@
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\LoginTheme\bin\Release\LoginTheme.dll
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\LoginTheme\bin\Release\LoginTheme.pdb
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\LoginTheme\bin\Release\LoginTheme.xml
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\LoginTheme\obj\Release\LoginTheme.Resources.resources
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\LoginTheme\obj\Release\LoginTheme.vbproj.GenerateResource.cache
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\LoginTheme\obj\Release\LoginTheme.dll
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\LoginTheme\obj\Release\LoginTheme.xml
+C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\LoginTheme\obj\Release\LoginTheme.pdb
+D:\Documents\Bitbucket\DotNetPatcher\LoginTheme\bin\Release\LoginTheme.dll
+D:\Documents\Bitbucket\DotNetPatcher\LoginTheme\bin\Release\LoginTheme.pdb
+D:\Documents\Bitbucket\DotNetPatcher\LoginTheme\bin\Release\LoginTheme.xml
+D:\Documents\Bitbucket\DotNetPatcher\LoginTheme\obj\Release\LoginTheme.Resources.resources
+D:\Documents\Bitbucket\DotNetPatcher\LoginTheme\obj\Release\LoginTheme.vbproj.GenerateResource.cache
+D:\Documents\Bitbucket\DotNetPatcher\LoginTheme\obj\Release\LoginTheme.dll
+D:\Documents\Bitbucket\DotNetPatcher\LoginTheme\obj\Release\LoginTheme.xml
+D:\Documents\Bitbucket\DotNetPatcher\LoginTheme\obj\Release\LoginTheme.pdb
+D:\Documents\Bitbucket\DotNetPatcher\LoginTheme\obj\Release\LoginTheme.vbproj.CoreCompileInputs.cache
