@@ -33,6 +33,7 @@ Namespace AssemblyHelper
             Try
                 'Copy DNP Helper.dll file to created temp directory
                 File.Copy(Assembly.GetExecutingAssembly.Location, Path.Combine(Npath, New FileInfo(Assembly.GetExecutingAssembly.Location).Name))
+
                 'create appdomain with created temp directory as AppBasePath
                 tempAppDomain = AppDomain.CreateDomain(Guid.NewGuid.ToString.Replace("-", ""), Nothing, Npath, "", False)
 

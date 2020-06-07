@@ -10,3 +10,4 @@ D:\Documents\Bitbucket\DotNetPatcher\ResourceLib\bin\Debug\Vestris.ResourceLib.p
 D:\Documents\Bitbucket\DotNetPatcher\ResourceLib\obj\Debug\Vestris.ResourceLib.dll
 D:\Documents\Bitbucket\DotNetPatcher\ResourceLib\obj\Debug\Vestris.ResourceLib.pdb
 D:\Documents\Bitbucket\DotNetPatcher\ResourceLib\obj\Debug\ResourceLib.csproj.CoreCompileInputs.cache
+D:\Documents\Bitbucket\DotNetPatcher\ResourceLib\obj\Debug\ResourceLib.csprojAssemblyReference.cache

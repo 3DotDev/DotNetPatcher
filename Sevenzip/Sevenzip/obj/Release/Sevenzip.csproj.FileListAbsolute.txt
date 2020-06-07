@@ -7,3 +7,4 @@ D:\Documents\Bitbucket\DotNetPatcher\Sevenzip\Sevenzip\bin\Release\SevenzipLib.p
 D:\Documents\Bitbucket\DotNetPatcher\Sevenzip\Sevenzip\obj\Release\SevenzipLib.dll
 D:\Documents\Bitbucket\DotNetPatcher\Sevenzip\Sevenzip\obj\Release\SevenzipLib.pdb
 D:\Documents\Bitbucket\DotNetPatcher\Sevenzip\Sevenzip\obj\Release\Sevenzip.csproj.CoreCompileInputs.cache
+D:\Documents\Bitbucket\DotNetPatcher\Sevenzip\Sevenzip\obj\Release\Sevenzip.csprojAssemblyReference.cache

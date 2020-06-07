@@ -2,7 +2,6 @@
 Imports Helper.CecilHelper
 Imports Mono.Cecil.Rocks
 Imports Implementer.Engine.Context
-Imports Helper.RandomizeHelper
 Imports Implementer.Engine.Processing
 
 Namespace Core.Obfuscation.Protections
@@ -158,6 +157,14 @@ Namespace Core.Obfuscation.Protections
             End If
         End Sub
 
+        Private Sub ProcessVirtualMethod(mDef As MethodDefinition, InheritM As OverridesMap)
+            Dim originalMeth As String = mDef.Name
+            Dim MethodPublicObf = Context.Randomizer.GenerateNew()
+            For Each a In InheritM.OverridesMethods(mDef)
+                Renamer.RenameVirtualMethod(a, MethodPublicObf)
+            Next
+            Renamer.RenameVirtualMethod(mDef, MethodPublicObf)
+        End Sub
         ''' <summary>
         ''' INFO : Methods, Parameters renamer routine.
         ''' </summary>
@@ -170,14 +177,21 @@ Namespace Core.Obfuscation.Protections
 
                     If mDef.IsVirtual AndAlso mDef.IsPublic = False Then
                         'Processing only public virtuals first
-                        If InheritM.ContainsKey(mDef) Then
-                            Dim originalMeth As String = mDef.Name
-                            Dim MethodPublicObf = Context.Randomizer.GenerateNew()
-                            For Each a In InheritM(mDef)
-                                Renamer.RenameVirtualMethod(a, MethodPublicObf)
-                            Next
-                            Renamer.RenameVirtualMethod(mDef, MethodPublicObf)
-                            InheritM.RemoveRoot(mDef)
+                        If InheritM.OverridesMethods.ContainsKey(mDef) Then
+                            Dim tdef = mDef.DeclaringType
+                            If InheritM.ContainsKey(tdef) Then
+                                Dim bTypes = InheritM(tdef)
+                                If bTypes.Count = 0 Then
+                                    ProcessVirtualMethod(mDef, InheritM)
+                                Else
+                                    Dim containsT = bTypes.Any(Function(t) t.Methods.Any(Function(m) Utils.MethodMatch(m, mDef)))
+                                    If containsT = False Then
+                                        ProcessVirtualMethod(mDef, InheritM)
+                                    End If
+                                End If
+                            Else
+                                ProcessVirtualMethod(mDef, InheritM)
+                            End If
                         End If
                     ElseIf Not mDef.IsVirtual Then
                         'Processing non-virtuals

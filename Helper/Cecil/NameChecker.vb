@@ -70,6 +70,7 @@ Namespace CecilHelper
                 End If
 
                 Dim IsSerializable As Boolean = MemberExtensions.HasCustomAttributeByMemberName(prop, "XmlIgnoreAttribute") = False AndAlso prop.DeclaringType.IsSerializable
+                'Dim DesignerSerialized As Boolean = MemberExtensions.HasCustomAttributeByMemberName(prop, "DesignerSerializationVisibilityAttribute")
                 Return If(Not prop.IsSpecialName AndAlso Not IsSerializable AndAlso Not Utils.HasINotifyPropertyChanged(prop) AndAlso Not prop.DeclaringType.Name.Contains("AnonymousType"), True, False)
             End If
             Return False

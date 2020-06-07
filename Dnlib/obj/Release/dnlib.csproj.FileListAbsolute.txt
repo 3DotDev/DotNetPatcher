@@ -7,3 +7,4 @@ D:\Documents\Bitbucket\DotNetPatcher\Dnlib\bin\Release\dnlib.pdb
 D:\Documents\Bitbucket\DotNetPatcher\Dnlib\obj\Release\dnlib.dll
 D:\Documents\Bitbucket\DotNetPatcher\Dnlib\obj\Release\dnlib.pdb
 D:\Documents\Bitbucket\DotNetPatcher\Dnlib\obj\Release\dnlib.csproj.CoreCompileInputs.cache
+D:\Documents\Bitbucket\DotNetPatcher\Dnlib\obj\Release\dnlib.csprojAssemblyReference.cache

@@ -54,7 +54,7 @@ Namespace CecilHelper
                         pushes += 1
                         Exit Select
                     Case StackBehaviour.Push1_push1
-                        pushes = (pushes + 2)
+                        pushes += 2
                         Exit Select
                 End Select
 

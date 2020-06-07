@@ -4,6 +4,7 @@ Imports System.Resources
 Imports Helper.AssemblyHelper
 Imports Helper.UtilsHelper
 Imports System.ComponentModel
+Imports Mono.Cecil
 
 Namespace Core.Dependencing
     Public Class Dependencies
@@ -42,7 +43,9 @@ Namespace Core.Dependencing
                                     Dim dataType = String.Empty
                                     Dim originalDataKey$ = Dat.Key
                                     read.GetResourceData(Dat.Key, dataType, data)
-                                    If dataType = "ResourceTypeCode.ByteArray" Then m_resourcesDependencies.Add(Dat.Key.ToString.Replace("_", "."))
+                                    If dataType = "ResourceTypeCode.ByteArray" Then
+                                        m_resourcesDependencies.Add(Dat.Key.ToString.Replace("_", "."))
+                                    End If
                                 Next
                                 read.Close()
                             End Using
@@ -59,7 +62,7 @@ Namespace Core.Dependencing
 
                 If Not m_listOfReferences.Count = 0 Then
                     For Each it In m_listOfReferences
-                        AddToRExternal(it.ToString)
+                        AddToRExternal(it)
                     Next
                 End If
 
@@ -96,7 +99,7 @@ Namespace Core.Dependencing
             End Try
         End Function
 
-        Private Sub AddToRExternal(fPath)
+        Private Sub AddToRExternal(fPath As String)
             For Each item In GetExternal(fPath)
                 If Not m_RExternal.ContainsKey(item.Key.ToLower) Then
                     m_RExternal.Add(item.Key.ToLower, item.Value)
@@ -104,14 +107,14 @@ Namespace Core.Dependencing
             Next
         End Sub
 
-        Private Function GetExternal(target$) As Dictionary(Of String, String)
+        Private Function GetExternal(target As String) As Dictionary(Of String, String)
             Dim resultsExt As New Dictionary(Of String, String)
 
             Try
-                Dim infos As IDataFull = Loader.Full(target)
-                For Each ass In infos.AssemblyReferences
-                    If Not ass Is Nothing AndAlso Not IsAssemblyInGAC(ass.FullName) AndAlso Not resultsExt.ContainsKey((ass.Name & ".dll").ToLower) Then
-                        resultsExt.Add((ass.Name & ".dll").ToLower, ass.FullName)
+                Dim aread = AssemblyDefinition.ReadAssembly(target)
+                For Each ref In aread.MainModule.AssemblyReferences
+                    If Not ref Is Nothing AndAlso Not IsAssemblyInGAC(ref.FullName) AndAlso Not resultsExt.ContainsKey((ref.Name & ".dll").ToLower) Then
+                        resultsExt.Add((ref.Name & ".dll").ToLower, ref.FullName)
                     End If
                 Next
             Catch ex As Exception
@@ -121,7 +124,7 @@ Namespace Core.Dependencing
             Return resultsExt
         End Function
 
-        Private Function IsAssemblyInGAC(assemblyFullName As String) As Boolean
+        Private Function IsAssemblyInGAC(assemblyFullName As String, Optional ByVal ResultExistsas As Dictionary(Of String, String) = Nothing) As Boolean
             Try
                 Return Assembly.ReflectionOnlyLoad(assemblyFullName).GlobalAssemblyCache
             Catch

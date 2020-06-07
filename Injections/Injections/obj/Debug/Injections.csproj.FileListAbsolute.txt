@@ -8,3 +8,4 @@ D:\Documents\Bitbucket\DotNetPatcher\Injections\Injections\bin\Debug\Injections.
 D:\Documents\Bitbucket\DotNetPatcher\Injections\Injections\obj\Debug\Injections.dll
 D:\Documents\Bitbucket\DotNetPatcher\Injections\Injections\obj\Debug\Injections.pdb
 D:\Documents\Bitbucket\DotNetPatcher\Injections\Injections\obj\Debug\Injections.csproj.CoreCompileInputs.cache
+D:\Documents\Bitbucket\DotNetPatcher\Injections\Injections\obj\Debug\Injections.csprojAssemblyReference.cache
