@@ -15,3 +15,12 @@ D:\Documents\Bitbucket\DotNetPatcher\LoginTheme\obj\Release\LoginTheme.dll
 D:\Documents\Bitbucket\DotNetPatcher\LoginTheme\obj\Release\LoginTheme.xml
 D:\Documents\Bitbucket\DotNetPatcher\LoginTheme\obj\Release\LoginTheme.pdb
 D:\Documents\Bitbucket\DotNetPatcher\LoginTheme\obj\Release\LoginTheme.vbproj.CoreCompileInputs.cache
+D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\LoginTheme\bin\Release\LoginTheme.dll
+D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\LoginTheme\bin\Release\LoginTheme.pdb
+D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\LoginTheme\bin\Release\LoginTheme.xml
+D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\LoginTheme\obj\Release\LoginTheme.Resources.resources
+D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\LoginTheme\obj\Release\LoginTheme.vbproj.GenerateResource.cache
+D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\LoginTheme\obj\Release\LoginTheme.vbproj.CoreCompileInputs.cache
+D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\LoginTheme\obj\Release\LoginTheme.dll
+D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\LoginTheme\obj\Release\LoginTheme.xml
+D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\LoginTheme\obj\Release\LoginTheme.pdb

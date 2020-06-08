@@ -8,4 +8,10 @@ D:\Documents\Bitbucket\DotNetPatcher\Dnlib\bin\Debug\dnlib.pdb
 D:\Documents\Bitbucket\DotNetPatcher\Dnlib\obj\Debug\dnlib.dll
 D:\Documents\Bitbucket\DotNetPatcher\Dnlib\obj\Debug\dnlib.pdb
 D:\Documents\Bitbucket\DotNetPatcher\Dnlib\obj\Debug\dnlib.csproj.CoreCompileInputs.cache
+D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\Dnlib\bin\Debug\dnlib.dll
+D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\Dnlib\bin\Debug\dnlib.pdb
+D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\Dnlib\obj\Debug\dnlib.csprojAssemblyReference.cache
+D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\Dnlib\obj\Debug\dnlib.csproj.CoreCompileInputs.cache
+D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\Dnlib\obj\Debug\dnlib.dll
+D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\Dnlib\obj\Debug\dnlib.pdb
 D:\Documents\Bitbucket\DotNetPatcher\Dnlib\obj\Debug\dnlib.csprojAssemblyReference.cache

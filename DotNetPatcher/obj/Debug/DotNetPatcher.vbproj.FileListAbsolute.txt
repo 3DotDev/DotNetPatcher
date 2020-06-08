@@ -60,3 +60,36 @@ D:\Documents\Bitbucket\DotNetPatcher\DotNetPatcher\obj\Debug\DotNetPatcher.vbpro
 D:\Documents\Bitbucket\DotNetPatcher\DotNetPatcher\obj\Debug\DotNetPatcher.exe
 D:\Documents\Bitbucket\DotNetPatcher\DotNetPatcher\obj\Debug\DotNetPatcher.pdb
 D:\Documents\Bitbucket\DotNetPatcher\DotNetPatcher\obj\Debug\DotNetPatcher.vbproj.CoreCompileInputs.cache
+D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\DotNetPatcher\bin\Debug\DotNetPatcher.exe.config
+D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\DotNetPatcher\bin\Debug\DotNetPatcher.exe
+D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\DotNetPatcher\bin\Debug\DotNetPatcher.pdb
+D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\DotNetPatcher\bin\Debug\dnlib.dll
+D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\DotNetPatcher\bin\Debug\Helper.dll
+D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\DotNetPatcher\bin\Debug\Implementer.dll
+D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\DotNetPatcher\bin\Debug\LoginTheme.dll
+D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\DotNetPatcher\bin\Debug\Mono.Cecil.dll
+D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\DotNetPatcher\bin\Debug\Mono.Cecil.Rocks.dll
+D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\DotNetPatcher\bin\Debug\Vestris.ResourceLib.dll
+D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\DotNetPatcher\bin\Debug\SevenzipLib.dll
+D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\DotNetPatcher\bin\Debug\Injections.dll
+D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\DotNetPatcher\bin\Debug\dnlib.pdb
+D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\DotNetPatcher\bin\Debug\Helper.pdb
+D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\DotNetPatcher\bin\Debug\Implementer.pdb
+D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\DotNetPatcher\bin\Debug\LoginTheme.pdb
+D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\DotNetPatcher\bin\Debug\LoginTheme.xml
+D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\DotNetPatcher\bin\Debug\Mono.Cecil.pdb
+D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\DotNetPatcher\bin\Debug\Mono.Cecil.Rocks.pdb
+D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\DotNetPatcher\bin\Debug\Vestris.ResourceLib.pdb
+D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\DotNetPatcher\bin\Debug\Vestris.ResourceLib.xml
+D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\DotNetPatcher\bin\Debug\SevenzipLib.pdb
+D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\DotNetPatcher\bin\Debug\Injections.pdb
+D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\DotNetPatcher\obj\Debug\DotNetPatcher.vbprojAssemblyReference.cache
+D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\DotNetPatcher\obj\Debug\DotNetPatcher.Frm_Viewer.resources
+D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\DotNetPatcher\obj\Debug\DotNetPatcher.Frm_Result.resources
+D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\DotNetPatcher\obj\Debug\DotNetPatcher.Frm_Main.resources
+D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\DotNetPatcher\obj\Debug\DotNetPatcher.Resources.resources
+D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\DotNetPatcher\obj\Debug\DotNetPatcher.vbproj.GenerateResource.cache
+D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\DotNetPatcher\obj\Debug\DotNetPatcher.vbproj.CoreCompileInputs.cache
+D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\DotNetPatcher\obj\Debug\DotNetPatcher.vbproj.CopyComplete
+D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\DotNetPatcher\obj\Debug\DotNetPatcher.exe
+D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\DotNetPatcher\obj\Debug\DotNetPatcher.pdb

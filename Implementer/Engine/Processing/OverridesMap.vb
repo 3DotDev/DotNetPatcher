@@ -70,10 +70,6 @@ Public Class OverridesMap
             If base Is Nothing Then Return
             AnnotateMethods(base, method)
         End If
-
-        'Dim base As MethodDefinition = GetBaseMethodInTypeHierarchy(method)
-        'If base Is Nothing Then Return
-        'AnnotateMethods(base, method)
     End Sub
 
     Private Sub MapVirtualInterfaceMethod(method As MethodDefinition)

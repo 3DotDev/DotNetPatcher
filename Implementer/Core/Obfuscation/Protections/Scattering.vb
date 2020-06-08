@@ -188,27 +188,6 @@ Namespace Core.Obfuscation.Protections
             publicMethods.Clear()
         End Sub
 
-        Private Function ConvertToByteArray(inputElements As Integer()) As Byte()
-            Dim myFinalBytes As Byte() = New Byte(inputElements.Length * 4 - 1) {}
-
-            For cnt As Integer = 0 To inputElements.Length - 1
-                Dim myBytes As Byte() = BitConverter.GetBytes(inputElements(cnt))
-                Array.Copy(myBytes, 0, myFinalBytes, cnt * 4, 4)
-            Next
-
-            Return myFinalBytes
-        End Function
-
-        Private Function ConvertToInt32Array(inputElements As Byte()) As Integer()
-            Dim myFinalIntegerArray As Integer() = New Integer(inputElements.Length / 4 - 1) {}
-
-            For cnt As Integer = 0 To inputElements.Length - 1 Step 4
-                myFinalIntegerArray(cnt / 4) = BitConverter.ToInt32(inputElements, cnt)
-            Next
-
-            Return myFinalIntegerArray
-        End Function
-
         Private Sub ProcessInstructions(body As MethodBody)
             Dim instructions = body.Instructions
             Dim il = body.GetILProcessor()

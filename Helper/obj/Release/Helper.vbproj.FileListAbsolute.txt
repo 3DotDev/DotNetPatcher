@@ -23,3 +23,16 @@ D:\Documents\Bitbucket\DotNetPatcher\Helper\obj\Release\Helper.vbproj.CopyComple
 D:\Documents\Bitbucket\DotNetPatcher\Helper\obj\Release\Helper.dll
 D:\Documents\Bitbucket\DotNetPatcher\Helper\obj\Release\Helper.pdb
 D:\Documents\Bitbucket\DotNetPatcher\Helper\obj\Release\Helper.vbproj.CoreCompileInputs.cache
+D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\Helper\bin\Release\Helper.dll
+D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\Helper\bin\Release\Helper.pdb
+D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\Helper\bin\Release\Mono.Cecil.dll
+D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\Helper\bin\Release\Mono.Cecil.Rocks.dll
+D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\Helper\bin\Release\Mono.Cecil.pdb
+D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\Helper\bin\Release\Mono.Cecil.Rocks.pdb
+D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\Helper\obj\Release\Helper.vbprojAssemblyReference.cache
+D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\Helper\obj\Release\Helper.Resources.resources
+D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\Helper\obj\Release\Helper.vbproj.GenerateResource.cache
+D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\Helper\obj\Release\Helper.vbproj.CoreCompileInputs.cache
+D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\Helper\obj\Release\Helper.vbproj.CopyComplete
+D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\Helper\obj\Release\Helper.dll
+D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\Helper\obj\Release\Helper.pdb

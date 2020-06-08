@@ -10,3 +10,9 @@ D:\Documents\Bitbucket\DotNetPatcher\ResourceLib\obj\Release\Vestris.ResourceLib
 D:\Documents\Bitbucket\DotNetPatcher\ResourceLib\obj\Release\Vestris.ResourceLib.pdb
 D:\Documents\Bitbucket\DotNetPatcher\ResourceLib\obj\Release\ResourceLib.csproj.CoreCompileInputs.cache
 D:\Documents\Bitbucket\DotNetPatcher\ResourceLib\obj\Release\ResourceLib.csprojAssemblyReference.cache
+D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\ResourceLib\bin\Release\Vestris.ResourceLib.XML
+D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\ResourceLib\bin\Release\Vestris.ResourceLib.dll
+D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\ResourceLib\bin\Release\Vestris.ResourceLib.pdb
+D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\ResourceLib\obj\Release\ResourceLib.csproj.CoreCompileInputs.cache
+D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\ResourceLib\obj\Release\Vestris.ResourceLib.dll
+D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\ResourceLib\obj\Release\Vestris.ResourceLib.pdb

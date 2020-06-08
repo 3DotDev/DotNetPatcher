@@ -45,3 +45,27 @@ D:\Documents\Bitbucket\DotNetPatcher\Implementer\obj\Release\Implementer.vbproj.
 D:\Documents\Bitbucket\DotNetPatcher\Implementer\obj\Release\Implementer.dll
 D:\Documents\Bitbucket\DotNetPatcher\Implementer\obj\Release\Implementer.pdb
 D:\Documents\Bitbucket\DotNetPatcher\Implementer\obj\Release\Implementer.vbproj.CoreCompileInputs.cache
+D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\Implementer\bin\Release\Implementer.dll
+D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\Implementer\bin\Release\Implementer.pdb
+D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\Implementer\bin\Release\dnlib.dll
+D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\Implementer\bin\Release\Helper.dll
+D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\Implementer\bin\Release\Injections.dll
+D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\Implementer\bin\Release\Mono.Cecil.dll
+D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\Implementer\bin\Release\Mono.Cecil.Rocks.dll
+D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\Implementer\bin\Release\SevenzipLib.dll
+D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\Implementer\bin\Release\Vestris.ResourceLib.dll
+D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\Implementer\bin\Release\Mono.Cecil.pdb
+D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\Implementer\bin\Release\Mono.Cecil.Rocks.pdb
+D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\Implementer\bin\Release\dnlib.pdb
+D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\Implementer\bin\Release\Helper.pdb
+D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\Implementer\bin\Release\Injections.pdb
+D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\Implementer\bin\Release\Vestris.ResourceLib.pdb
+D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\Implementer\bin\Release\Vestris.ResourceLib.xml
+D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\Implementer\bin\Release\SevenzipLib.pdb
+D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\Implementer\obj\Release\Implementer.vbprojAssemblyReference.cache
+D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\Implementer\obj\Release\Implementer.Resources.resources
+D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\Implementer\obj\Release\Implementer.vbproj.GenerateResource.cache
+D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\Implementer\obj\Release\Implementer.vbproj.CoreCompileInputs.cache
+D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\Implementer\obj\Release\Implementer.vbproj.CopyComplete
+D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\Implementer\obj\Release\Implementer.dll
+D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\Implementer\obj\Release\Implementer.pdb

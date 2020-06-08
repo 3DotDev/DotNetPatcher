@@ -16,7 +16,7 @@ It doesn't support WPF app !
 * Displays selected .exe informations (assembly name, Version, TargetRuntime, TargetCPU, SubSystemType)
 * Selecting encoding chars type : Alphabetic, Dots, Invisible, Chinese, Japanese, Greek, Flowing, Symbols) 
 * Renaming : Namespaces, Types, Methods (overrides also), Properties, Fields, Custom Attributes, Events, Parameters, Resources and/or content ..... 
-* Dependencies merging/embedding (encrypt and/or compress or not)
+* Dependencies detection & merging/embedding (encrypt and/or compress or not)
 * Anti-IlDasm, Anti-Tamper, Anti-Debug, Anti-Dumping
 * Public calls hidding
 * Pinvoke calls hidding (Use with caution)
@@ -52,6 +52,7 @@ It doesn't support WPF app !
 * Xertz : for his [Login GDI+ theme](http://xertzproductions.weebly.com/login-gdi-theme.html) which I modified a little bit
 * Paupino : for some useful functions from his open source project : [NCloak](https://github.com/paupino/ncloak/)
 * Mirhabi : for his IconInjector class
+* Mono Linker : for its inherits & virtual map [Mono.Linker](https://github.com/mono/linker)
 
 
 # Copyright

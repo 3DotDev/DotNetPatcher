@@ -11,3 +11,10 @@ D:\Documents\Bitbucket\DotNetPatcher\Cecil\rocks\obj\Release\Mono.Cecil.Rocks.cs
 D:\Documents\Bitbucket\DotNetPatcher\Cecil\rocks\obj\Release\Mono.Cecil.Rocks.dll
 D:\Documents\Bitbucket\DotNetPatcher\Cecil\rocks\obj\Release\Mono.Cecil.Rocks.pdb
 D:\Documents\Bitbucket\DotNetPatcher\Cecil\rocks\obj\Release\Mono.Cecil.Rocks.csproj.CoreCompileInputs.cache
+D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\Cecil\bin\Release\Mono.Cecil.Rocks.dll
+D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\Cecil\bin\Release\Mono.Cecil.Rocks.pdb
+D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\Cecil\rocks\obj\Release\Mono.Cecil.Rocks.csprojAssemblyReference.cache
+D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\Cecil\rocks\obj\Release\Mono.Cecil.Rocks.csproj.CoreCompileInputs.cache
+D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\Cecil\rocks\obj\Release\Mono.Cecil.Rocks.csproj.CopyComplete
+D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\Cecil\rocks\obj\Release\Mono.Cecil.Rocks.dll
+D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\Cecil\rocks\obj\Release\Mono.Cecil.Rocks.pdb
