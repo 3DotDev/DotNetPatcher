@@ -34,14 +34,6 @@ Namespace AssemblyHelper
                 'Copy DNP Helper.dll file to created temp directory
                 File.Copy(Assembly.GetExecutingAssembly.Location, Path.Combine(Npath, New FileInfo(Assembly.GetExecutingAssembly.Location).Name))
 
-
-                'For Each f In Directory.GetFiles(Directory.GetParent(AssPath).FullName, "*.dll")
-                '    If Not File.Exists(Path.Combine(Npath, New FileInfo(f).Name)) Then
-                '        m_AssList.Add(Path.Combine(Npath, New FileInfo(f).Name))
-                '        File.Copy(f, Path.Combine(Npath, New FileInfo(f).Name), True)
-                '    End If
-                'Next
-
                 'create appdomain with created temp directory as AppBasePath
                 tempAppDomain = AppDomain.CreateDomain(Guid.NewGuid.ToString.Replace("-", ""), Nothing, Npath, "", False)
 
@@ -97,13 +89,6 @@ Namespace AssemblyHelper
             Dim AssData As New Data
             Try
                 File.Copy(Assembly.GetExecutingAssembly.Location, Path.Combine(Npath, New FileInfo(Assembly.GetExecutingAssembly.Location).Name))
-
-                'For Each f In Directory.GetFiles(Directory.GetParent(AssPath).FullName, "*.dll")
-                '    If Not File.Exists(Path.Combine(Npath, New FileInfo(f).Name)) Then
-                '        m_AssList.Add(Path.Combine(Npath, New FileInfo(f).Name))
-                '        File.Copy(f, Path.Combine(Npath, New FileInfo(f).Name), True)
-                '    End If
-                'Next
 
                 tempAppDomain = AppDomain.CreateDomain(Guid.NewGuid.ToString.Replace("-", ""), Nothing, Npath, "", False)
 

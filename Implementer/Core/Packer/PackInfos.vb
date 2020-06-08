@@ -1,7 +1,5 @@
-﻿Imports Helper.UtilsHelper
-Imports Implementer.Core.IconChanger
+﻿Imports Implementer.Core.IconChanger
 Imports System.Drawing
-Imports System.Drawing.Imaging
 
 Namespace Core.Packer
     Public Structure PackInfos

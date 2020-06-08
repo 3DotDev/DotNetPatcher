@@ -323,7 +323,7 @@ Namespace Engine.Processing
             If Not methodSearch Is Nothing Then
                 If methodSearch.HasBody Then
                     If methodSearch.Body.Instructions.Count <> 0 Then
-                        For Each instruction As Cil.Instruction In methodSearch.Body.Instructions
+                        For Each instruction As Instruction In methodSearch.Body.Instructions
                             If TypeOf instruction.Operand Is String Then
                                 If Properties Then
                                     RenameInitializeComponentsGetName(instruction, OriginalKeyName, NewKeyName)

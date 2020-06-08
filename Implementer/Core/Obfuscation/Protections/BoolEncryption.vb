@@ -105,6 +105,7 @@ Namespace Core.Obfuscation.Protections
             Dim publicMethods As New List(Of MethodDefinition)()
             publicMethods.AddRange(From m In td.Methods Where (m.HasBody AndAlso m.Body.Instructions.Count >= 2 AndAlso
                                                             Not CompletedMethods.Contains(m) AndAlso
+                                                            Not Utils.HasUnsafeInstructions(m) AndAlso
                                                             Not TypeExtensions.HasCustomAttributeByMemberName(m.DeclaringType, "EditorBrowsableAttribute")))
             Try
                 For Each md In publicMethods

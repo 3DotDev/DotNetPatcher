@@ -47,6 +47,8 @@ Namespace RandomizeHelper
         End Sub
 #End Region
 
+
+
 #Region " Methods "
         Public Function GenerateAlphabetic(ByVal Optional length As Integer = -1) As String
             Dim text As String = "‮"

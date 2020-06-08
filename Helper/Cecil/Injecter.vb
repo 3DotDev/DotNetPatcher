@@ -513,8 +513,8 @@ Namespace CecilHelper
             Return item
         End Function
 
-        Public Shared Sub InjectResource(TargetAssembly As AssemblyDefinition, ResName As String)
-            Dim CompressRes As EmbeddedResource = New EmbeddedResource(ResName & ".resources", ManifestResourceAttributes.Private, File.ReadAllBytes(My.Application.Info.DirectoryPath & "\" & ResName & ".resources"))
+        Public Shared Sub InjectResource(TargetAssembly As AssemblyDefinition, ResName As String, ResPath As String)
+            Dim CompressRes As EmbeddedResource = New EmbeddedResource(ResName & ".resources", ManifestResourceAttributes.Private, File.ReadAllBytes(ResPath))
             TargetAssembly.MainModule.Resources.Add(CompressRes)
         End Sub
 

@@ -119,8 +119,10 @@ Namespace CecilHelper
                 originalReference = TryCast(instruct.Operand, MethodReference)
                 If Not originalReference Is Nothing Then
                     Dim originalMethod As MethodDefinition = originalReference.Resolve
-                    If (Not originalMethod Is Nothing AndAlso Not originalMethod.DeclaringType Is Nothing) And originalMethod.IsPInvokeImpl Then
-                        Return True
+                    If Not originalMethod Is Nothing AndAlso Not originalMethod.DeclaringType Is Nothing Then
+                        If (originalMethod.IsPInvokeImpl AndAlso originalMethod.HasParameters = False) OrElse (originalMethod.IsPInvokeImpl AndAlso originalMethod.HasParameters AndAlso originalMethod.Parameters.All(Function(m) m.HasFieldMarshal = False)) Then
+                            Return True
+                        End If
                     End If
                 End If
             Catch ex As Exception

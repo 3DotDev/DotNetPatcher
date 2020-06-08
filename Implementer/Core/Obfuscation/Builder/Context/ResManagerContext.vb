@@ -20,6 +20,7 @@ Namespace Core.Obfuscation.Builder
             _ResourceName = ResourceN
             _ResourceNamePath = Path.Combine(Path.GetTempPath, ResourceN & ".resources")
             _ResourceWriter = New ResourceWriter(_ResourceNamePath)
+
         End Sub
 #End Region
 

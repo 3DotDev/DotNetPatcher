@@ -150,7 +150,9 @@ Namespace CecilHelper
 
         Public Shared Iterator Function GetMethods(type As TypeReference) As IEnumerable(Of MethodReference)
             Dim typeDef = type.Resolve()
-            If typeDef?.HasMethods <> True Then Return
+            If typeDef Is Nothing Then Return
+            If typeDef.HasMethods = False Then Return
+            'If typeDef?.HasMethods <> True Then Return
             Dim genericInstanceType As GenericInstanceType = Nothing
 
             If Utils.InlineAssignHelper(genericInstanceType, TryCast(type, GenericInstanceType)) IsNot Nothing Then

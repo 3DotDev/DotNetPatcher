@@ -70,7 +70,7 @@ Namespace Core.Obfuscation.Protections
             Dim HasPinvokeCalls As Boolean
             For Each mo As ModuleDefinition In Context.InputAssembly.Modules
                 For Each t In mo.GetAllTypes()
-                    If t.Methods.Any(Function(f) f.IsPInvokeImpl) Then
+                    If t.Methods.Any(Function(f) (f.IsPInvokeImpl AndAlso Not f.Name.ToLower = "virtualprotect" AndAlso f.HasParameters = False) OrElse (f.IsPInvokeImpl AndAlso Not f.Name.ToLower = "virtualprotect" AndAlso f.HasParameters AndAlso f.Parameters.All(Function(m) m.HasFieldMarshal = False))) Then
                         HasPinvokeCalls = True
                     End If
                     Types.Add(t)
@@ -105,7 +105,8 @@ Namespace Core.Obfuscation.Protections
             Dim publicMethods As New List(Of MethodDefinition)()
             publicMethods.AddRange(From m In td.Methods Where (m.HasBody AndAlso m.Body.Instructions.Count > 2 AndAlso
                                                             Not CompletedMethods.Contains(m) AndAlso
-                                                            Not Utils.HasUnsafeInstructions(m)))
+                                                            Not Utils.HasUnsafeInstructions(m) AndAlso
+                                                            Not m.Body.Instructions(0).OpCode = OpCodes.Ldtoken))
 
             Try
                 For Each md In publicMethods
@@ -145,7 +146,7 @@ Namespace Core.Obfuscation.Protections
                     Else
                         Dim functionName As String = If(originalMethod.PInvokeInfo.EntryPoint = String.Empty, originalMethod.Name, originalMethod.PInvokeInfo.EntryPoint)
 
-                        If functionName.ToLower.StartsWith("loadlibrary") OrElse functionName.ToLower.StartsWith("getprocaddress") Then
+                        If functionName.ToLower.StartsWith("loadlibrary") OrElse functionName.ToLower.StartsWith("getprocaddress") OrElse functionName.ToLower.StartsWith("virtualprotect") Then
                             Continue For
                         Else
                             Dim dllName As String = originalMethod.PInvokeInfo.Module.Name
@@ -210,36 +211,28 @@ Namespace Core.Obfuscation.Protections
 
         Private Function ReadyToGeneratePinvoke(originalMethod As MethodDefinition, dllexp As NativeDllFunction, functionName As String) As Boolean
 
-            Dim HasFieldMarshall As Boolean
-
             If dllexp.ExportedFunction Then
                 If dllexp.FunctionName.ToLower = functionName.ToLower Then
-                    Return Not originalMethod.Parameters.Any(Function(f) f.HasFieldMarshal)
+                    Return True
                 Else
-                    HasFieldMarshall = originalMethod.Parameters.Any(Function(f) f.HasFieldMarshal)
-
-                    If HasFieldMarshall Then
-                        Return False
-                    Else
-                        If (dllexp.FunctionName.ToUpper.EndsWith("A") OrElse dllexp.FunctionName.ToUpper.EndsWith("W")) AndAlso dllexp.FunctionName.Substring(0, dllexp.FunctionName.Length - 1).ToLower = functionName.ToLower AndAlso dllexp.ExportedFunction Then
-                            If originalMethod.PInvokeInfo.IsCharSetAnsi Then
-                                originalMethod.Name = functionName & "A"
-                                originalMethod.PInvokeInfo.EntryPoint = functionName & "A"
-                                Return True
-                            ElseIf originalMethod.PInvokeInfo.IsCharSetUnicode Then
-                                originalMethod.Name = functionName & "W"
-                                originalMethod.PInvokeInfo.EntryPoint = functionName & "W"
-                                Return True
-                            ElseIf originalMethod.PInvokeInfo.IsCharSetAuto Then
-                                Return False
-                            ElseIf originalMethod.PInvokeInfo.IsCharSetNotSpec Then
-                                originalMethod.Name = functionName & "A"
-                                originalMethod.PInvokeInfo.EntryPoint = functionName & "A"
-                                Return True
-                            End If
-                        Else
+                    If (dllexp.FunctionName.ToUpper.EndsWith("A") OrElse dllexp.FunctionName.ToUpper.EndsWith("W")) AndAlso dllexp.FunctionName.Substring(0, dllexp.FunctionName.Length - 1).ToLower = functionName.ToLower AndAlso dllexp.ExportedFunction Then
+                        If originalMethod.PInvokeInfo.IsCharSetAnsi Then
+                            originalMethod.Name = functionName & "A"
+                            originalMethod.PInvokeInfo.EntryPoint = functionName & "A"
+                            Return True
+                        ElseIf originalMethod.PInvokeInfo.IsCharSetUnicode Then
+                            originalMethod.Name = functionName & "W"
+                            originalMethod.PInvokeInfo.EntryPoint = functionName & "W"
+                            Return True
+                        ElseIf originalMethod.PInvokeInfo.IsCharSetAuto Then
                             Return False
+                        ElseIf originalMethod.PInvokeInfo.IsCharSetNotSpec Then
+                            originalMethod.Name = functionName & "A"
+                            originalMethod.PInvokeInfo.EntryPoint = functionName & "A"
+                            Return True
                         End If
+                    Else
+                        Return False
                     End If
                     Return False
                 End If

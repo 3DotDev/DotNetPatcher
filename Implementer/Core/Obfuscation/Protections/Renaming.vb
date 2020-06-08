@@ -3,7 +3,6 @@ Imports Helper.CecilHelper
 Imports Mono.Cecil.Rocks
 Imports Implementer.Engine.Context
 Imports Implementer.Engine.Processing
-Imports System.IO
 
 Namespace Core.Obfuscation.Protections
 

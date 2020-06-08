@@ -39,7 +39,7 @@ Namespace Core.Obfuscation.Builder
         Public Sub InjectResource()
             If Not Context.ResourceWriter Is Nothing Then
                 Context.ResourceWriter.Close()
-                Injecter.InjectResource(Context.InputAssembly, Context.ResourceName)
+                Injecter.InjectResource(Context.InputAssembly, Context.ResourceName, Context.ResourceNamePath)
             End If
         End Sub
 

@@ -12,3 +12,4 @@ D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\Injections\
 D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\Injections\Injections\obj\Release\Injections.csproj.CoreCompileInputs.cache
 D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\Injections\Injections\obj\Release\Injections.dll
 D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\Injections\Injections\obj\Release\Injections.pdb
+D:\Documents\Bitbucket\DotNetPatcher\Injections\Injections\obj\Release\Injections.csprojAssemblyReference.cache
