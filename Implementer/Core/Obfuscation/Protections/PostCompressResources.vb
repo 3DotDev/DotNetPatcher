@@ -3,7 +3,7 @@
     Public NotInheritable Class PostCompressResources
         Inherits Protection
 
-#Region " Properties "
+#Region " Fields "
         Private ReadOnly IsResolver As Boolean
 #End Region
 

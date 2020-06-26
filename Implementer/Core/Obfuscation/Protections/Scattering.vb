@@ -22,8 +22,8 @@ Namespace Core.Obfuscation.Protections
 
                 Dim allMethods = Where(Function(f) f.Value?.DeclaringType.FullName = md.DeclaringType.FullName)
                 If allMethods.Count > 0 Then
-                    If Any(Function(f) f.Value?.DeclaringType.FullName = md.DeclaringType.FullName AndAlso f.Key.Equals(key)) Then
-                        mdFinal = Where(Function(f) f.Value?.DeclaringType.FullName = md.DeclaringType.FullName AndAlso f.Key.Equals(key)).First.Value
+                    If Any(Function(m) m.Value?.DeclaringType.FullName = md.DeclaringType.FullName AndAlso m.Key.Equals(key)) Then
+                        mdFinal = Where(Function(m) m.Value?.DeclaringType.FullName = md.DeclaringType.FullName AndAlso m.Key.Equals(key)).First.Value
                     Else
                         mdFinal = CreateMethod(key, md, Randomizer)
                         AddToList(mdFinal, key)
@@ -32,6 +32,7 @@ Namespace Core.Obfuscation.Protections
                     mdFinal = CreateMethod(key, md, Randomizer)
                     AddToList(mdFinal, key)
                 End If
+
                 Return mdFinal
             End Function
 
@@ -82,7 +83,6 @@ Namespace Core.Obfuscation.Protections
         Private ReadOnly MdByLong As MethodsCollection(Of Long)
         Private ReadOnly MdByDouble As MethodsCollection(Of Double)
         Private ReadOnly MdBySingle As MethodsCollection(Of Single)
-        Private ReadOnly MdByByte As MethodsCollection(Of Byte)
         Private ReadOnly MdByRef As Dictionary(Of MethodReference, MethodDefinition)
         Private ReadOnly Types As List(Of TypeDefinition)
         Private ReadOnly OpCodeDic As Dictionary(Of OpCode, String)
@@ -99,7 +99,7 @@ Namespace Core.Obfuscation.Protections
 
         Public Overrides ReadOnly Property Name As String
             Get
-                Return "Anti-Debug"
+                Return "Scattering"
             End Get
         End Property
 
@@ -132,10 +132,9 @@ Namespace Core.Obfuscation.Protections
                 MdByLong = New MethodsCollection(Of Long)
                 MdByDouble = New MethodsCollection(Of Double)
                 MdBySingle = New MethodsCollection(Of Single)
-                MdByByte = New MethodsCollection(Of Byte)
                 MdByRef = New Dictionary(Of MethodReference, MethodDefinition)
+                OpCodeDic = New Dictionary(Of OpCode, String) From {{OpCodes.Ldc_I4, "System.Int32"}, {OpCodes.Ldc_I8, "System.Int64"}, {OpCodes.Ldc_R4, "System.Single"}, {OpCodes.Ldc_R8, "System.Double"}}
                 Types = New List(Of TypeDefinition)
-                OpCodeDic = New Dictionary(Of OpCode, String) From {{OpCodes.Ldc_I4, "System.Int32"}, {OpCodes.Ldc_R4, "System.Single"}, {OpCodes.Ldc_R8, "System.Double"}}
                 CompletedMethods = New Mono.Collections.Generic.Collection(Of MethodDefinition)
             End If
         End Sub
@@ -155,13 +154,13 @@ Namespace Core.Obfuscation.Protections
         End Sub
 
         Private Sub MethodByClear()
-            MdByByte.Clear()
+            MdByString.Clear()
             MdByInteger.Clear()
             MdByLong.Clear()
             MdByDouble.Clear()
             MdBySingle.Clear()
-            MdByByte.Clear()
             MdByRef.Clear()
+            OpCodeDic.Clear()
         End Sub
 
         Private Sub IterateType(td As TypeDefinition)
@@ -196,12 +195,12 @@ Namespace Core.Obfuscation.Protections
             For Each instruction As Instruction In instructions
                 Select Case instruction.OpCode
                     Case OpCodes.Ldc_I4
-                        If Utils.IsValidIntegerOperand(instruction) AndAlso Not Context.Randomizer.invisibleChars.Contains(CInt(instruction.Operand)) Then
+                        If Utils.IsValidIntegerOperand(instruction) AndAlso Not Context.Randomizer.invisibleChars.Contains(instruction.Operand) Then
                             OpCodesFilter(instruction, instructionsToExpand, body)
                         End If
                     Case OpCodes.Ldc_I8
                         If Utils.IsValidLongOperand(instruction) Then
-                            instructionsToExpand.Add(instruction)
+                            OpCodesFilter(instruction, instructionsToExpand, body)
                         End If
                     Case OpCodes.Ldc_R4
                         If Utils.IsValidSingleOperand(instruction) Then
@@ -225,37 +224,20 @@ Namespace Core.Obfuscation.Protections
             For Each instruction As Instruction In instructionsToExpand
                 Select Case instruction.OpCode
                     Case OpCodes.Ldc_I4
-                        Dim Value As Integer = CInt(instruction.Operand)
-                        Dim mdFinal As MethodDefinition = MdByInteger.GetValue(body.Method, Value, Context.Randomizer)
-                        ReplaceInstruction(il, mdFinal, instruction)
+                        ReplaceInstruction(il, MdByInteger.GetValue(body.Method, instruction.Operand, Context.Randomizer), instruction)
                     Case OpCodes.Ldc_I8
-                        Dim Value As Long = CLng(instruction.Operand)
-                        Dim mdFinal As MethodDefinition = MdByLong.GetValue(body.Method, Value, Context.Randomizer)
-                        ReplaceInstruction(il, mdFinal, instruction)
+                        ReplaceInstruction(il, MdByLong.GetValue(body.Method, instruction.Operand, Context.Randomizer), instruction)
                     Case OpCodes.Ldc_R4
-                        Dim Value As Single = CSng(instruction.Operand)
-                        Dim mdFinal As MethodDefinition = MdBySingle.GetValue(body.Method, Value, Context.Randomizer)
-                        ReplaceInstruction(il, mdFinal, instruction)
+                        ReplaceInstruction(il, MdBySingle.GetValue(body.Method, instruction.Operand, Context.Randomizer), instruction)
                     Case OpCodes.Ldc_R8
-                        Dim Value As Double = CDbl(instruction.Operand)
-                        Dim mdFinal As MethodDefinition = MdByDouble.GetValue(body.Method, Value, Context.Randomizer)
-                        ReplaceInstruction(il, mdFinal, instruction)
+                        ReplaceInstruction(il, MdByDouble.GetValue(body.Method, instruction.Operand, Context.Randomizer), instruction)
                     Case OpCodes.Ldstr
-                        Dim Value As String = CStr(instruction.Operand)
-                        Dim mdFinal As MethodDefinition = MdByString.GetValue(body.Method, Value, Context.Randomizer)
-                        ReplaceInstruction(il, mdFinal, instruction)
+                        ReplaceInstruction(il, MdByString.GetValue(body.Method, instruction.Operand, Context.Randomizer), instruction)
                     Case OpCodes.Newobj
                         Dim Mref = DirectCast(instruction.Operand, MethodReference)
                         Dim mdFinal As MethodDefinition
 
-                        If MdByRef.ContainsKey(Mref) Then
-                            mdFinal = MdByRef.Item(Mref)
-                        Else
-                            mdFinal = CreateReferenceMethod(Mref, body.Method)
-                            If Not mdFinal Is Nothing Then
-                                MdByRef.Add(Mref, mdFinal)
-                            End If
-                        End If
+                        mdFinal = CreateReferenceMethod(Mref, body.Method)
                         ReplaceInstruction(il, mdFinal, instruction)
                 End Select
             Next

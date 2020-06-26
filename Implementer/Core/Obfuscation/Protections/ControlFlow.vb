@@ -73,6 +73,7 @@ Namespace Core.Obfuscation.Protections
                                                             Not m.IsConstructor AndAlso
                                                             Not Utils.HasUnsafeInstructions(m) AndAlso
                                                             Not m.Body.Instructions.Any(Function(f) f.OpCode = OpCodes.Throw) AndAlso 'CtrlFlow Stack calculation doesn't take charge Throw opcode like ExceptionHandlers !
+                                                            Not m.Body.Instructions.Any(Function(f) f.OpCode = OpCodes.Rethrow) AndAlso
                                                             Not m.Body.Instructions.Any(Function(f) f.OpCode = OpCodes.Initobj))) 'CtrlFlow Stack calculation doesn't take charge Initobj opcode !
 
             Try
@@ -105,7 +106,7 @@ Namespace Core.Obfuscation.Protections
                     Dim pops As Integer = 0
                     Msil.CalculateStackUsage(Instruct, stacks, pops)
                     item1.Add(Instruct)
-                    incremStackUsage = (incremStackUsage + (stacks - pops))
+                    incremStackUsage += (stacks - pops)
                     If (((stacks = 0) AndAlso (Not Instruct.OpCode = OpCodes.Nop)) AndAlso ((incremStackUsage = 0) OrElse (Instruct.OpCode = OpCodes.Ret))) Then
                         If Not flag Then
                             Dim item2 As New InstructionGroup With {

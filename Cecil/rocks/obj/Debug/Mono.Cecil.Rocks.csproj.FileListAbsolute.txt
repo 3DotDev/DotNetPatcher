@@ -1,10 +1,3 @@
-D:\Documents\Bitbucket\DotNetPatcher\Cecil\bin\Debug\Mono.Cecil.Rocks.dll
-D:\Documents\Bitbucket\DotNetPatcher\Cecil\bin\Debug\Mono.Cecil.Rocks.pdb
-D:\Documents\Bitbucket\DotNetPatcher\Cecil\rocks\obj\Debug\Mono.Cecil.Rocks.csprojAssemblyReference.cache
-D:\Documents\Bitbucket\DotNetPatcher\Cecil\rocks\obj\Debug\Mono.Cecil.Rocks.csproj.CopyComplete
-D:\Documents\Bitbucket\DotNetPatcher\Cecil\rocks\obj\Debug\Mono.Cecil.Rocks.dll
-D:\Documents\Bitbucket\DotNetPatcher\Cecil\rocks\obj\Debug\Mono.Cecil.Rocks.pdb
-D:\Documents\Bitbucket\DotNetPatcher\Cecil\rocks\obj\Debug\Mono.Cecil.Rocks.csproj.CoreCompileInputs.cache
 D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\Cecil\bin\Debug\Mono.Cecil.Rocks.dll
 D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\Cecil\bin\Debug\Mono.Cecil.Rocks.pdb
 D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\Cecil\rocks\obj\Debug\Mono.Cecil.Rocks.csprojAssemblyReference.cache
@@ -12,3 +5,10 @@ D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\Cecil\rocks
 D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\Cecil\rocks\obj\Debug\Mono.Cecil.Rocks.csproj.CopyComplete
 D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\Cecil\rocks\obj\Debug\Mono.Cecil.Rocks.dll
 D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\Cecil\rocks\obj\Debug\Mono.Cecil.Rocks.pdb
+D:\Documents\Bitbucket\DotNetPatcher\Cecil\bin\Debug\Mono.Cecil.Rocks.dll
+D:\Documents\Bitbucket\DotNetPatcher\Cecil\bin\Debug\Mono.Cecil.Rocks.pdb
+D:\Documents\Bitbucket\DotNetPatcher\Cecil\rocks\obj\Debug\Mono.Cecil.Rocks.csprojAssemblyReference.cache
+D:\Documents\Bitbucket\DotNetPatcher\Cecil\rocks\obj\Debug\Mono.Cecil.Rocks.csproj.CoreCompileInputs.cache
+D:\Documents\Bitbucket\DotNetPatcher\Cecil\rocks\obj\Debug\Mono.Cecil.Rocks.csproj.CopyComplete
+D:\Documents\Bitbucket\DotNetPatcher\Cecil\rocks\obj\Debug\Mono.Cecil.Rocks.dll
+D:\Documents\Bitbucket\DotNetPatcher\Cecil\rocks\obj\Debug\Mono.Cecil.Rocks.pdb

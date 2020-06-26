@@ -32,7 +32,9 @@ Namespace Engine.Processing
 
         Protected Friend Sub Add(Protect As Protection)
             If Protect.Enabled Then
-                If (Not HasTask(Protect.GetType)) Then Protections.Insert(Protections.Count, Protect)
+                If (Not HasTask(Protect.GetType)) Then
+                    Protections.Insert(Protections.Count, Protect)
+                End If
             End If
         End Sub
 

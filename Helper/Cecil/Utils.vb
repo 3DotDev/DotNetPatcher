@@ -133,7 +133,7 @@ Namespace CecilHelper
 
         Public Shared Sub AddHelpKeywordAttribute(Modul As ModuleDefinition, targetMember As ICustomAttributeProvider, browsable As TypeReference)
             Dim attribType = Modul.Import(GetType(ComponentModel.Design.HelpKeywordAttribute))
-            Dim constructor = attribType.Resolve.getConstructors().Single(Function(ctor) 1 = ctor.Parameters.Count AndAlso "System.Type" = ctor.Parameters(0).ParameterType.FullName)
+            Dim constructor = attribType.Resolve.GetConstructors().Single(Function(ctor) 1 = ctor.Parameters.Count AndAlso "System.Type" = ctor.Parameters(0).ParameterType.FullName)
             Dim constructorRef = Modul.Import(constructor)
             Dim attrib = New CustomAttribute(constructorRef)
             Dim browsableArg = New CustomAttributeArgument(Modul.Import(GetType(Type)), browsable)
@@ -170,7 +170,7 @@ Namespace CecilHelper
             Dim HasAtt As Boolean = False
             For Each mo In ass.Modules
                 If HasAtt Then Exit For
-                For Each ty In mo.GetallTypes
+                For Each ty In mo.GetAllTypes
                     If ty.Attributes.HasFlag(TypeAttributes.Serializable) Then
                         HasAtt = True
                         Exit For

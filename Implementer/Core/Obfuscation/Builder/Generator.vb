@@ -1,4 +1,4 @@
-﻿Namespace CryptoHelper
+﻿Namespace Core.Obfuscation.Builder
     Public NotInheritable Class Generator
 
 #Region " Fields "

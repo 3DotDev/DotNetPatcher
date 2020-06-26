@@ -5,7 +5,6 @@ Imports Helper.CecilHelper
 Imports System.IO
 Imports System.Text
 Imports System.Security.Cryptography
-Imports Helper.CryptoHelper
 Imports Implementer.Core.Obfuscation.Builder
 Imports Implementer.Core.Dependencing.DependenciesInfos
 
@@ -175,7 +174,7 @@ Namespace Core.Obfuscation.Protections
                     Dim ilProc As ILProcessor = mdFinal.Body.GetILProcessor()
                     ilProc.Body.InitLocals = True
 
-                    Dim resEncrypted As Boolean = If((EncryptToResources = EncryptType.ToResources), True, False)
+                    Dim resEncrypted As Boolean = (EncryptToResources = EncryptType.ToResources)
                     If resEncrypted Then
                         mdFinal.Body.Variables.Add(New VariableDefinition(Context.InputAssembly.MainModule.Import(GetType(Integer))))
                         mdFinal.Body.Variables.Add(New VariableDefinition(Context.InputAssembly.MainModule.Import(GetType(String))))
@@ -274,7 +273,7 @@ Namespace Core.Obfuscation.Protections
             Dim jincrement% = 0
             Do While (jincrement <= sLength)
                 Dim p% = (Convert.ToInt32(tString.Chars(jincrement)) Xor numInteg)
-                sResult = (sResult & Char.ConvertFromUtf32(p))
+                sResult &= Char.ConvertFromUtf32(p)
                 jincrement += 1
             Loop
             Return sResult

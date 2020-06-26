@@ -77,7 +77,6 @@
     <Compile Include="Cecil\Msil.vb" />
     <Compile Include="Cecil\NameChecker.vb" />
     <Compile Include="Cecil\TypeExtensions.vb" />
-    <Compile Include="CodeDom\Compiler.vb" />
     <Compile Include="Assembly\Data.vb" />
     <Compile Include="Assembly\Infos.vb" />
     <Compile Include="Assembly\Loader.vb" />
@@ -98,8 +97,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Crypto\Crypt.vb" />
-    <Compile Include="Crypto\Generator.vb" />
     <Compile Include="Cecil\Injecter.vb" />
     <Compile Include="Resource\NativeMethods.vb" />
     <Compile Include="Resource\ResourceEx.vb" />
@@ -136,6 +133,7 @@
       <Name>Mono.Cecil.Rocks</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

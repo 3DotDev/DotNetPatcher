@@ -1,8 +1,8 @@
 ﻿Imports System.CodeDom.Compiler
 Imports System.IO
 
-Namespace CodeDomHelper
-    Public Class Compiler
+Namespace Core.Obfuscation.Builder
+    Public Class Compile
 
 #Region " Methods "
         Public Shared Function CreateStubFromString(MainClass$, FrmwkVersion$, str$, Optional ByVal ReferencencedAssemblies As Dictionary(Of String, Byte()) = Nothing) As String

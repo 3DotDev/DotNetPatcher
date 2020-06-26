@@ -1,12 +1,12 @@
-D:\Documents\Bitbucket\DotNetPatcher\Cecil\bin\Debug\Mono.Cecil.dll
-D:\Documents\Bitbucket\DotNetPatcher\Cecil\bin\Debug\Mono.Cecil.pdb
-D:\Documents\Bitbucket\DotNetPatcher\Cecil\obj\Debug\Mono.Cecil.dll
-D:\Documents\Bitbucket\DotNetPatcher\Cecil\obj\Debug\Mono.Cecil.pdb
-D:\Documents\Bitbucket\DotNetPatcher\Cecil\obj\Debug\Mono.Cecil.csproj.CoreCompileInputs.cache
 D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\Cecil\bin\Debug\Mono.Cecil.dll
 D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\Cecil\bin\Debug\Mono.Cecil.pdb
 D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\Cecil\obj\Debug\Mono.Cecil.csprojAssemblyReference.cache
 D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\Cecil\obj\Debug\Mono.Cecil.csproj.CoreCompileInputs.cache
 D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\Cecil\obj\Debug\Mono.Cecil.dll
 D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\Cecil\obj\Debug\Mono.Cecil.pdb
+D:\Documents\Bitbucket\DotNetPatcher\Cecil\bin\Debug\Mono.Cecil.dll
+D:\Documents\Bitbucket\DotNetPatcher\Cecil\bin\Debug\Mono.Cecil.pdb
 D:\Documents\Bitbucket\DotNetPatcher\Cecil\obj\Debug\Mono.Cecil.csprojAssemblyReference.cache
+D:\Documents\Bitbucket\DotNetPatcher\Cecil\obj\Debug\Mono.Cecil.csproj.CoreCompileInputs.cache
+D:\Documents\Bitbucket\DotNetPatcher\Cecil\obj\Debug\Mono.Cecil.dll
+D:\Documents\Bitbucket\DotNetPatcher\Cecil\obj\Debug\Mono.Cecil.pdb

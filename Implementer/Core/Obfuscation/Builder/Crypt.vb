@@ -1,7 +1,7 @@
 ﻿Imports System.Security.Cryptography
 Imports System.Text
 
-Namespace CryptoHelper
+Namespace Core.Obfuscation.Builder
     Public Class Crypt
 
 #Region " Properties "

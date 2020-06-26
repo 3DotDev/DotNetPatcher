@@ -9,8 +9,8 @@ Namespace CecilHelper
         Public Shared Sub CalculateStackUsage(inst As Instruction, <Out> ByRef pushes As Integer, <Out> ByRef pops As Integer)
             Dim hasReturnValue As Boolean = False
             Dim opCode As OpCode = inst.OpCode
-            If (opCode.FlowControl = FlowControl.Call) Then
-                If (opCode.Code <> Code.Jmp) Then
+            If opCode.FlowControl = FlowControl.Call Then
+                If opCode.Code <> Code.Jmp Then
                     pushes = 0
                     pops = 0
                     Dim methodSig As IMethodSignature
@@ -23,7 +23,7 @@ Namespace CecilHelper
                         methodSig = TryCast(operand, IMethodSignature)
                     End If
                     If (Not methodSig Is Nothing) Then
-                        Dim implicitThis As Boolean = (methodSig.HasThis AndAlso Not methodSig.ExplicitThis)
+                        Dim implicitThis As Boolean = methodSig.HasThis AndAlso Not methodSig.ExplicitThis
                         If (methodSig.ReturnType.MetadataType <> MetadataType.Void OrElse ((opCode.Code = Code.Newobj) AndAlso methodSig.HasThis)) Then
                             pushes += 1
                         End If
@@ -57,54 +57,30 @@ Namespace CecilHelper
                         pushes += 2
                         Exit Select
                 End Select
-
                 Select Case opCode.StackBehaviourPop
-                    'Case StackBehaviour.Pop0, StackBehaviour.Push0, StackBehaviour.Push1, StackBehaviour.Push1_push1, StackBehaviour.Pushi, StackBehaviour.Pushi8, StackBehaviour.Pushr4, StackBehaviour.Pushr8, StackBehaviour.Pushref, StackBehaviour.Varpush
-                    '    Exit Select
-                    'Case StackBehaviour.Pop1, StackBehaviour.Popi, StackBehaviour.Popref
-                    '    pops += 1
-                    '    Return
-                    'Case StackBehaviour.Pop1_pop1, StackBehaviour.Popi_pop1, StackBehaviour.Popi_popi, StackBehaviour.Popi_popi8, StackBehaviour.Popi_popr4, StackBehaviour.Popi_popr8, StackBehaviour.Popref_pop1, StackBehaviour.Popref_popi
-                    '    pops = (pops + 2)
-                    '    Return
-                    'Case StackBehaviour.Popi_popi_popi, StackBehaviour.Popref_popi_popi, StackBehaviour.Popref_popi_popi8, StackBehaviour.Popref_popi_popr4, StackBehaviour.Popref_popi_popr8, StackBehaviour.Popref_popi_popref
-                    '    pops = (pops + 3)
-                    '    Return
-                    'Case StackBehaviour.Varpop
-                    '    If hasReturnValue Then
-                    '        pops += 1
-                    '    End If
-                    '    Exit Select
-                    'Case StackBehaviour.PopAll
-                    '    pops = -1
-                    '    Return
-                    'Case Else
-                    '    Return
-
-                    Case StackBehaviour.Pop0, StackBehaviour.Push0, StackBehaviour.Push1, StackBehaviour.Push1_push1, StackBehaviour.Pushi, StackBehaviour.Pushi8, StackBehaviour.Pushr4, StackBehaviour.Pushr8, StackBehaviour.Pushref, StackBehaviour.Varpush
-                        Exit Select
-                    Case StackBehaviour.Pop1, StackBehaviour.Pop1_pop1, StackBehaviour.Popi, StackBehaviour.Popref
+                    Case StackBehaviour.Pop1, StackBehaviour.Popi, StackBehaviour.Popref
                         pops += 1
-                        Return
-                    Case StackBehaviour.Popi_pop1, StackBehaviour.Popi_popi, StackBehaviour.Popi_popi8, StackBehaviour.Popi_popr4, StackBehaviour.Popi_popr8, StackBehaviour.Popref_pop1, StackBehaviour.Popref_popi
+                        Exit Select
+                    Case StackBehaviour.Pop1_pop1, StackBehaviour.Popi_pop1, StackBehaviour.Popi_popi, StackBehaviour.Popi_popi8, StackBehaviour.Popi_popr4, StackBehaviour.Popi_popr8, StackBehaviour.Popref_pop1, StackBehaviour.Popref_popi
                         pops += 2
-                        Return
-                    Case StackBehaviour.Popi_popi_popi, StackBehaviour.Popref_popi_popi, StackBehaviour.Popref_popi_popi8, StackBehaviour.Popref_popi_popr4, StackBehaviour.Popref_popi_popr8, StackBehaviour.Popref_popi_popref
+                        Exit Select
+                    Case StackBehaviour.Popi_popi_popi, StackBehaviour.Popref_popi_popi, StackBehaviour.Popref_popi_popi8, StackBehaviour.Popref_popi_popr4, StackBehaviour.Popref_popi_popr8, StackBehaviour.Popref_popi_popref, StackBehaviour.Varpush
                         pops += 3
-                        Return
-                    Case StackBehaviour.PopAll
-                        pops = -1
-                        Return
+                        Exit Select
                     Case StackBehaviour.Varpop
                         If hasReturnValue Then
                             pops += 1
                         End If
                         Exit Select
-                    Case Else
-                        Return
+                    Case StackBehaviour.PopAll
+                        pops = -1
+                        Exit Select
                 End Select
+
             End If
         End Sub
+
+
 #End Region
 
     End Class

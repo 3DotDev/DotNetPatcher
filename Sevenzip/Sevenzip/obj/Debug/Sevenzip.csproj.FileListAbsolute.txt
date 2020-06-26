@@ -2,15 +2,15 @@ C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\Sev
 C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\Sevenzip\Sevenzip\bin\Debug\SevenzipLib.pdb
 C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\Sevenzip\Sevenzip\obj\Debug\SevenzipLib.dll
 C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\Sevenzip\Sevenzip\obj\Debug\SevenzipLib.pdb
-D:\Documents\Bitbucket\DotNetPatcher\Sevenzip\Sevenzip\bin\Debug\SevenzipLib.dll
-D:\Documents\Bitbucket\DotNetPatcher\Sevenzip\Sevenzip\bin\Debug\SevenzipLib.pdb
-D:\Documents\Bitbucket\DotNetPatcher\Sevenzip\Sevenzip\obj\Debug\SevenzipLib.dll
-D:\Documents\Bitbucket\DotNetPatcher\Sevenzip\Sevenzip\obj\Debug\SevenzipLib.pdb
-D:\Documents\Bitbucket\DotNetPatcher\Sevenzip\Sevenzip\obj\Debug\Sevenzip.csproj.CoreCompileInputs.cache
 D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\Sevenzip\Sevenzip\bin\Debug\SevenzipLib.dll
 D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\Sevenzip\Sevenzip\bin\Debug\SevenzipLib.pdb
 D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\Sevenzip\Sevenzip\obj\Debug\Sevenzip.csprojAssemblyReference.cache
 D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\Sevenzip\Sevenzip\obj\Debug\Sevenzip.csproj.CoreCompileInputs.cache
 D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\Sevenzip\Sevenzip\obj\Debug\SevenzipLib.dll
 D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\Sevenzip\Sevenzip\obj\Debug\SevenzipLib.pdb
+D:\Documents\Bitbucket\DotNetPatcher\Sevenzip\Sevenzip\bin\Debug\SevenzipLib.dll
+D:\Documents\Bitbucket\DotNetPatcher\Sevenzip\Sevenzip\bin\Debug\SevenzipLib.pdb
 D:\Documents\Bitbucket\DotNetPatcher\Sevenzip\Sevenzip\obj\Debug\Sevenzip.csprojAssemblyReference.cache
+D:\Documents\Bitbucket\DotNetPatcher\Sevenzip\Sevenzip\obj\Debug\Sevenzip.csproj.CoreCompileInputs.cache
+D:\Documents\Bitbucket\DotNetPatcher\Sevenzip\Sevenzip\obj\Debug\SevenzipLib.dll
+D:\Documents\Bitbucket\DotNetPatcher\Sevenzip\Sevenzip\obj\Debug\SevenzipLib.pdb

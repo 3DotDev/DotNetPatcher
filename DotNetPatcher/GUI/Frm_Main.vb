@@ -19,8 +19,6 @@ Public Class Frm_Main
     Private WithEvents DependenciesChecker As Checker
     Private WithEvents IconChanger As Changer
     Private ReadOnly m_rdb As LogInRadioButton()
-    Private m_Context As Tasks
-    Private ReadOnly m_taskArgs As TaskState
     Private ReadOnly m_controlList As List(Of Control)
     Private m_taskIsRunning As Boolean
     Private m_lastRequested As String
@@ -34,7 +32,6 @@ Public Class Frm_Main
         Frm_MainThemeContainer.Text = "DotNetPatcher " & My.Application.Info.Version.ToString
         ShowAboutInfos()
         m_rdb = New LogInRadioButton(2) {RdbManifestChangerAsInvoker, RdbManifestChangerRequireAdministrator, RdbManifestChangerHighestAvailable}
-        m_taskArgs = New TaskState
         DependenciesChecker = New Checker(LbxDependenciesAdd)
         IconChanger = New Changer
     End Sub
@@ -154,6 +151,10 @@ Public Class Frm_Main
         PnlVersionInfosEnabled.Enabled = True
         ChbDependenciesEnabled.Checked = False
         ChbDependenciesEnabled.Enabled = False
+
+        LblDependenciesWarning.ForeColor = Color.DarkOrange
+        LblDependenciesWarning.Text = "(Dependencies detection is disabled)"
+
         PnlDependenciesEnabled.Enabled = False
         ChbManifestEnabled.Checked = True
         ChbManifestEnabled.Enabled = True
@@ -184,6 +185,10 @@ Public Class Frm_Main
         PnlVersionInfosEnabled.Enabled = True
         ChbDependenciesEnabled.Checked = True
         ChbDependenciesEnabled.Enabled = True
+
+        LblDependenciesWarning.ForeColor = Color.LimeGreen()
+        LblDependenciesWarning.Text = "(Dependencies detection is enabled)"
+
         PnlDependenciesEnabled.Enabled = True
         ChbManifestEnabled.Checked = True
         ChbManifestEnabled.Enabled = True
@@ -208,6 +213,8 @@ Public Class Frm_Main
         ChbObfuscatorNamespacesRP.Checked = True
         ChbObfuscatorRenameMainNamespaceOnlyNamespaces.Enabled = True
         ChbObfuscatorRenameMainNamespaceOnlyNamespaces.Checked = False
+        ChbObfuscatorReplaceNamespaceByEmptyNamespaces.Enabled = True
+        ChbObfuscatorReplaceNamespaceByEmptyNamespaces.Checked = True
 
         CbxObfuscatorScheme.Items.Clear()
         CbxObfuscatorScheme.Items.Add("Alphabetic")
@@ -218,9 +225,6 @@ Public Class Frm_Main
         CbxObfuscatorScheme.Items.Add("Dot")
         CbxObfuscatorScheme.Items.Add("Symbols")
         CbxObfuscatorScheme.Items.Add("Flowing")
-
-        ChbObfuscatorReplaceNamespaceByEmptyNamespaces.Enabled = True
-        ChbObfuscatorReplaceNamespaceByEmptyNamespaces.Checked = True
     End Sub
 
     Private Sub EmptyTextBox()
@@ -421,11 +425,7 @@ Public Class Frm_Main
     End Sub
 
     Private Sub RdbDependenciesEmbedded_Click(sender As Object, e As EventArgs) Handles RdbDependenciesEmbedded.Click, RdbDependenciesMerged.Click
-        If TryCast(sender, LogInRadioButton).Text = "Merging" Then
-            CbxDependenciesEmbedded.Visible = False
-        Else
-            CbxDependenciesEmbedded.Visible = True
-        End If
+        CbxDependenciesEmbedded.Visible = TryCast(sender, LogInRadioButton).Text IsNot "Merging"
     End Sub
 
 #End Region
@@ -462,17 +462,17 @@ Public Class Frm_Main
     Private Sub ChbPackerEnabled_Click(sender As Object, e As EventArgs) Handles ChbPackerEnabled.Click
         PnlPackerEnabled.Enabled = ChbPackerEnabled.Checked
         Dim state As Boolean = ChbPackerEnabled.Checked
-        ChbObfuscatorResourcesContent.Enabled = If(state, False, True)
-        ChbObfuscatorResourcesContent.Checked = If(state, False, True)
-        ChbObfuscatorResourcesEncryption.Enabled = If(state, False, True)
-        ChbObfuscatorResourcesEncryption.Checked = If(state, False, True)
-        ChbObfuscatorResourcesCompress.Enabled = If(state, False, True)
-        ChbObfuscatorResourcesCompress.Checked = If(state, False, True)
-        ChbObfuscatorRenameMainNamespaceOnlyNamespaces.Enabled = If(state, False, True)
-        ChbObfuscatorRenameMainNamespaceOnlyNamespaces.Checked = If(state, False, False)
-        ChbObfuscatorReplaceNamespaceByEmptyNamespaces.Enabled = If(m_assemblyHasSerializableAttributes, False, If(state, False, True))
-        ChbObfuscatorReplaceNamespaceByEmptyNamespaces.Checked = If(m_assemblyHasSerializableAttributes, False, If(state, False, True))
-        GbxPackerLoader.Enabled = If(state, True, False)
+        ChbObfuscatorResourcesContent.Enabled = Not state
+        ChbObfuscatorResourcesContent.Checked = Not state
+        ChbObfuscatorResourcesEncryption.Enabled = Not state
+        ChbObfuscatorResourcesEncryption.Checked = Not state
+        ChbObfuscatorResourcesCompress.Enabled = Not state
+        ChbObfuscatorResourcesCompress.Checked = Not state
+        ChbObfuscatorRenameMainNamespaceOnlyNamespaces.Enabled = Not state
+        ChbObfuscatorRenameMainNamespaceOnlyNamespaces.Checked = state AndAlso False
+        ChbObfuscatorReplaceNamespaceByEmptyNamespaces.Enabled = Not m_assemblyHasSerializableAttributes AndAlso Not state
+        ChbObfuscatorReplaceNamespaceByEmptyNamespaces.Checked = Not m_assemblyHasSerializableAttributes AndAlso Not state
+        GbxPackerLoader.Enabled = state
     End Sub
 
     Private Sub TpPacker_Enter(sender As Object, e As EventArgs) Handles TpPacker.Enter
@@ -491,7 +491,6 @@ Public Class Frm_Main
 #End Region
 
 #Region " ######### START TASK ######### "
-
     Private Sub BtnStart_Click(sender As Object, e As EventArgs) Handles BtnStart.Click
         If Not BgwRenameTask.IsBusy Then
             BtnStart.Enabled = False
@@ -534,7 +533,8 @@ Public Class Frm_Main
                                                       ObfuscatorRenamingSchemeIndex,
                                                       NamespaceSerialized)
 
-            With m_taskArgs
+            Dim TskArgs = New TaskState
+            With TskArgs
                 .DllReferences = New DependenciesInfos(ChbDependenciesEnabled.Checked,
                                                          LbxDependenciesAdd.Items.Cast(Of String).ToList,
                                                          RdbDependenciesEmbedded.Checked,
@@ -574,10 +574,10 @@ Public Class Frm_Main
                                         If(m_rdb.Where(Function(y) y.Checked).First.Tag.ToString <> m_lastRequested, m_rdb.Where(Function(y) y.Checked).First.Tag.ToString, m_lastRequested))
             End With
 
-            Param.TaskAccept = m_taskArgs
+            Param.TaskAccept = TskArgs
 
-            m_Context = New Tasks(Param, BgwRenameTask)
-            With m_Context
+            Dim Tsks = New Tasks(Param, BgwRenameTask)
+            With Tsks
                 .EmptyTemp()
                 .PreparingTask(TxbSelectedFile.Text)
 
@@ -626,7 +626,6 @@ Public Class Frm_Main
         Catch ex As Exception
             e.Result = New String() {"Error", ex.ToString}
         End Try
-
     End Sub
 
     Private Sub BgwRenameTask_ProgressChanged(sender As Object, e As ProgressChangedEventArgs) Handles BgwRenameTask.ProgressChanged
@@ -680,7 +679,6 @@ Public Class Frm_Main
 
     Private Sub CleanUpMax()
         m_taskIsRunning = False
-        m_taskArgs.CleanUp()
         EmptyTextBox()
         GbxSelectFile.Enabled = True
         GbxDetection.Enabled = False

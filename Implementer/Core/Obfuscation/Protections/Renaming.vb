@@ -210,6 +210,7 @@ Namespace Core.Obfuscation.Protections
                                     End If
                                 End If
                             Else
+                                'Probably useless.......^^
                                 ProcessVirtualMethod(mDef, InheritM)
                             End If
                         End If
@@ -222,7 +223,7 @@ Namespace Core.Obfuscation.Protections
                                 Dim MethodPublicObf = Context.Randomizer.GenerateNew()
                                 Renamer.RenameMethod(mDef, MethodPublicObf)
                             ElseIf Finder.AccessorMethods(mDef.DeclaringType).Contains(mDef) AndAlso mDef.IsSpecialName Then
-                                'accessors with certain conditions
+                                'accessors with conditions
                                 Dim originalMeth As String = mDef.Name
                                 Dim MethodPublicObf = Context.Randomizer.GenerateNew()
                                 If mDef.IsSetter OrElse mDef.IsGetter Then
@@ -235,6 +236,7 @@ Namespace Core.Obfuscation.Protections
                                                 If mDef.IsGetter Then
                                                     prop = mDef.DeclaringType.Properties.Where(Function(f) f.GetMethod IsNot Nothing AndAlso f.GetMethod.Name = mDef.Name).FirstOrDefault
                                                     If Not MemberExtensions.HasCustomAttributeByMemberName(prop, "DebuggerNonUserCodeAttribute") Then
+                                                        'Remove useless property ... but ensure it is not decorate with a custom attribute
                                                         mDef.SemanticsAttributes = MethodSemanticsAttributes.None
                                                         mDef.DeclaringType.Properties.Remove(prop)
                                                     End If

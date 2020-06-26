@@ -171,7 +171,7 @@ Namespace Core.Obfuscation.Protections
 
                                             dllexp.FunctionName = lineSplitted(0)
                                             dllexp.FileName = dllEntireNew
-                                            dllexp.ExportedFunction = If(lineSplitted(6) = "Exported Function", True, False)
+                                            dllexp.ExportedFunction = (lineSplitted(6) = "Exported Function")
 
                                             ExportedDll.Add(dllexp)
 

@@ -68,12 +68,15 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Core\Obfuscation\Builder\Context\CompressContext.vb" />
-    <Compile Include="Core\Obfuscation\Builder\Context\EmbedContext.vb" />
-    <Compile Include="Core\Obfuscation\Builder\Context\PackerContext.vb" />
-    <Compile Include="Core\Obfuscation\Builder\Context\ResManagerContext.vb" />
-    <Compile Include="Core\Obfuscation\Builder\Context\ResStreamContext.vb" />
-    <Compile Include="Core\Obfuscation\Builder\Context\StubContext.vb" />
+    <Compile Include="Core\Obfuscation\Builder\Compile.vb" />
+    <Compile Include="Core\Obfuscation\Builder\Contexts\CompressContext.vb" />
+    <Compile Include="Core\Obfuscation\Builder\Contexts\EmbedContext.vb" />
+    <Compile Include="Core\Obfuscation\Builder\Contexts\PackerContext.vb" />
+    <Compile Include="Core\Obfuscation\Builder\Contexts\ResManagerContext.vb" />
+    <Compile Include="Core\Obfuscation\Builder\Contexts\ResStreamContext.vb" />
+    <Compile Include="Core\Obfuscation\Builder\Contexts\StubContext.vb" />
+    <Compile Include="Core\Obfuscation\Builder\Crypt.vb" />
+    <Compile Include="Core\Obfuscation\Builder\Generator.vb" />
     <Compile Include="Core\Obfuscation\Builder\Names.vb" />
     <Compile Include="Core\Obfuscation\Builder\Stub.vb" />
     <Compile Include="Core\Obfuscation\Viewer\TreeviewHandler.vb" />

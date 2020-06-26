@@ -1,7 +1,6 @@
 ﻿Imports System.IO
 Imports System.Text
 Imports Helper.CecilHelper
-Imports Helper.CryptoHelper
 Imports Helper.RandomizeHelper
 Imports Helper.UtilsHelper
 Imports Implementer.Core.Packer

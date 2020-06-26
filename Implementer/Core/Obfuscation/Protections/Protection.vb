@@ -16,8 +16,6 @@
 #End Region
 
 #Region " Methods "
-        Public Overridable Sub Init()
-        End Sub
 
         Public Overridable Sub Execute()
         End Sub

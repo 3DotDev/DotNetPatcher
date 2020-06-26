@@ -24,3 +24,4 @@ D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\LoginTheme\
 D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\LoginTheme\obj\Release\LoginTheme.dll
 D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\LoginTheme\obj\Release\LoginTheme.xml
 D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\LoginTheme\obj\Release\LoginTheme.pdb
+D:\Documents\Bitbucket\DotNetPatcher\LoginTheme\obj\Release\LoginTheme.vbprojAssemblyReference.cache

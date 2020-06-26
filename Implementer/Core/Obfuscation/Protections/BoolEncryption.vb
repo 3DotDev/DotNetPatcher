@@ -2,7 +2,6 @@
 Imports Mono.Cecil.Rocks
 Imports Mono.Cecil.Cil
 Imports Helper.CecilHelper
-Imports Helper.CryptoHelper
 Imports Implementer.Core.Obfuscation.Builder
 Imports Implementer.Core.Dependencing.DependenciesInfos
 
@@ -16,11 +15,11 @@ Namespace Core.Obfuscation.Protections
         Private DecryptInt As DecryptionInteger
         Private DecryptOdd As DecryptionOdd
         Private DecryptPrime As DecryptionPrime
+        Private EncryptToResources As EncryptType
 
         Private ReadOnly MtdByInteger As Dictionary(Of Integer, MethodDefinition)
         Private ReadOnly Types As List(Of TypeDefinition)
         Private ReadOnly CompletedMethods As Mono.Collections.Generic.Collection(Of MethodDefinition)
-        Private EncryptToResources As EncryptType
         Private ReadOnly Rand As Random
         Private ReadOnly PackerState As Boolean
 #End Region
@@ -68,7 +67,6 @@ Namespace Core.Obfuscation.Protections
             If EncryptToResources = EncryptType.ToResources Then
                 DecryptReadResources = New DecryptionResources(New ResManagerContext(Context.InputAssembly, PackerState, Context.Randomizer, Context.Randomizer.GenerateNew))
                 CompletedMethods.Add(DecryptReadResources.ReadFromResource)
-
                 'Build Decryption Integer Stub and retrieve its methoddefinition
                 DecryptInt = New DecryptionInteger(New StubContext(Context.InputAssembly, PackerState, Context.Randomizer))
                 CompletedMethods.Add(DecryptInt.DecryptInt())
@@ -175,7 +173,7 @@ Namespace Core.Obfuscation.Protections
                 If EncryptToResources = EncryptType.ToResources Then
                     Dim integ = Context.Randomizer.GenerateInvisible
 
-                    Dim encSt = Generator.IntEncrypt(TestNumber(If(value = 0, False, True)), integ)
+                    Dim encSt = Generator.IntEncrypt(TestNumber(value <> 0), integ)
                     Dim dataKeyName = Context.Randomizer.GenerateNew
                     DecryptReadResources.AddResource(dataKeyName, encSt)
 
@@ -197,7 +195,7 @@ Namespace Core.Obfuscation.Protections
 
                     md.DeclaringType.Methods.Add(mDef)
                 Else
-                    Dim encStr = TestNumber(If(CInt(value) = 0, False, True))
+                    Dim encStr = TestNumber(CInt(value) <> 0)
                     Dim IlProc1 As ILProcessor = mDef.Body.GetILProcessor()
                     With IlProc1
                         .Body.MaxStackSize = 4

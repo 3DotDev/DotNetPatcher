@@ -35,8 +35,8 @@ Namespace Core.Obfuscation.Protections
                 Conform = td.IsBeforeFieldInit = False AndAlso td.HasGenericParameters = False
                 If Conform Then
                     _StaticCtor = td.GetStaticConstructor
-                    If StaticCtor Is Nothing Then
-                        StaticCtor = New MethodDefinition(".cctor", MethodAttributes.Private Or MethodAttributes.SpecialName Or MethodAttributes.RTSpecialName Or MethodAttributes.Static, td.Module.TypeSystem.Void)
+                    If _StaticCtor Is Nothing Then
+                        _StaticCtor = New MethodDefinition(".cctor", MethodAttributes.Private Or MethodAttributes.SpecialName Or MethodAttributes.RTSpecialName Or MethodAttributes.Static, td.Module.TypeSystem.Void)
                     Else
                         _CctorAlreadyExists = True
                     End If
@@ -251,9 +251,9 @@ Namespace Core.Obfuscation.Protections
             Dim tRef As TypeReference = Nothing
 
             For Each instruction As Instruction In instructionsToExpand
-                Dim value As Integer = CInt(instruction.Operand)
+                Dim value As Integer = instruction.Operand
                 Dim num As Integer = 0
-                Select Case Rand.Next(1, 8)
+                Select Case Rand.Next(1, 16)
                     Case 1
                         tRef = Context.InputAssembly.MainModule.Import(GetType(Integer))
                         num = 4
@@ -281,6 +281,38 @@ Namespace Core.Obfuscation.Protections
                     Case 7
                         tRef = Context.InputAssembly.MainModule.Import(GetType(Long))
                         num = 8
+                        Exit Select
+                    Case 8
+                        tRef = Context.InputAssembly.MainModule.Import(GetType(UInteger))
+                        num = 4
+                        Exit Select
+                    Case 9
+                        tRef = Context.InputAssembly.MainModule.Import(GetType(Single))
+                        num = 4
+                        Exit Select
+                    Case 10
+                        tRef = Context.InputAssembly.MainModule.Import(GetType(Char))
+                        num = 2
+                        Exit Select
+                    Case 11
+                        tRef = Context.InputAssembly.MainModule.Import(GetType(UShort))
+                        num = 2
+                        Exit Select
+                    Case 12
+                        tRef = Context.InputAssembly.MainModule.Import(GetType(Double))
+                        num = 8
+                        Exit Select
+                    Case 13
+                        tRef = Context.InputAssembly.MainModule.Import(GetType(Date))
+                        num = 8
+                        Exit Select
+                    Case 14
+                        tRef = Context.InputAssembly.MainModule.Import(GetType(ConsoleKeyInfo))
+                        num = 12
+                        Exit Select
+                    Case 15
+                        tRef = Context.InputAssembly.MainModule.Import(GetType(Guid))
+                        num = 16
                         Exit Select
                 End Select
 

@@ -20,7 +20,7 @@ Namespace Core.Obfuscation.Protections
 
         Public Overrides ReadOnly Property Name As String
             Get
-                Return "Anti-Debug"
+                Return "Anti-ILDasm"
             End Get
         End Property
 

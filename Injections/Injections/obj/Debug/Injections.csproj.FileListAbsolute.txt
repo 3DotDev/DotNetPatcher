@@ -3,15 +3,15 @@ C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\Inj
 C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\Injections\Injections\obj\Debug\Injections.csprojAssemblyReference.cache
 C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\Injections\Injections\obj\Debug\Injections.dll
 C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\Injections\Injections\obj\Debug\Injections.pdb
-D:\Documents\Bitbucket\DotNetPatcher\Injections\Injections\bin\Debug\Injections.dll
-D:\Documents\Bitbucket\DotNetPatcher\Injections\Injections\bin\Debug\Injections.pdb
-D:\Documents\Bitbucket\DotNetPatcher\Injections\Injections\obj\Debug\Injections.dll
-D:\Documents\Bitbucket\DotNetPatcher\Injections\Injections\obj\Debug\Injections.pdb
-D:\Documents\Bitbucket\DotNetPatcher\Injections\Injections\obj\Debug\Injections.csproj.CoreCompileInputs.cache
 D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\Injections\Injections\bin\Debug\Injections.dll
 D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\Injections\Injections\bin\Debug\Injections.pdb
 D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\Injections\Injections\obj\Debug\Injections.csprojAssemblyReference.cache
 D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\Injections\Injections\obj\Debug\Injections.csproj.CoreCompileInputs.cache
 D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\Injections\Injections\obj\Debug\Injections.dll
 D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\Injections\Injections\obj\Debug\Injections.pdb
+D:\Documents\Bitbucket\DotNetPatcher\Injections\Injections\bin\Debug\Injections.dll
+D:\Documents\Bitbucket\DotNetPatcher\Injections\Injections\bin\Debug\Injections.pdb
 D:\Documents\Bitbucket\DotNetPatcher\Injections\Injections\obj\Debug\Injections.csprojAssemblyReference.cache
+D:\Documents\Bitbucket\DotNetPatcher\Injections\Injections\obj\Debug\Injections.csproj.CoreCompileInputs.cache
+D:\Documents\Bitbucket\DotNetPatcher\Injections\Injections\obj\Debug\Injections.dll
+D:\Documents\Bitbucket\DotNetPatcher\Injections\Injections\obj\Debug\Injections.pdb

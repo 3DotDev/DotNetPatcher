@@ -4,7 +4,7 @@ Namespace Core.Obfuscation.Protections
     Public NotInheritable Class PreCompressResources
         Inherits Protection
 
-#Region " Properties "
+#Region " Fields "
         Private ReadOnly PackerState As Boolean
 #End Region
 

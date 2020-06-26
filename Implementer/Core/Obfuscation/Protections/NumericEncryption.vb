@@ -3,7 +3,6 @@ Imports Mono.Cecil.Rocks
 Imports Mono.Cecil.Cil
 Imports Helper.CecilHelper
 Imports System.Text.RegularExpressions
-Imports Helper.CryptoHelper
 Imports Implementer.Core.Obfuscation.Builder
 Imports Implementer.Core.Dependencing.DependenciesInfos
 
@@ -137,7 +136,11 @@ Namespace Core.Obfuscation.Protections
                 Select Case instruction.OpCode
                     Case OpCodes.Ldc_I4
                         Dim mdFinal As MethodDefinition = Nothing
-                        If Not MethodByInteger.TryGetValue(CInt(instruction.Operand), mdFinal) Then
+
+                        Dim methExists = MethodByInteger.TryGetValue(instruction.Operand, mdFinal)
+                        Dim IsCandidateToProxy = IsProxyfiable(methExists, body.Method, If(methExists, MethodByInteger.Item(instruction.Operand), Nothing))
+
+                        If IsCandidateToProxy Then
                             If Context.Randomizer.GenerateBoolean Then
                                 If (instruction.Operand < Integer.MaxValue AndAlso instruction.Operand > 9) AndAlso (Not instruction.Next Is Nothing AndAlso Not instruction.Next.OpCode = OpCodes.Newarr) Then
 
@@ -151,7 +154,7 @@ Namespace Core.Obfuscation.Protections
                                         mdFinal.Body.Variables.Add(New VariableDefinition(Context.InputAssembly.MainModule.Import(GetType(Integer))))
 
                                         Dim integ = Context.Randomizer.GenerateInvisible
-                                        Dim encStr = Generator.IntEncrypt(CInt(instruction.Operand), integ)
+                                        Dim encStr = Generator.IntEncrypt(instruction.Operand, integ)
                                         Dim dataKeyName = Context.Randomizer.GenerateNew
                                         DecryptReadResources.AddResource(dataKeyName, encStr)
 
@@ -176,10 +179,12 @@ Namespace Core.Obfuscation.Protections
                                         End With
 
                                         body.Method.DeclaringType.Methods.Add(mdFinal)
-                                        MethodByInteger.Add(CInt(instruction.Operand), mdFinal)
+                                        If methExists = False Then
+                                            MethodByInteger.Add(instruction.Operand, mdFinal)
+                                        End If
                                     Else
                                         Dim integ = Context.Randomizer.GenerateInvisible
-                                        Dim encStr = Generator.IntEncrypt(CInt(instruction.Operand), integ)
+                                        Dim encStr = Generator.IntEncrypt(instruction.Operand, integ)
 
                                         mdFinal.Body.Variables.Add(New VariableDefinition(Context.InputAssembly.MainModule.Import(GetType(String))))
                                         mdFinal.Body.Variables.Add(New VariableDefinition(Context.InputAssembly.MainModule.Import(GetType(Integer))))
@@ -201,7 +206,9 @@ Namespace Core.Obfuscation.Protections
                                         End With
 
                                         body.Method.DeclaringType.Methods.Add(mdFinal)
-                                        MethodByInteger.Add(CInt(instruction.Operand), mdFinal)
+                                        If methExists = False Then
+                                            MethodByInteger.Add(instruction.Operand, mdFinal)
+                                        End If
                                     End If
                                 ElseIf (CInt(instruction.Operand) >= 1 AndAlso CInt(instruction.Operand) < 10) AndAlso (Not instruction.Next Is Nothing AndAlso Not instruction.Next.OpCode = OpCodes.Newarr) Then
                                     mdFinal = New MethodDefinition(Context.Randomizer.GenerateNew, (MethodAttributes.CompilerControlled Or (MethodAttributes.FamANDAssem Or (MethodAttributes.Family Or MethodAttributes.Static))), body.Method.DeclaringType.Module.Import(GetType(Integer)))
@@ -209,7 +216,7 @@ Namespace Core.Obfuscation.Protections
                                     mdFinal.Body.Variables.Add(New VariableDefinition(Context.InputAssembly.MainModule.Import(GetType(Integer))))
 
                                     Dim integ = Context.Randomizer.GenerateInvisible
-                                    Dim encStr = Generator.IntEncrypt(CInt(instruction.Operand), integ)
+                                    Dim encStr = Generator.IntEncrypt(instruction.Operand, integ)
 
                                     Dim ilProc = mdFinal.Body.GetILProcessor()
                                     With ilProc
@@ -232,7 +239,9 @@ Namespace Core.Obfuscation.Protections
                                     End With
 
                                     body.Method.DeclaringType.Methods.Add(mdFinal)
-                                    MethodByInteger.Add(CInt(instruction.Operand), mdFinal)
+                                    If methExists = False Then
+                                        MethodByInteger.Add(instruction.Operand, mdFinal)
+                                    End If
                                 End If
                             Else
                                 If (instruction.Operand < Integer.MaxValue AndAlso instruction.Operand >= 2) AndAlso (Not instruction.Next Is Nothing AndAlso Not instruction.Next.OpCode = OpCodes.Newarr) Then
@@ -283,10 +292,12 @@ Namespace Core.Obfuscation.Protections
                                         End With
 
                                         body.Method.DeclaringType.Methods.Add(mdFinal)
-                                        MethodByInteger.Add(CInt(instruction.Operand), mdFinal)
+                                        If methExists = False Then
+                                            MethodByInteger.Add(instruction.Operand, mdFinal)
+                                        End If
                                     Else
                                         Dim divider0 = 0
-                                        Dim resultdivider0 = DetermineDiv(CInt(instruction.Operand), divider0)
+                                        Dim resultdivider0 = DetermineDiv(instruction.Operand, divider0)
                                         Dim str = resultdivider0 & "," & divider0 & ",/"
 
                                         mdFinal = New MethodDefinition(Context.Randomizer.GenerateNew, (MethodAttributes.CompilerControlled Or (MethodAttributes.FamANDAssem Or (MethodAttributes.Family Or MethodAttributes.Static))), Context.InputAssembly.MainModule.Import(GetType(Integer)))
@@ -313,17 +324,19 @@ Namespace Core.Obfuscation.Protections
                                         End With
 
                                         body.Method.DeclaringType.Methods.Add(mdFinal)
-                                        MethodByInteger.Add(CInt(instruction.Operand), mdFinal)
+                                        If methExists = False Then
+                                            MethodByInteger.Add(instruction.Operand, mdFinal)
+                                        End If
                                     End If
                                 End If
                             End If
                         Else
-                            mdFinal = MethodByInteger.Item(CInt(instruction.Operand))
+                            mdFinal = MethodByInteger.Item(instruction.Operand)
                         End If
                         If (Not mdFinal Is Nothing) Then
-                            If mdFinal.DeclaringType.IsNotPublic Then
-                                mdFinal.DeclaringType.IsPublic = True
-                            End If
+                            'If mdFinal.DeclaringType.IsNotPublic Then
+                            '    mdFinal.DeclaringType.IsPublic = True
+                            'End If
                             Dim Instruct = il.Create(OpCodes.Call, Context.InputAssembly.MainModule.Import(mdFinal))
                             il.Replace(instruction, Instruct)
                             CompletedMethods.Add(mdFinal)
@@ -331,7 +344,11 @@ Namespace Core.Obfuscation.Protections
                     Case OpCodes.Ldc_R4
                         If Utils.IsValidOperand(instruction) AndAlso CSng(instruction.Operand) >= 0 Then
                             Dim mdFinal As MethodDefinition = Nothing
-                            If Not MethodBySingle.TryGetValue(CSng(instruction.Operand), mdFinal) Then
+
+                            Dim methExists = MethodBySingle.TryGetValue(instruction.Operand, mdFinal)
+                            Dim IsCandidateToProxy = IsProxyfiable(methExists, body.Method, If(methExists, MethodBySingle.Item(instruction.Operand), Nothing))
+
+                            If IsCandidateToProxy Then
                                 Dim Sng As Single
                                 If Single.TryParse(instruction.Operand, Sng) Then
                                     Dim pdefName = Context.Randomizer.GenerateNew
@@ -363,10 +380,12 @@ Namespace Core.Obfuscation.Protections
                                     mdFinal.IsSpecialName = True
                                     mdFinal.IsGetter = True
 
-                                    MethodBySingle.Add(CSng(instruction.Operand), mdFinal)
+                                    If methExists = False Then
+                                        MethodBySingle.Add(instruction.Operand, mdFinal)
+                                    End If
                                 End If
                             Else
-                                mdFinal = MethodBySingle.Item(CSng(instruction.Operand))
+                                mdFinal = MethodBySingle.Item(instruction.Operand)
                             End If
                             If (Not mdFinal Is Nothing) Then
                                 Dim Instruct = il.Create(OpCodes.Call, Context.InputAssembly.MainModule.Import(mdFinal))
@@ -378,7 +397,10 @@ Namespace Core.Obfuscation.Protections
                         If Utils.IsValidOperand(instruction) AndAlso CDbl(instruction.Operand) >= 0 Then
                             Dim mdFinal As MethodDefinition = Nothing
 
-                            If Not MethodByDouble.TryGetValue(CDbl(instruction.Operand), mdFinal) Then
+                            Dim methExists = MethodByDouble.TryGetValue(instruction.Operand, mdFinal)
+                            Dim IsCandidateToProxy = IsProxyfiable(methExists, body.Method, If(methExists, MethodByDouble.Item(instruction.Operand), Nothing))
+
+                            If IsCandidateToProxy Then
                                 Dim integ As Double
                                 If Double.TryParse(instruction.Operand, integ) Then
                                     Dim pdefName = Context.Randomizer.GenerateNew
@@ -409,10 +431,12 @@ Namespace Core.Obfuscation.Protections
                                     mdFinal.IsSpecialName = True
                                     mdFinal.IsGetter = True
 
-                                    MethodByDouble.Add(CDbl(instruction.Operand), mdFinal)
+                                    If methExists = False Then
+                                        MethodByDouble.Add(instruction.Operand, mdFinal)
+                                    End If
                                 End If
                             Else
-                                mdFinal = MethodByDouble.Item(CDbl(instruction.Operand))
+                                mdFinal = MethodByDouble.Item(instruction.Operand)
                             End If
                             If (Not mdFinal Is Nothing) Then
                                 Dim Instruct = il.Create(OpCodes.Call, Context.InputAssembly.MainModule.Import(mdFinal))
@@ -446,6 +470,20 @@ Namespace Core.Obfuscation.Protections
                 End If
             End If
         End Sub
+
+        Private Function IsProxyfiable(mtdExists As Boolean, srcmtd As MethodDefinition, mtd As MethodDefinition) As Boolean
+            Dim methExists As Boolean = mtdExists
+            If methExists = False Then
+                Return True
+            Else
+                Dim mdFinal = mtd
+                If mdFinal.DeclaringType.FullName <> srcmtd.DeclaringType.FullName Then
+                    Return True
+                Else
+                    Return False
+                End If
+            End If
+        End Function
 
         Private Function PrimeFactors(a As Integer) As List(Of Integer)
             Dim retval As New List(Of Integer)
@@ -493,16 +531,16 @@ Namespace Core.Obfuscation.Protections
                             If (prior = 1) Then
                                 Select Case item
                                     Case "+"c, "-"c
-                                        postfixBuffer = (postfixBuffer & CStr(s1.Pop))
+                                        postfixBuffer &= CStr(s1.Pop)
                                         i -= 1
                                         Continue For
                                 End Select
-                                postfixBuffer = (postfixBuffer & CStr(s1.Pop))
+                                postfixBuffer &= CStr(s1.Pop)
                                 i -= 1
                             Else
                                 Select Case item
                                     Case "+"c, "-"c
-                                        postfixBuffer = (postfixBuffer & CStr(s1.Pop))
+                                        postfixBuffer &= CStr(s1.Pop)
                                         s1.Push(item)
                                         Continue For
                                 End Select
@@ -511,14 +549,14 @@ Namespace Core.Obfuscation.Protections
                         End If
                         Exit Select
                     Case Else
-                        postfixBuffer = (postfixBuffer & CStr(item))
+                        postfixBuffer &= CStr(item)
                         Exit Select
                 End Select
             Next
 
             Dim len% = s1.Count
             For j% = 0 To len - 1
-                postfixBuffer = (postfixBuffer & CStr(s1.Pop))
+                postfixBuffer &= CStr(s1.Pop)
             Next
 
             postfixBuffer = postfixBuffer.Replace("/", " / ").Replace("*", " * ").Replace("+", " + ").Replace("-", " - ")

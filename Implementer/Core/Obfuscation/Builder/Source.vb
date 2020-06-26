@@ -1,7 +1,5 @@
-﻿Imports Helper.CryptoHelper
-Imports Helper.AssemblyHelper
+﻿Imports Helper.AssemblyHelper
 Imports Helper.CecilHelper
-Imports Helper.CodeDomHelper
 Imports Mono.Cecil
 
 Namespace Core.Obfuscation.Builder
@@ -58,7 +56,7 @@ Namespace Core.Obfuscation.Builder
                        & "    End Sub" & vbNewLine _
                        & Generator.GenerateDeCompressWithGzipStreamFunc(Decompress0, Decompress1) & vbNewLine _
                        & "End Class"
-            Return Compiler.CreateStubFromString(ClassName, Contex.FrameworkVersion, str)
+            Return Compile.CreateStubFromString(ClassName, Contex.FrameworkVersion, str)
         End Function
 
         Friend Shared Function DecryptXorStub(ClassName$, DecryptXorFuncName$, Contex As StubContext) As String
@@ -68,7 +66,7 @@ Namespace Core.Obfuscation.Builder
                       & m_AddedNamespaceStart & vbNewLine _
                       & Generator.GenerateDecryptXorFunc(ClassName, DecryptXorFuncName) & vbNewLine _
                       & m_AddedNamespaceEnd
-            Return Compiler.CreateStubFromString(ClassName, Contex.FrameworkVersion, str)
+            Return Compile.CreateStubFromString(ClassName, Contex.FrameworkVersion, str)
         End Function
 
         Friend Shared Function FromBase64Stub(ClassName$, Base64FuncName$, GetStringFuncName$, Contex As StubContext) As String
@@ -82,7 +80,7 @@ Namespace Core.Obfuscation.Builder
                       & m_AddedNamespaceStart & vbNewLine _
                       & Generator.GenerateFromBase64Func(ClassName, Base64FuncName, GetStringFuncName) & vbNewLine _
                       & m_AddedNamespaceEnd
-            Return Compiler.CreateStubFromString(ClassName, Contex.FrameworkVersion, str)
+            Return Compile.CreateStubFromString(ClassName, Contex.FrameworkVersion, str)
         End Function
 #End Region
 
@@ -96,7 +94,7 @@ Namespace Core.Obfuscation.Builder
                         & m_AddedNamespaceStart & vbNewLine _
                         & Generator.GenerateDecryptIntFunc(ClassName, DecryptIntFuncName) & vbNewLine _
                         & m_AddedNamespaceEnd
-            Return Compiler.CreateStubFromString(ClassName, Contex.FrameworkVersion, str)
+            Return Compile.CreateStubFromString(ClassName, Contex.FrameworkVersion, str)
         End Function
 
         Friend Shared Function DecryptOddStub(ClassName$, DecryptOddFuncName$, Contex As StubContext) As String
@@ -108,7 +106,7 @@ Namespace Core.Obfuscation.Builder
                       & m_AddedNamespaceStart & vbNewLine _
                       & Generator.GenerateDecryptOddFunc(ClassName, DecryptOddFuncName) & vbNewLine _
                       & m_AddedNamespaceEnd
-            Return Compiler.CreateStubFromString(ClassName, Contex.FrameworkVersion, str)
+            Return Compile.CreateStubFromString(ClassName, Contex.FrameworkVersion, str)
         End Function
 
         Friend Shared Function ReadFromResourcesStub(ClassName$, ReadFromResourcesFuncName$, contex As ResManagerContext) As String
@@ -121,7 +119,7 @@ Namespace Core.Obfuscation.Builder
                           & m_AddedNamespaceStart & vbNewLine _
                           & Generator.GenerateReadFromResourcesFunc(ClassName, ReadFromResourcesFuncName, contex.ResourceName) & vbNewLine _
                           & m_AddedNamespaceEnd
-            Return Compiler.CreateStubFromString(ClassName, contex.FrameworkVersion, str)
+            Return Compile.CreateStubFromString(ClassName, contex.FrameworkVersion, str)
         End Function
 
         Friend Shared Function DecryptPrimeStub(className$, DecryptPrimeFuncName$, Contex As StubContext) As String
@@ -136,7 +134,7 @@ Namespace Core.Obfuscation.Builder
                     & "End Class" & vbNewLine & vbNewLine _
                     & m_AddedNamespaceEnd
 
-            Return Compiler.CreateStubFromString(className, Contex.FrameworkVersion, str)
+            Return Compile.CreateStubFromString(className, Contex.FrameworkVersion, str)
         End Function
 
         Friend Shared Function DecryptRPNStub(ClassName$, DecryptRPNFuncName1$, DecryptRPNFuncName2$, Contex As StubContext) As String
@@ -151,7 +149,7 @@ Namespace Core.Obfuscation.Builder
                     & "End Class" & vbNewLine & vbNewLine _
                     & m_AddedNamespaceEnd
 
-            Return Compiler.CreateStubFromString(ClassName, Contex.FrameworkVersion, str)
+            Return Compile.CreateStubFromString(ClassName, Contex.FrameworkVersion, str)
         End Function
 
 #End Region
@@ -195,7 +193,7 @@ Namespace Core.Obfuscation.Builder
             "End Sub" & vbNewLine & vbNewLine &
         "End Class" & vbNewLine & vbNewLine &
     m_AddedNamespaceEnd
-            Return Compiler.CreateStubFromString(classname, Contex.FrameworkVersion, str)
+            Return Compile.CreateStubFromString(classname, Contex.FrameworkVersion, str)
         End Function
 
 #End Region
@@ -228,7 +226,7 @@ Namespace Core.Obfuscation.Builder
                  & "    End Sub" & vbNewLine _
                  & "End Class" & vbNewLine _
                  & m_AddedNamespaceEnd
-            Return Compiler.CreateStubFromString(className, Contex.FrameworkVersion, str)
+            Return Compile.CreateStubFromString(className, Contex.FrameworkVersion, str)
         End Function
 #End Region
 
@@ -255,7 +253,7 @@ Namespace Core.Obfuscation.Builder
                        & "    End Function" & vbNewLine _
                        & "End Class" & vbNewLine _
                        & m_AddedNamespaceEnd
-            Return Compiler.CreateStubFromString(className, Contex.FrameworkVersion, str)
+            Return Compile.CreateStubFromString(className, Contex.FrameworkVersion, str)
         End Function
 #End Region
 
@@ -318,7 +316,7 @@ Namespace Core.Obfuscation.Builder
                        & "    End Sub" & vbNewLine _
                        & "End Class"
 
-            Return Compiler.CreateStubFromString(ClassName, Contex.FrameworkVersion, str)
+            Return Compile.CreateStubFromString(ClassName, Contex.FrameworkVersion, str)
         End Function
 
         Friend Shared Function PackerStub(Contex As PackerContext, Names As Names) As String
@@ -390,7 +388,7 @@ Namespace Core.Obfuscation.Builder
 
             Dim dic As New Dictionary(Of String, Byte()) From {{Contex.ReferencedZipperAssembly.FPath, Contex.ReferencedZipperAssembly.RefByte}}
 
-            Return Compiler.CreateStubFromString(Names.ClassName, Contex.FrameworkVersion, str.Replace("app, version=0.0.0.0, culture=neutral, publickeytoken=null", Contex.ResourceName), dic)
+            Return Compile.CreateStubFromString(Names.ClassName, Contex.FrameworkVersion, str.Replace("app, version=0.0.0.0, culture=neutral, publickeytoken=null", Contex.ResourceName), dic)
         End Function
 
         Friend Shared Function ResourcesStub(ClassName$, initializeFuncName$, resolverName$, Decompress0$, Decompress1$, Contex As CompressContext) As String
@@ -444,7 +442,7 @@ Namespace Core.Obfuscation.Builder
                        & "End Class" & vbNewLine _
                        & m_AddedNamespaceEnd
 
-            Return Compiler.CreateStubFromString(ClassName, Contex.FrameworkVersion, str)
+            Return Compile.CreateStubFromString(ClassName, Contex.FrameworkVersion, str)
         End Function
 
         Friend Shared Function ResourcesEmbeddingStub(ClassName$, initializeFuncName$, contex As EmbedContext) As String
@@ -532,7 +530,7 @@ Namespace Core.Obfuscation.Builder
                        & "End Class" & vbNewLine & vbNewLine &
                        m_AddedNamespaceEnd
 
-            Return Compiler.CreateStubFromString(ClassName, contex.FrameworkVersion, str)
+            Return Compile.CreateStubFromString(ClassName, contex.FrameworkVersion, str)
         End Function
 
 #End Region

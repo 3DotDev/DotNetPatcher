@@ -12,3 +12,4 @@ D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\Cecil\bin\R
 D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\Cecil\obj\Release\Mono.Cecil.csproj.CoreCompileInputs.cache
 D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\Cecil\obj\Release\Mono.Cecil.dll
 D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\Cecil\obj\Release\Mono.Cecil.pdb
+D:\Documents\Bitbucket\DotNetPatcher\Cecil\obj\Release\Mono.Cecil.csprojAssemblyReference.cache

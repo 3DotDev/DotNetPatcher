@@ -18,30 +18,6 @@ C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\Imp
 C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\Implementer\obj\Debug\Implementer.vbproj.CopyComplete
 C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\Implementer\obj\Debug\Implementer.dll
 C:\Users\HERAULTJM\Documents\Visual Studio 2019\Projets\DotNetPatcher-master\Implementer\obj\Debug\Implementer.pdb
-D:\Documents\Bitbucket\DotNetPatcher\Implementer\bin\Debug\Implementer.dll
-D:\Documents\Bitbucket\DotNetPatcher\Implementer\bin\Debug\Implementer.pdb
-D:\Documents\Bitbucket\DotNetPatcher\Implementer\bin\Debug\dnlib.dll
-D:\Documents\Bitbucket\DotNetPatcher\Implementer\bin\Debug\Helper.dll
-D:\Documents\Bitbucket\DotNetPatcher\Implementer\bin\Debug\Injections.dll
-D:\Documents\Bitbucket\DotNetPatcher\Implementer\bin\Debug\Mono.Cecil.dll
-D:\Documents\Bitbucket\DotNetPatcher\Implementer\bin\Debug\Mono.Cecil.Rocks.dll
-D:\Documents\Bitbucket\DotNetPatcher\Implementer\bin\Debug\SevenzipLib.dll
-D:\Documents\Bitbucket\DotNetPatcher\Implementer\bin\Debug\Vestris.ResourceLib.dll
-D:\Documents\Bitbucket\DotNetPatcher\Implementer\bin\Debug\Mono.Cecil.pdb
-D:\Documents\Bitbucket\DotNetPatcher\Implementer\bin\Debug\Mono.Cecil.Rocks.pdb
-D:\Documents\Bitbucket\DotNetPatcher\Implementer\bin\Debug\dnlib.pdb
-D:\Documents\Bitbucket\DotNetPatcher\Implementer\bin\Debug\Helper.pdb
-D:\Documents\Bitbucket\DotNetPatcher\Implementer\bin\Debug\Injections.pdb
-D:\Documents\Bitbucket\DotNetPatcher\Implementer\bin\Debug\Vestris.ResourceLib.pdb
-D:\Documents\Bitbucket\DotNetPatcher\Implementer\bin\Debug\Vestris.ResourceLib.xml
-D:\Documents\Bitbucket\DotNetPatcher\Implementer\bin\Debug\SevenzipLib.pdb
-D:\Documents\Bitbucket\DotNetPatcher\Implementer\obj\Debug\Implementer.vbprojAssemblyReference.cache
-D:\Documents\Bitbucket\DotNetPatcher\Implementer\obj\Debug\Implementer.Resources.resources
-D:\Documents\Bitbucket\DotNetPatcher\Implementer\obj\Debug\Implementer.vbproj.GenerateResource.cache
-D:\Documents\Bitbucket\DotNetPatcher\Implementer\obj\Debug\Implementer.vbproj.CopyComplete
-D:\Documents\Bitbucket\DotNetPatcher\Implementer\obj\Debug\Implementer.dll
-D:\Documents\Bitbucket\DotNetPatcher\Implementer\obj\Debug\Implementer.pdb
-D:\Documents\Bitbucket\DotNetPatcher\Implementer\obj\Debug\Implementer.vbproj.CoreCompileInputs.cache
 D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\Implementer\bin\Debug\Implementer.dll
 D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\Implementer\bin\Debug\Implementer.pdb
 D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\Implementer\bin\Debug\dnlib.dll
@@ -66,3 +42,27 @@ D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\Implementer
 D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\Implementer\obj\Debug\Implementer.vbproj.CopyComplete
 D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\Implementer\obj\Debug\Implementer.dll
 D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\Implementer\obj\Debug\Implementer.pdb
+D:\Documents\Bitbucket\DotNetPatcher\Implementer\bin\Debug\Implementer.dll
+D:\Documents\Bitbucket\DotNetPatcher\Implementer\bin\Debug\Implementer.pdb
+D:\Documents\Bitbucket\DotNetPatcher\Implementer\bin\Debug\dnlib.dll
+D:\Documents\Bitbucket\DotNetPatcher\Implementer\bin\Debug\Helper.dll
+D:\Documents\Bitbucket\DotNetPatcher\Implementer\bin\Debug\Injections.dll
+D:\Documents\Bitbucket\DotNetPatcher\Implementer\bin\Debug\Mono.Cecil.dll
+D:\Documents\Bitbucket\DotNetPatcher\Implementer\bin\Debug\Mono.Cecil.Rocks.dll
+D:\Documents\Bitbucket\DotNetPatcher\Implementer\bin\Debug\SevenzipLib.dll
+D:\Documents\Bitbucket\DotNetPatcher\Implementer\bin\Debug\Vestris.ResourceLib.dll
+D:\Documents\Bitbucket\DotNetPatcher\Implementer\bin\Debug\Mono.Cecil.pdb
+D:\Documents\Bitbucket\DotNetPatcher\Implementer\bin\Debug\Mono.Cecil.Rocks.pdb
+D:\Documents\Bitbucket\DotNetPatcher\Implementer\bin\Debug\dnlib.pdb
+D:\Documents\Bitbucket\DotNetPatcher\Implementer\bin\Debug\Helper.pdb
+D:\Documents\Bitbucket\DotNetPatcher\Implementer\bin\Debug\Injections.pdb
+D:\Documents\Bitbucket\DotNetPatcher\Implementer\bin\Debug\Vestris.ResourceLib.pdb
+D:\Documents\Bitbucket\DotNetPatcher\Implementer\bin\Debug\Vestris.ResourceLib.xml
+D:\Documents\Bitbucket\DotNetPatcher\Implementer\bin\Debug\SevenzipLib.pdb
+D:\Documents\Bitbucket\DotNetPatcher\Implementer\obj\Debug\Implementer.vbprojAssemblyReference.cache
+D:\Documents\Bitbucket\DotNetPatcher\Implementer\obj\Debug\Implementer.Resources.resources
+D:\Documents\Bitbucket\DotNetPatcher\Implementer\obj\Debug\Implementer.vbproj.GenerateResource.cache
+D:\Documents\Bitbucket\DotNetPatcher\Implementer\obj\Debug\Implementer.vbproj.CoreCompileInputs.cache
+D:\Documents\Bitbucket\DotNetPatcher\Implementer\obj\Debug\Implementer.vbproj.CopyComplete
+D:\Documents\Bitbucket\DotNetPatcher\Implementer\obj\Debug\Implementer.dll
+D:\Documents\Bitbucket\DotNetPatcher\Implementer\obj\Debug\Implementer.pdb

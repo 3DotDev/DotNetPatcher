@@ -34,7 +34,7 @@ Namespace Core.Obfuscation.Protections
 
         Public Overrides ReadOnly Property Name As String
             Get
-                Return "RenameResourcesContent"
+                Return "Rename Resources Content"
             End Get
         End Property
 
