@@ -73,14 +73,58 @@ Namespace CecilHelper
 
         Public Shared Function IsValidIntegerOperand(instruct As Instruction) As Boolean
             If Not instruct.Operand Is Nothing AndAlso Not Integer.Parse(instruct.Operand.ToString) = Nothing Then
-                Return True
+                If CInt(instruct.Operand) > 7 Then
+                    Return True
+                End If
             End If
             Return False
+        End Function
+
+        Public Shared Function IsValidIntegerOperand(body As MethodBody, instruct As Instruction) As Boolean
+            If Not instruct.Operand Is Nothing AndAlso Not Integer.Parse(instruct.Operand.ToString) = Nothing Then
+                If CInt(instruct.Operand) > 7 Then
+                    Return IsValidInstructionReference(body, instruct)
+                End If
+            End If
+            Return False
+        End Function
+
+        Private Shared Function IsValidInstructionReference(body As MethodBody, Instruct As Instruction) As Boolean
+            For Each ins In body.Instructions
+                If ins.OpCode = Cil.OpCodes.Switch Then
+                    For Each Inst As Instruction In ins.Operand
+                        If Inst Is Instruct Then
+                            Return False
+                        End If
+                    Next
+                Else
+                    If ins.Operand IsNot Nothing AndAlso TypeOf ins.Operand Is Instruction AndAlso Instruct Is TryCast(ins.Operand, Instruction) AndAlso Instruct.Index = TryCast(ins.Operand, Instruction).Index Then
+                        Return False
+                    End If
+                End If
+            Next
+
+            If body.HasExceptionHandlers Then
+                For Each exc In body.ExceptionHandlers
+                    If exc.TryStart.Index <= Instruct.Index AndAlso exc.TryEnd.Index >= Instruct.Index Then
+                        Return False
+                    End If
+                Next
+            End If
+
+            Return True
         End Function
 
         Public Shared Function IsValidNewObjOperand(instruct As Instruction) As Boolean
             If Not instruct.Operand Is Nothing AndAlso Not DirectCast(instruct.Operand, MethodReference) Is Nothing Then
                 Return True
+            End If
+            Return False
+        End Function
+
+        Public Shared Function IsValidNewObjOperand(body As MethodBody, instruct As Instruction) As Boolean
+            If Not instruct.Operand Is Nothing AndAlso Not DirectCast(instruct.Operand, MethodReference) Is Nothing Then
+                Return IsValidInstructionReference(body, instruct)
             End If
             Return False
         End Function
@@ -92,9 +136,23 @@ Namespace CecilHelper
             Return False
         End Function
 
+        Public Shared Function IsValidLongOperand(body As MethodBody, instruct As Instruction) As Boolean
+            If Not instruct.Operand Is Nothing AndAlso Not Long.Parse(instruct.Operand.ToString) = Nothing Then
+                Return IsValidInstructionReference(body, instruct)
+            End If
+            Return False
+        End Function
+
         Public Shared Function IsValidSingleOperand(instruct As Instruction) As Boolean
             If Not instruct.Operand Is Nothing AndAlso Not Single.Parse(instruct.Operand.ToString) = Nothing Then
                 Return True
+            End If
+            Return False
+        End Function
+
+        Public Shared Function IsValidSingleOperand(body As MethodBody, instruct As Instruction) As Boolean
+            If Not instruct.Operand Is Nothing AndAlso Not Single.Parse(instruct.Operand.ToString) = Nothing Then
+                Return IsValidInstructionReference(body, instruct)
             End If
             Return False
         End Function
@@ -106,9 +164,23 @@ Namespace CecilHelper
             Return False
         End Function
 
+        Public Shared Function IsValidDoubleOperand(body As MethodBody, instruct As Instruction) As Boolean
+            If Not instruct.Operand Is Nothing AndAlso Not Double.Parse(instruct.Operand.ToString) = Nothing Then
+                Return IsValidInstructionReference(body, instruct)
+            End If
+            Return False
+        End Function
+
         Public Shared Function IsValidStringOperand(instruct As Instruction) As Boolean
             If Not instruct.Operand Is Nothing AndAlso Not String.IsNullOrWhiteSpace(CStr(instruct.Operand)) AndAlso Not CStr(instruct.Operand).Length = 0 Then
                 Return True
+            End If
+            Return False
+        End Function
+
+        Public Shared Function IsValidStringOperand(body As MethodBody, instruct As Instruction) As Boolean
+            If Not instruct.Operand Is Nothing AndAlso Not String.IsNullOrWhiteSpace(CStr(instruct.Operand)) AndAlso Not CStr(instruct.Operand).Length = 0 Then
+                Return IsValidInstructionReference(body, instruct)
             End If
             Return False
         End Function

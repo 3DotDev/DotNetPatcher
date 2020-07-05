@@ -13,38 +13,55 @@ Namespace Core.Obfuscation.Protections
         Private Class MethodsCollection(Of T)
             Inherits List(Of KeyValuePair(Of T, MethodDefinition))
 
+            Private ReadOnly KeyMethods As List(Of KeyValuePair(Of Integer, MethodDefinition))
+            Private ReadOnly Rnd As Random
+
+            Public Sub New()
+                KeyMethods = New List(Of KeyValuePair(Of Integer, MethodDefinition))
+                Rnd = New Random
+            End Sub
+
             Public Overloads Sub Add(key As T, value As MethodDefinition)
                 Add(New KeyValuePair(Of T, MethodDefinition)(key, value))
             End Sub
 
-            Public Overloads Function GetValue(md As MethodDefinition, key As T, Randomizer As Randomizer) As MethodDefinition
+            Public Overloads Function GetValue(md As MethodDefinition, key As T, Randomizer As Randomizer) As Tuple(Of MethodDefinition, Integer)
                 Dim mdFinal As MethodDefinition
+                Dim rand As Integer
+                Dim tups As Tuple(Of MethodDefinition, Integer)
 
                 Dim allMethods = Where(Function(f) f.Value?.DeclaringType.FullName = md.DeclaringType.FullName)
                 If allMethods.Count > 0 Then
                     If Any(Function(m) m.Value?.DeclaringType.FullName = md.DeclaringType.FullName AndAlso m.Key.Equals(key)) Then
                         mdFinal = Where(Function(m) m.Value?.DeclaringType.FullName = md.DeclaringType.FullName AndAlso m.Key.Equals(key)).First.Value
+                        rand = KeyMethods.Where(Function(r) r.Value Is mdFinal).First.Key
+                        tups = Tuple.Create(mdFinal, rand)
                     Else
-                        mdFinal = CreateMethod(key, md, Randomizer)
-                        AddToList(mdFinal, key)
+                        tups = CreateMethod(key, md, Randomizer)
+                        mdFinal = tups.Item1
+                        rand = tups.Item2
+                        AddToList(mdFinal, key, rand)
                     End If
                 Else
-                    mdFinal = CreateMethod(key, md, Randomizer)
-                    AddToList(mdFinal, key)
+                    tups = CreateMethod(key, md, Randomizer)
+                    mdFinal = tups.Item1
+                    rand = tups.Item2
+                    AddToList(mdFinal, key, rand)
                 End If
-
-                Return mdFinal
+                Return tups
             End Function
 
-            Private Sub AddToList(mdFinal As MethodDefinition, key As T)
+            Private Sub AddToList(mdFinal As MethodDefinition, key As T, Rand As Integer)
                 If Not mdFinal Is Nothing Then
                     mdFinal.Attributes = MethodAttributes.Static Or MethodAttributes.Private
                     Add(New KeyValuePair(Of T, MethodDefinition)(key, mdFinal))
+                    KeyMethods.Add(New KeyValuePair(Of Integer, MethodDefinition)(Rand, mdFinal))
                 End If
             End Sub
 
-            Private Function CreateMethod(value As Object, md As MethodDefinition, Randomizer As Randomizer) As MethodDefinition
+            Private Function CreateMethod(value As Object, md As MethodDefinition, Randomizer As Randomizer) As Tuple(Of MethodDefinition, Integer)
                 Dim opc As OpCode = Nothing
+                Dim Rand = Rnd.Next(8, 100)
                 Select Case value.GetType
                     Case GetType(String)
                         opc = OpCodes.Ldstr
@@ -61,18 +78,43 @@ Namespace Core.Obfuscation.Protections
                 End Select
 
                 Dim item As New MethodDefinition(Randomizer.GenerateNew, (MethodAttributes.CompilerControlled Or (MethodAttributes.FamANDAssem Or (MethodAttributes.Family Or MethodAttributes.Static))), md.DeclaringType.Module.Import(value.GetType))
-                item.Body = New MethodBody(item)
-                item.IsPublic = True
+                Dim par1 As New ParameterDefinition(md.DeclaringType.Module.Import(GetType(Integer)))
+                Dim var1 As New VariableDefinition(md.DeclaringType.Module.Import(value.GetType))
+                Dim var2 As New VariableDefinition(md.DeclaringType.Module.Import(GetType(Integer)))
+                item.Parameters.Add(par1)
+                item.Body.Variables.Add(var1)
+                item.Body.Variables.Add(var2)
+
                 Dim ilProc As ILProcessor = item.Body.GetILProcessor()
                 With ilProc
-                    .Body.MaxStackSize = 1
+                    .Body.MaxStackSize = 2
                     .Body.InitLocals = True
-                    .Emit(opc, value)
-                    .Emit(OpCodes.Ret)
+
+                    .Body.Instructions.Add(ilProc.Create(OpCodes.Ldc_I4_8))
+                    .Body.Instructions.Add(ilProc.Create(OpCodes.Stloc_1))
+                    .Body.Instructions.Add(ilProc.Create(OpCodes.Ldloc_1))
+                    .Body.Instructions.Add(ilProc.Create(OpCodes.Ldarg_0))
+                    .Body.Instructions.Add(ilProc.Create(OpCodes.Nop)) '4
+                    .Body.Instructions.Add(ilProc.Create(opc, value))
+                    .Body.Instructions.Add(ilProc.Create(OpCodes.Stloc_0))
+                    .Body.Instructions.Add(ilProc.Create(OpCodes.Nop)) '7
+                    .Body.Instructions.Add(ilProc.Create(OpCodes.Ldloc_1)) '8
+                    .Body.Instructions.Add(ilProc.Create(OpCodes.Ldc_I4_1))
+                    .Body.Instructions.Add(ilProc.Create(OpCodes.Add_Ovf))
+                    .Body.Instructions.Add(ilProc.Create(OpCodes.Stloc_1))
+                    .Body.Instructions.Add(ilProc.Create(OpCodes.Ldloc_1))
+                    .Body.Instructions.Add(ilProc.Create(OpCodes.Ldc_I4, 100))
+                    .Body.Instructions.Add(ilProc.Create(OpCodes.Ble_S, .Body.Instructions(2)))
+                    .Body.Instructions.Add(ilProc.Create(OpCodes.Ldloc_0)) '15
+                    .Body.Instructions.Add(ilProc.Create(OpCodes.Ret))
+
+                    ilProc.Replace(.Body.Instructions(7), ilProc.Create(OpCodes.Br_S, .Body.Instructions(15)))
+                    ilProc.Replace(.Body.Instructions(4), ilProc.Create(OpCodes.Bne_Un_S, .Body.Instructions(8)))
                 End With
+
                 md.DeclaringType.Methods.Add(item)
 
-                Return item
+                Return Tuple.Create(item, Rand)
             End Function
         End Class
 #End Region
@@ -88,6 +130,7 @@ Namespace Core.Obfuscation.Protections
         Private ReadOnly OpCodeDic As Dictionary(Of OpCode, String)
         Private ReadOnly CompletedMethods As Mono.Collections.Generic.Collection(Of MethodDefinition)
         Private ReadOnly PackerState As Boolean
+        Private Rnd As Random
 #End Region
 
 #Region " Properties "
@@ -136,6 +179,7 @@ Namespace Core.Obfuscation.Protections
                 OpCodeDic = New Dictionary(Of OpCode, String) From {{OpCodes.Ldc_I4, "System.Int32"}, {OpCodes.Ldc_I8, "System.Int64"}, {OpCodes.Ldc_R4, "System.Single"}, {OpCodes.Ldc_R8, "System.Double"}}
                 Types = New List(Of TypeDefinition)
                 CompletedMethods = New Mono.Collections.Generic.Collection(Of MethodDefinition)
+                Rnd = New Random
             End If
         End Sub
 #End Region
@@ -195,23 +239,23 @@ Namespace Core.Obfuscation.Protections
             For Each instruction As Instruction In instructions
                 Select Case instruction.OpCode
                     Case OpCodes.Ldc_I4
-                        If Utils.IsValidIntegerOperand(instruction) AndAlso Not Context.Randomizer.invisibleChars.Contains(instruction.Operand) Then
-                            OpCodesFilter(instruction, instructionsToExpand, body)
+                        If Not Context.Randomizer.invisibleChars.Contains(instruction.Operand) AndAlso Utils.IsValidIntegerOperand(body, instruction) Then
+                            instructionsToExpand.Add(instruction)
                         End If
                     Case OpCodes.Ldc_I8
-                        If Utils.IsValidLongOperand(instruction) Then
-                            OpCodesFilter(instruction, instructionsToExpand, body)
+                        If Utils.IsValidLongOperand(body, instruction) Then
+                            instructionsToExpand.Add(instruction)
                         End If
                     Case OpCodes.Ldc_R4
-                        If Utils.IsValidSingleOperand(instruction) Then
-                            OpCodesFilter(instruction, instructionsToExpand, body)
+                        If Utils.IsValidSingleOperand(body, instruction) Then
+                            instructionsToExpand.Add(instruction)
                         End If
                     Case OpCodes.Ldc_R8
-                        If Utils.IsValidDoubleOperand(instruction) Then
-                            OpCodesFilter(instruction, instructionsToExpand, body)
+                        If Utils.IsValidDoubleOperand(body, instruction) Then
+                            instructionsToExpand.Add(instruction)
                         End If
                     Case OpCodes.Ldstr
-                        If Utils.IsValidStringOperand(instruction) Then
+                        If Utils.IsValidStringOperand(body, instruction) Then
                             instructionsToExpand.Add(instruction)
                         End If
                     Case OpCodes.Newobj
@@ -235,42 +279,27 @@ Namespace Core.Obfuscation.Protections
                         ReplaceInstruction(il, MdByString.GetValue(body.Method, instruction.Operand, Context.Randomizer), instruction)
                     Case OpCodes.Newobj
                         Dim Mref = DirectCast(instruction.Operand, MethodReference)
-                        Dim mdFinal As MethodDefinition
-
-                        mdFinal = CreateReferenceMethod(Mref, body.Method)
+                        Dim mdFinal = CreateReferenceMethod(Mref, body.Method)
                         ReplaceInstruction(il, mdFinal, instruction)
                 End Select
             Next
         End Sub
 
-        Private Sub ReplaceInstruction(il As ILProcessor, mdFinal As MethodDefinition, instruction As Instruction)
-            If (Not mdFinal Is Nothing) Then
-                Dim Instruct = il.Create(OpCodes.Call, Context.InputAssembly.MainModule.Import(mdFinal))
+        Private Sub ReplaceInstruction(il As ILProcessor, mdfinal As MethodDefinition, instruction As Instruction)
+            If (Not mdfinal Is Nothing) Then
+                Dim Instruct = il.Create(OpCodes.Call, Context.InputAssembly.MainModule.Import(mdfinal))
                 il.Replace(instruction, Instruct)
-                CompletedMethods.Add(mdFinal)
+                CompletedMethods.Add(mdfinal)
             End If
         End Sub
 
-        Private Sub OpCodesFilter(Instruction As Instruction, instructionsToExpand As List(Of Instruction), body As MethodBody)
-            Dim opCodeStr = OpCodeDic.Item(Instruction.OpCode)
-
-            Dim instructNext = Instruction.Next
-            If instructNext.OpCode = OpCodes.Stloc OrElse instructNext.OpCode = OpCodes.Ldloc Then
-                Dim varIndex = CInt(instructNext.Operand.ToString.ToLower.Replace("v_", String.Empty))
-                Dim varType = body.Variables(varIndex).VariableType
-                If varType.ToString = opCodeStr Then
-                    If Not Instruction.Operand Is Nothing Then
-                        instructionsToExpand.Add(Instruction)
-                    End If
-                End If
-            Else
-                If Not instructNext.Operand Is Nothing Then
-                    If instructNext.Operand.ToString.ToLower.EndsWith(opCodeStr.ToLower & ")") OrElse instructNext.Operand.ToString.ToLower.StartsWith(opCodeStr.ToLower) Then
-                        If Not Instruction.Operand Is Nothing Then
-                            instructionsToExpand.Add(Instruction)
-                        End If
-                    End If
-                End If
+        Private Sub ReplaceInstruction(il As ILProcessor, mdfinal As Tuple(Of MethodDefinition, Integer), instruction As Instruction)
+            If (Not mdfinal Is Nothing) Then
+                Dim Instruct = il.Create(OpCodes.Call, Context.InputAssembly.MainModule.Import(mdfinal.Item1))
+                il.Replace(instruction, Instruct)
+                Dim i4Instruct = Instruction.Create(OpCodes.Ldc_I4, mdfinal.Item2)
+                il.InsertBefore(Instruct, i4Instruct)
+                CompletedMethods.Add(mdfinal.Item1)
             End If
         End Sub
 
@@ -278,18 +307,25 @@ Namespace Core.Obfuscation.Protections
             If (targetConstructor.Parameters.Count <> 0) OrElse targetConstructor.DeclaringType.IsGenericInstance OrElse targetConstructor.HasGenericParameters Then
                 Return Nothing
             End If
-            Dim item As New MethodDefinition(Context.Randomizer.GenerateNew, (MethodAttributes.CompilerControlled Or (MethodAttributes.FamANDAssem Or (MethodAttributes.Family Or MethodAttributes.Static))), Context.InputAssembly.MainModule.Import(targetConstructor.DeclaringType))
-            item.Body = New MethodBody(item)
-            item.IsPublic = True
-            Dim ilProc As ILProcessor = item.Body.GetILProcessor()
-            With ilProc
-                .Body.MaxStackSize = 1
-                .Body.InitLocals = True
-                .Emit(OpCodes.Newobj, targetConstructor)
-                .Emit(OpCodes.Ret)
-            End With
 
-            md.DeclaringType.Methods.Add(item)
+            Dim item As MethodDefinition = Nothing
+
+            If MdByRef.TryGetValue(targetConstructor, item) Then
+            Else
+                item = New MethodDefinition(Context.Randomizer.GenerateNew, (MethodAttributes.CompilerControlled Or (MethodAttributes.FamANDAssem Or (MethodAttributes.Family Or MethodAttributes.Static))), Context.InputAssembly.MainModule.Import(targetConstructor.DeclaringType))
+                item.Body = New MethodBody(item)
+                item.IsPublic = True
+                Dim ilProc As ILProcessor = item.Body.GetILProcessor()
+                With ilProc
+                    .Body.MaxStackSize = 1
+                    .Body.InitLocals = True
+                    .Emit(OpCodes.Newobj, targetConstructor)
+                    .Emit(OpCodes.Ret)
+                End With
+                md.DeclaringType.Methods.Add(item)
+
+                MdByRef.Add(targetConstructor, item)
+            End If
 
             Return item
         End Function

@@ -124,14 +124,6 @@ Namespace Engine.Processing
                     End If
                 Next
             End If
-            'Dim genParam As New List(Of GenericParameter)
-            'If method.HasGenericParameters Then
-            '    For Each GenPar As GenericParameter In method.GenericParameters
-            '        If GenPar.CustomAttributes.Count = 0 Then
-            '            GenPar.Name = Mapping.RenameGenericParamMember(GenPar, Randomizer.GenerateNew())
-            '        End If
-            '    Next
-            'End If
         End Sub
 
 

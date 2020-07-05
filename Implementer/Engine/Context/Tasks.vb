@@ -20,13 +20,13 @@ Namespace Engine.Context
     Public NotInheritable Class Tasks
 
 #Region " Fields "
+        Public Context As ProtectionContext
         Private m_bgw As BackgroundWorker
         Private ReadOnly Property Parameters As Parameters
         Private m_Dependencies As Dependencies
 #End Region
 
 #Region " Events "
-        Public Context As ProtectionContext
         Public Shared Event RenamedItem As RenamedItemDelegate
 #End Region
 

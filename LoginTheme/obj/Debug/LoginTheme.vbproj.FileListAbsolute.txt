@@ -20,7 +20,6 @@ D:\Documents\Bitbucket\DotNetPatcher - Copie11 OK With virtuals logs\LoginTheme\
 D:\Documents\Bitbucket\DotNetPatcher\LoginTheme\bin\Debug\LoginTheme.dll
 D:\Documents\Bitbucket\DotNetPatcher\LoginTheme\bin\Debug\LoginTheme.pdb
 D:\Documents\Bitbucket\DotNetPatcher\LoginTheme\bin\Debug\LoginTheme.xml
-D:\Documents\Bitbucket\DotNetPatcher\LoginTheme\obj\Debug\LoginTheme.vbprojAssemblyReference.cache
 D:\Documents\Bitbucket\DotNetPatcher\LoginTheme\obj\Debug\LoginTheme.Resources.resources
 D:\Documents\Bitbucket\DotNetPatcher\LoginTheme\obj\Debug\LoginTheme.vbproj.GenerateResource.cache
 D:\Documents\Bitbucket\DotNetPatcher\LoginTheme\obj\Debug\LoginTheme.vbproj.CoreCompileInputs.cache

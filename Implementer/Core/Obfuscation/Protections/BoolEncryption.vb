@@ -250,7 +250,7 @@ Namespace Core.Obfuscation.Protections
             Dim result As Boolean = False
             Do While result = False
                 n = Rand.Next(1000000, 99999999)
-                result = If(IsOdd(n) = isPair, True, False)
+                result = (IsOdd(n) = isPair)
                 If result Then
                     Exit Do
                 End If

@@ -11,7 +11,6 @@ Namespace Engine.Context
         Public ReadOnly Property Fields As Boolean
         Public ReadOnly Property CustomAttributes As Boolean
         Public ReadOnly Property Events As Boolean
-        Public ReadOnly Property Variables As Boolean
         Public ReadOnly Property Parameters As Boolean
         Public ReadOnly Property ReplaceNamespacesSetting As ReplaceNamespaces
         Public ReadOnly Property RenameMainNamespaceSetting As RenameMainNamespace
@@ -21,7 +20,7 @@ Namespace Engine.Context
 #End Region
 
 #Region " Constructor "
-        Public Sub New(Namespac As Boolean, Typ As Boolean, Meth As Boolean, Prop As Boolean, Fiel As Boolean, Even As Boolean, Custom As Boolean, Vari As Boolean,
+        Public Sub New(Namespac As Boolean, Typ As Boolean, Meth As Boolean, Prop As Boolean, Fiel As Boolean, Even As Boolean, Custom As Boolean,
                 param As Boolean, ReplaceNamespace As Boolean, RenameMainNamespace As Boolean, RenamingType%, NamespacSerialized As Boolean)
             _Namespaces = Namespac
             _Types = Typ
@@ -30,7 +29,6 @@ Namespace Engine.Context
             _Fields = Fiel
             _Events = Even
             _CustomAttributes = Custom
-            _Variables = Vari
             _Parameters = param
             _ReplaceNamespacesSetting = ReplaceNamespacesValue(ReplaceNamespace)
             _RenameMainNamespaceSetting = RenameMainNamespaceValue(RenameMainNamespace)
@@ -83,7 +81,6 @@ Namespace Engine.Context
             _Fields = False
             _CustomAttributes = False
             _Events = False
-            _Variables = False
             _Parameters = False
         End Sub
 #End Region

@@ -2,7 +2,7 @@
 
 # Description
 
-DNP is a Obfuscator/Packer which use MonoCecil library for .NET applications !
+DNP is an Obfuscator/Packer for .NET applications which use MonoCecil library.
 It doesn't support WPF app !
 
 # Screenshot
@@ -44,7 +44,7 @@ It doesn't support WPF app !
 
 # Credits
 
-* 0xd4d : for [Dnlib Pe module] (https://github.com/0xd4d/dnlib) library
+* 0xd4d : for [Dnlib Pe module](https://github.com/0xd4d/dnlib) library
 * jbevains : for [MonoCecil](https://github.com/jbevain/cecil) library
 * Yck1509 : for [Confuser](https://confuser.codeplex.com/) project 
 * Daniel Doubrovkine : for his ResourceLib library [Vestris](https://github.com/dblock/resourcelib)
@@ -61,5 +61,3 @@ Copyright © 3DotDev 2008-2020
 
 
 # Licence
-
-NOTHING

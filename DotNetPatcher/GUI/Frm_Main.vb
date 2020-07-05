@@ -527,7 +527,6 @@ Public Class Frm_Main
                                                       ChbObfuscatorEventsRP.Checked,
                                                       ChbObfuscatorAttributesRP.Checked,
                                                       ChbObfuscatorMethodsRP.Checked,
-                                                      ChbObfuscatorMethodsRP.Checked,
                                                       ChbObfuscatorReplaceNamespaceByEmptyNamespaces.Checked,
                                                       ChbObfuscatorRenameMainNamespaceOnlyNamespaces.Checked,
                                                       ObfuscatorRenamingSchemeIndex,
